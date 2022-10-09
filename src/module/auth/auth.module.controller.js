@@ -4,7 +4,7 @@ const Auth = require("./auth.module.model");
 const { sendMail } = require("../../service/email.service");
 const { generateOTP, generateHash, verify } = require("../../helpers/helpers");
 
-exports.getOTP = async (req, res, next) => {
+exports.sendOTP = async (req, res, next) => {
   let { email } = req.body;
   let otp = generateOTP();
 
@@ -19,7 +19,7 @@ exports.getOTP = async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      message: "Send otp for authentication success",
+      message: "Please check your email for code!",
       hash,
       email,
     });
@@ -51,8 +51,13 @@ exports.login = async (req, res, next) => {
 
     res.status(200).json({
       success: false,
-      message: "Login success",
+      message: "Login successfully",
       token: user.getToken(),
+      user: {
+        userName: user.userName,
+        email: user.email,
+        profilePic: user.profilePic,
+      },
     });
   } catch (error) {
     console.error("Login error");
@@ -61,7 +66,7 @@ exports.login = async (req, res, next) => {
 };
 
 exports.registration = async (req, res, next) => {
-  let { email, otp, hash, password } = req.body;
+  let { email, otp, hash, password, userName } = req.body;
 
   try {
     if (!email || !password || !otp) {
@@ -80,6 +85,7 @@ exports.registration = async (req, res, next) => {
     }
 
     let isVerified = verify(email, otp, hash);
+
     if (!isVerified) {
       return res.status(404).json({
         success: false,
@@ -91,13 +97,14 @@ exports.registration = async (req, res, next) => {
     let user = await Auth.create({
       email: email,
       password: hashPass,
+      userName: userName,
     });
 
     await user.save();
 
-    res.status(201).json({
+    res.status(200).json({
       success: true,
-      message: "Registration successful",
+      message: "Registration completed successfully",
     });
   } catch (error) {
     console.error("registration failed");

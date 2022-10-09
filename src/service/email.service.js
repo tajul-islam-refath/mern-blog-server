@@ -4,7 +4,7 @@ var transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: process.env.EMAIL,
-    pass: process.env.PASSWORD,
+    pass: "iowwrpfbnhryrgsx",
   },
 });
 
@@ -20,6 +20,7 @@ exports.sendMail = async (email, subject, body) => {
     let info = await transporter.sendMail(mailOptions);
     console.log(info.response);
   } catch (err) {
-    throw new Error("Email send fail");
+    console.log(err.message);
+    throw new Error("Email send fail", err.message);
   }
 };

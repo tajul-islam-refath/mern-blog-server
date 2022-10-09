@@ -37,6 +37,9 @@ exports.verify = (email, otp, fullHash) => {
     .update(hashObj)
     .digest("hex");
 
+  console.log(newhash);
+  console.log(hash);
+
   if (newhash == hash) return true;
   return false;
 };

@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 
 const authSchema = new Schema(
   {
-    username: {
+    userName: {
       type: String,
       trim: true,
       maxlength: 15,
