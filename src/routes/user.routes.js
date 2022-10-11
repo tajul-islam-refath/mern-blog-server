@@ -1,5 +1,13 @@
 const router = require("express").Router();
 
-router.get("/profile/me");
-router.get("/profile/:id");
+const {
+  getMyProfile,
+  getUserProfile,
+  createUserProfile,
+  updateUserProfile,
+  deleteUserProfile,
+} = require("../controllers/user.controller");
+
+router.get("/profile/me", getMyProfile);
+router.get("/profile/:id", getUserProfile);
 module.exports = router;
