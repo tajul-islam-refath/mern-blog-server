@@ -12,8 +12,10 @@ const authSchema = new Schema(
     },
     email: { type: String, trim: true, unique: true, required: true },
     password: { type: String, required: true },
+    role: [],
     profilePic: {
       type: String,
+      default: "",
     },
   },
   {

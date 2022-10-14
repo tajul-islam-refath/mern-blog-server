@@ -8,6 +8,10 @@ const {
   deleteUserProfile,
 } = require("../controllers/user.controller");
 
-router.get("/profile/me", getMyProfile);
-router.get("/profile/:id", getUserProfile);
+const { isAuthenticated } = require("../middlewarers/authMiddleware");
+
+router.get("/profile/me", isAuthenticated, getMyProfile);
+router.get("/profile/:id", isAuthenticated, getUserProfile);
+
+router.post("/profile/create", isAuthenticated, createUserProfile);
 module.exports = router;
