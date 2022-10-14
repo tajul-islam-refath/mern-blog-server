@@ -6,7 +6,8 @@ exports.bindUserWithReq = () => async (req, res, next) => {
   const token = req.headers.authorization;
   if (token) {
     const decoded = jwt.verify(token, process.env.KEY);
-    req.user = await User.findById({ _id: decoded._id });
+
+    req.user = await User.findOne({ _id: decoded._id }, { password: 0 });
   }
   next();
 };

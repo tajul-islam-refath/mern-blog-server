@@ -34,6 +34,7 @@ exports.login = async (req, res, next) => {
   try {
     let user = await Auth.findOne({ email: email });
 
+    console.log(user);
     if (!user) {
       return res.status(404).json({
         success: false,
@@ -54,6 +55,7 @@ exports.login = async (req, res, next) => {
       message: "Login successfully",
       token: user.getToken(),
       user: {
+        _id: user._id,
         userName: user.userName,
         email: user.email,
         profilePic: user.profilePic,

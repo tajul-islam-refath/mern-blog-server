@@ -14,7 +14,7 @@ const postSchema = new Schema(
       maxlength: 5000,
     },
     author: {
-      type: Schema.Types.ObjectId,
+      type: Schema.ObjectId,
       ref: "User",
     },
     tags: [
@@ -27,19 +27,19 @@ const postSchema = new Schema(
     readTime: String,
     likes: [
       {
-        type: Schema.Types.ObjectId,
+        type: Schema.ObjectId,
         ref: "User",
       },
     ],
     dislike: [
       {
-        type: Schema.Types.ObjectId,
+        type: Schema.ObjectId,
         ref: "User",
       },
     ],
     comments: [
       {
-        type: Schema.Types.ObjectId,
+        type: Schema.ObjectId,
         ref: "Comment",
       },
     ],
