@@ -10,6 +10,7 @@ const { bindUserWithReq } = require("./middlewarers/authMiddleware");
 const errorHandler = require("./middlewarers/error-handler.middleware");
 const authRouter = require("./module/auth/auth.module.route");
 const userRouter = require("./routes/user.routes");
+const postRouter = require("./routes/post.routes");
 
 dotenv.config();
 const app = express();
@@ -26,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 /* setup routes */
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/post", postRouter);
 
 app.get("/", async (req, res) => {
   res.send("Wow!😯 are you here🙃🙃 application running!!! 😜😜😜");

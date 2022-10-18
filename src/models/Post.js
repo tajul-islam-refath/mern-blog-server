@@ -25,6 +25,7 @@ const postSchema = new Schema(
     ],
     thumbail: String,
     readTime: String,
+    totalViews: Number,
     likes: [
       {
         type: Schema.ObjectId,
