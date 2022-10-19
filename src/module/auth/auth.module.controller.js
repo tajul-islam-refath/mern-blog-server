@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 
 const Auth = require("./auth.module.model");
+const Profile = require("../../models/Profile");
 const { sendMail } = require("../../service/email.service");
 const { generateOTP, generateHash, verify } = require("../../helpers/helpers");
 
@@ -34,7 +35,7 @@ exports.login = async (req, res, next) => {
   try {
     let user = await Auth.findOne({ email: email });
 
-    console.log(user);
+    // console.log(user);
     if (!user) {
       return res.status(404).json({
         success: false,
@@ -50,6 +51,10 @@ exports.login = async (req, res, next) => {
       });
     }
 
+    const profile = await Profile.findOne({
+      user: user._id,
+    });
+
     res.status(200).json({
       success: false,
       message: "Login successfully",
@@ -60,6 +65,7 @@ exports.login = async (req, res, next) => {
         email: user.email,
         profilePic: user.profilePic,
       },
+      profile,
     });
   } catch (error) {
     console.error("Login error");
