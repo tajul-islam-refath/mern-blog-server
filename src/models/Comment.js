@@ -9,7 +9,7 @@ const commentSchema = new Schema(
     },
     user: {
       type: Schema.ObjectId,
-      ref: "User",
+      ref: "Auth",
       required: true,
     },
     body: {
@@ -25,7 +25,7 @@ const commentSchema = new Schema(
         },
         user: {
           type: Schema.ObjectId,
-          ref: "User",
+          ref: "Auth",
           required: true,
         },
         createdAt: {

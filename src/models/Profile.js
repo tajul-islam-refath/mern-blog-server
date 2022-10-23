@@ -5,7 +5,7 @@ const profileSchema = new Schema(
   {
     user: {
       type: Schema.ObjectId,
-      ref: "User",
+      ref: "Auth",
       required: true,
     },
     name: {

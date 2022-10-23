@@ -15,7 +15,7 @@ const postSchema = new Schema(
     },
     author: {
       type: Schema.ObjectId,
-      ref: "User",
+      ref: "Auth",
     },
     tags: [
       {
@@ -29,13 +29,13 @@ const postSchema = new Schema(
     likes: [
       {
         type: Schema.ObjectId,
-        ref: "User",
+        ref: "Auth",
       },
     ],
     dislike: [
       {
         type: Schema.ObjectId,
-        ref: "User",
+        ref: "Auth",
       },
     ],
     comments: [
