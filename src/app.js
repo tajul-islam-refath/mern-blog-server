@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 /* setup routes */
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/user", userRouter);
-app.use("/api/v1/post", postRouter);
+app.use("/api/v1/posts", postRouter);
 app.use("/api/v1/web", webRouter);
 
 app.get("/", async (req, res) => {

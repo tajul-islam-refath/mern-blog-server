@@ -42,3 +42,26 @@ exports.createPostControler = async (req, res, next) => {
     console.log(e);
   }
 };
+
+exports.getPostController = async (req, res, next) => {
+  const { id } = req.params;
+
+  const post = await Post.findByIdAndUpdate(
+    { _id: id },
+    {
+      $set: {
+        totalViews: totalViews + 1,
+      },
+    },
+    { new: true }
+  );
+
+  res.status(200).json({
+    success: true,
+    post,
+  });
+  try {
+  } catch (err) {
+    next(err);
+  }
+};
