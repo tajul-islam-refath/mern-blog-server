@@ -32,3 +32,35 @@ exports.getWebContent = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.getDashboardContent = async (req, res, next) => {
+  try {
+    let totalPost = await Post.countDocuments({ author: req.user._id });
+    let totalViews = await Post.aggregate([
+      {
+        $group: {
+          _id: null,
+          totalViews: {
+            $sum: "$totalViews",
+          },
+        },
+      },
+    ]);
+
+    console.log("totalPost ", totalPost);
+    console.log("totalViews ", totalViews[0].totalViews);
+
+    const latestPosts = await Post.find({ author: req.user._id })
+      .sort("createdAt")
+      .limit(8);
+
+    res.status(200).json({
+      success: true,
+      totalPost,
+      totalViews: totalViews[0].totalViews,
+      latestPosts,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

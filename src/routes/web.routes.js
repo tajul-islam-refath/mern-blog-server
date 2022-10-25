@@ -1,6 +1,13 @@
 const router = require("express").Router();
 
-const { getWebContent } = require("../controllers/web.controller");
+const {
+  getWebContent,
+  getDashboardContent,
+} = require("../controllers/web.controller");
+
+const { isAuthenticated } = require("../middlewarers/authMiddleware");
+
 router.get("/", getWebContent);
+router.get("/dashboard", isAuthenticated, getDashboardContent);
 
 module.exports = router;
