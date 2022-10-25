@@ -49,8 +49,8 @@ exports.getPostController = async (req, res, next) => {
   const post = await Post.findByIdAndUpdate(
     { _id: id },
     {
-      $set: {
-        totalViews: totalViews + 1,
+      $inc: {
+        totalViews: 1,
       },
     },
     { new: true }
