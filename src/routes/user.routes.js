@@ -14,4 +14,5 @@ router.get("/profile/me", isAuthenticated, getMyProfile);
 router.get("/profile/:id", isAuthenticated, getUserProfile);
 
 router.post("/profile/create", isAuthenticated, createUserProfile);
+router.put("/profile/update", isAuthenticated, updateUserProfile);
 module.exports = router;

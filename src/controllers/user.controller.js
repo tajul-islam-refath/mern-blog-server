@@ -54,5 +54,39 @@ exports.createUserProfile = async (req, res, next) => {
     next(e);
   }
 };
-exports.updateUserProfile = (req, res, next) => {};
+exports.updateUserProfile = async (req, res, next) => {
+  console.log(req.body);
+
+  
+  try {
+    await Profile.findByIdAndUpdate(
+      { user: req.user._id },
+      {
+        $set: req.body,
+      },
+      {
+        new: true,
+      }
+    );
+
+    if (req.body.profilePic) {
+      await User.findByIdAndUpdate(
+        { _id: req.user._id },
+        {
+          $set: {
+            profilePic: req.body.profilePic,
+          },
+        },
+        { new: true }
+      );
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Updated profile successfully",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 exports.deleteUserProfile = (req, res, next) => {};
