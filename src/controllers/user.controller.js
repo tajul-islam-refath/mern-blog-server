@@ -32,8 +32,6 @@ exports.createUserProfile = async (req, res, next) => {
 
     await userProfile.save();
 
-    console.log(userProfile);
-
     // const user = await User.findByIdAndUpdate(
     //   { _id: req.user._id },
     //   {
@@ -55,11 +53,10 @@ exports.createUserProfile = async (req, res, next) => {
   }
 };
 exports.updateUserProfile = async (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
 
-  
   try {
-    await Profile.findByIdAndUpdate(
+    let profile = await Profile.findOneAndUpdate(
       { user: req.user._id },
       {
         $set: req.body,
@@ -80,13 +77,32 @@ exports.updateUserProfile = async (req, res, next) => {
         { new: true }
       );
     }
-
     res.status(200).json({
       success: true,
       message: "Updated profile successfully",
+      profile,
     });
   } catch (error) {
     next(error);
   }
 };
+
+exports.bookmarkPostAdd = async (req, res, next) => {
+  console.log(req.body);
+  try {
+    await Profile.findOneAndUpdate(
+      { user: req.user._id },
+      { $push: { bookmarks: req.body.id } }
+    );
+
+    res.status(200).json({
+      success: true,
+      message: "Post saved as bookmarks",
+      id: req.body.id,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 exports.deleteUserProfile = (req, res, next) => {};

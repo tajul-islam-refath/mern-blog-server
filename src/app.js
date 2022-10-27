@@ -22,8 +22,9 @@ app.use(helmet());
 app.use(morgan("dev"));
 app.use(cors());
 app.use(bindUserWithReq());
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(express.json({ limit: "50mb" }));
 
 /* setup routes */
 app.use("/api/v1/auth", authRouter);

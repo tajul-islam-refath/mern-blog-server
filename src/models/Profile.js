@@ -30,9 +30,18 @@ const profileSchema = new Schema(
       type: String,
     },
     links: {
-      website: String,
-      linkedin: String,
-      github: String,
+      website: {
+        type: String,
+        default: "",
+      },
+      linkedin: {
+        type: String,
+        default: "",
+      },
+      github: {
+        type: String,
+        default: "",
+      },
     },
     posts: [
       {

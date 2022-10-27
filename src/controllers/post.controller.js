@@ -65,3 +65,16 @@ exports.getPostController = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.getMyPostsController = async (req, res, next) => {
+  try {
+    const posts = await Post.find({ author: req.user._id });
+
+    res.status(200).send({
+      success: true,
+      posts,
+    });
+  } catch (error) {
+    next(error);
+  }
+};

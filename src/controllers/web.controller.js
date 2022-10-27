@@ -13,13 +13,12 @@ exports.getWebContent = async (req, res, next) => {
   const latestPosts = await Post.find().sort("createdAt").limit(4);
 
   if (req.user) {
-    const profile = await Profile.find({ user: req.user._id });
+    let profile = await Profile.findOne({ user: req.user._id });
+
     if (profile) {
       bookmarks = profile.bookmarks;
     }
   }
-
-  // console.log(latestPosts.length);
 
   res.status(200).json({
     posts,
