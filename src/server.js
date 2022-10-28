@@ -20,7 +20,7 @@ if (cluster.isMaster) {
     console.log(`worker ${worker.process.pid} died`);
   });
 } else {
-/* Run application via port & Establish database connection */
+  /* Run application via port & Establish database connection */
   app.listen(PORT, () => {
     dbConnection();
 

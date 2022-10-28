@@ -87,39 +87,4 @@ exports.updateUserProfile = async (req, res, next) => {
   }
 };
 
-exports.bookmarkPostAdd = async (req, res, next) => {
-  console.log(req.body);
-  try {
-    await Profile.findOneAndUpdate(
-      { user: req.user._id },
-      { $push: { bookmarks: req.body.id } }
-    );
-
-    res.status(200).json({
-      success: true,
-      message: "Post saved as bookmarks",
-      id: req.body.id,
-    });
-  } catch (error) {
-    next(error);
-  }
-};
-
-exports.bookmarkDelete = async (req, res, next) => {
-  try {
-    await Profile.findOneAndUpdate(
-      { user: req.user._id },
-      { $pull: { bookmarks: req.body.id } }
-    );
-
-    res.status(200).json({
-      success: true,
-      message: "Remove post from bookmarks",
-      id: req.body.id,
-    });
-  } catch (error) {
-    next(error);
-  }
-};
-
 exports.deleteUserProfile = (req, res, next) => {};
