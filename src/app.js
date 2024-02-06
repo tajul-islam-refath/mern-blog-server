@@ -1,10 +1,15 @@
 const express = require("express");
+const path = require("path");
 const compression = require("compression");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const swaggerUi = require("swagger-ui-express");
+const YAML = require("yamljs");
+const filePath = path.join(__dirname, "api_doc.yml");
+const swaggerDoc = YAML.load(filePath);
 
 const { bindUserWithReq } = require("./middlewarers/authMiddleware");
 const errorHandler = require("./middlewarers/error-handler.middleware");
@@ -26,6 +31,7 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.json({ limit: "50mb" }));
 
+app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 /* setup routes */
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/user", userRouter);

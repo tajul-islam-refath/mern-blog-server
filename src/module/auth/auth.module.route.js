@@ -8,8 +8,8 @@ const {
   sendOTP,
 } = require("./auth.module.controller");
 
-router.post("/sendOTP", sendOTP);
 router.post("/login", login);
+router.post("/sendOTP", sendOTP);
 router.post("/registation", registration);
 router.post("/forgotPassword", forgotPassword);
 router.get("/logout", logout);

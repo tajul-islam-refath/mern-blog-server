@@ -20,7 +20,7 @@ exports.sendOTP = async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      message: "Please check your email for code!",
+      message: "Please check your email for OTP!",
       hash,
       email,
     });
@@ -155,7 +155,6 @@ exports.forgotPassword = async (req, res, next) => {
       token: user.getToken(),
     });
   } catch (error) {
-    console.error("registration failed");
     next(error);
   }
 };

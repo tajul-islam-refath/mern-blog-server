@@ -26,6 +26,8 @@
     "nodemailer": "^6.7.8",
     "nodemon": "^2.0.19",
     "otp-generator": "^4.0.0",
-    "reading-time": "^1.5.0"
+    "reading-time": "^1.5.0",
+    "swagger-ui-express": "^5.0.0",
+    "yamljs": "^0.3.0"
   }
 }
