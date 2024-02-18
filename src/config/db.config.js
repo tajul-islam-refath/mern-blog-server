@@ -1,26 +1,12 @@
 const mongoose = require("mongoose");
 
-const dbConnection = () => {
-  try {
-    // let url = process.env.DB_URI;
-    const url = `mongodb+srv://${process.env.dbName}:${process.env.dbPass}@cluster0.ltldm.mongodb.net/mindShareV2?retryWrites=true&w=majority`;
-    // console.log(process.env);
-    mongoose.connect(
-      url,
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        autoIndex: true,
-      },
-      () => {
-        console.log("Database connect success..");
-      }
-    );
-  } catch (error) {
-    if (error) {
-      console.log("Failed database connect");
-    }
-  }
+/**
+ * Connect database
+ */
+const connectDB = async () => {
+  const url = `mongodb+srv://${process.env.dbUser}:${process.env.dbPass}@cluster0.ltldm.mongodb.net/${process.env.dbName}?retryWrites=true&w=majority`;
+  await mongoose.connect(url);
+  console.log("Database connect success..");
 };
 
-module.exports = dbConnection;
+module.exports = connectDB;

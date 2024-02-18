@@ -7,7 +7,7 @@ const {
   bookmarkPostAdd,
   bookmarkDelete,
   getSearchPosts,
-} = require("../controllers/post.controller");
+} = require("../controllers/post");
 const { isAuthenticated } = require("../middlewarers/authMiddleware");
 
 router.get("/myPosts", isAuthenticated, getMyPostsController);

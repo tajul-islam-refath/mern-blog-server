@@ -6,7 +6,7 @@ const {
   createUserProfile,
   updateUserProfile,
   deleteUserProfile,
-} = require("../controllers/user.controller");
+} = require("../controllers/user");
 
 const { isAuthenticated } = require("../middlewarers/authMiddleware");
 

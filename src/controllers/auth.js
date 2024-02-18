@@ -1,9 +1,11 @@
 const bcrypt = require("bcrypt");
 
-const Auth = require("./auth.module.model");
-const Profile = require("../../models/Profile");
-const { sendMail } = require("../../service/email.service");
-const { generateOTP, generateHash, verify } = require("../../helpers/helpers");
+const Auth = require("../models/Auth");
+const Profile = require("../models/Profile");
+const { sendMail } = require("../service/email.service");
+const { generateOTP, generateOTPHash, verifyOTPHash } = require("../utils/otp");
+const { signToken } = require("../utils/token");
+const { generateHash, hashMatched } = require("../utils/hashing");
 
 exports.sendOTP = async (req, res, next) => {
   let { email } = req.body;
@@ -16,7 +18,7 @@ exports.sendOTP = async (req, res, next) => {
       `Your OTP is ( ${otp} ) it will expire in 10 minutes`
     );
 
-    let hash = generateHash(email, otp);
+    let hash = generateOTPHash(email, otp);
 
     res.status(200).json({
       success: true,
@@ -35,7 +37,6 @@ exports.login = async (req, res, next) => {
   try {
     let user = await Auth.findOne({ email: email });
 
-    // console.log(user);
     if (!user) {
       return res.status(404).json({
         success: false,
@@ -43,7 +44,7 @@ exports.login = async (req, res, next) => {
       });
     }
 
-    let match = await bcrypt.compare(password, user.password);
+    let match = await hashMatched(password, user.password);
     if (!match) {
       return res.status(404).json({
         success: false,
@@ -58,7 +59,7 @@ exports.login = async (req, res, next) => {
     res.status(200).json({
       success: false,
       message: "Login successfully",
-      token: user.getToken(),
+      token: signToken({ _id: user._id }, process.env.JWT_SECRET),
       user: {
         _id: user._id,
         userName: user.userName,
@@ -92,7 +93,7 @@ exports.registration = async (req, res, next) => {
       });
     }
 
-    let isVerified = verify(email, otp, hash);
+    let isVerified = verifyOTPHash(email, otp, hash);
 
     if (!isVerified) {
       return res.status(404).json({
@@ -101,7 +102,8 @@ exports.registration = async (req, res, next) => {
       });
     }
 
-    let hashPass = await bcrypt.hash(password, 11);
+    let hashPass = await generateHash(password, 11);
+
     let user = await Auth.create({
       email: email,
       password: hashPass,
@@ -131,7 +133,7 @@ exports.forgotPassword = async (req, res, next) => {
       });
     }
 
-    let isVerified = verify(email, otp, hash);
+    let isVerified = verifyOTPHash(email, otp, hash);
 
     if (!isVerified) {
       return res.status(404).json({
@@ -140,7 +142,7 @@ exports.forgotPassword = async (req, res, next) => {
       });
     }
 
-    let hashPass = await bcrypt.hash(password, 11);
+    let hashPass = await generateHash(password, 11);
     let user = await Auth.findOneAndUpdate(
       { email: email },
       {

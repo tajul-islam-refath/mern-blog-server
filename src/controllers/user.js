@@ -1,4 +1,4 @@
-const User = require("../module/auth/auth.module.model");
+const User = require("../models/Auth");
 const Profile = require("../models/Profile");
 const { ObjectId } = require("mongoose");
 

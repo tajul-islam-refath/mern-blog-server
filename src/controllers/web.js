@@ -1,4 +1,4 @@
-const Auth = require("../module/auth/auth.module.model");
+const Auth = require("../models/Auth");
 const Profile = require("../models/Profile");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");

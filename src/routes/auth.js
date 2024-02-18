@@ -6,7 +6,7 @@ const {
   logout,
   forgotPassword,
   sendOTP,
-} = require("./auth.module.controller");
+} = require("../controllers/auth");
 
 router.post("/login", login);
 router.post("/sendOTP", sendOTP);

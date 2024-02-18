@@ -1,9 +1,6 @@
 const router = require("express").Router();
 
-const {
-  getWebContent,
-  getDashboardContent,
-} = require("../controllers/web.controller");
+const { getWebContent, getDashboardContent } = require("../controllers/web");
 
 const { isAuthenticated } = require("../middlewarers/authMiddleware");
 

@@ -1,42 +1,24 @@
 const express = require("express");
-const path = require("path");
-const compression = require("compression");
-const cors = require("cors");
 const dotenv = require("dotenv");
-const helmet = require("helmet");
-const morgan = require("morgan");
-const bodyParser = require("body-parser");
-const swaggerUi = require("swagger-ui-express");
-const YAML = require("yamljs");
-const filePath = path.join(__dirname, "api_doc.yml");
-const swaggerDoc = YAML.load(filePath);
 
+const configureSwagger = require("./config/swagger.config");
+const applyMiddleware = require("./middlewarers/applyMiddleware");
 const { bindUserWithReq } = require("./middlewarers/authMiddleware");
+
 const errorHandler = require("./middlewarers/error-handler.middleware");
-const authRouter = require("./module/auth/auth.module.route");
-const userRouter = require("./routes/user.routes");
-const postRouter = require("./routes/post.routes");
-const webRouter = require("./routes/web.routes");
+const setupRoutes = require("./routes");
 
 dotenv.config();
+
 const app = express();
-
-/* Gzip compressing can greatly decrease the size of the response body and hence increase the speed of a web app. */
-app.use(compression());
-app.use(helmet());
-app.use(morgan("dev"));
-app.use(cors());
-app.use(bindUserWithReq());
-app.use(bodyParser.json({ limit: "50mb" }));
-app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.json({ limit: "50mb" }));
-
-app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(swaggerDoc));
+/**Swagger config with app */
+configureSwagger(app);
+/**Middleware config  with app*/
+applyMiddleware(app);
 /* setup routes */
-app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/user", userRouter);
-app.use("/api/v1/posts", postRouter);
-app.use("/api/v1/web", webRouter);
+setupRoutes(app);
+
+app.use(bindUserWithReq());
 
 app.get("/", async (req, res) => {
   res.send("Wow!😯 are you here🙃🙃 application running!!! 😜😜😜");
@@ -50,6 +32,6 @@ app.use((req, res, next) => {
 });
 
 /* Error handler middleware */
-// app.use(errorHandler);
+app.use(errorHandler);
 
 module.exports = app;

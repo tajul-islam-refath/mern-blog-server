@@ -28,17 +28,5 @@ const authSchema = new Schema(
   }
 );
 
-authSchema.methods.getToken = function () {
-  var token = jwt.sign(
-    {
-      _id: this._id,
-    },
-    process.env.KEY,
-    { expiresIn: 5 * 60 * 60 * 1000 }
-  );
-
-  return token;
-};
-
 const Auth = model("Auth", authSchema);
 module.exports = Auth;
