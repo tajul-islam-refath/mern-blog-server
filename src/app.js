@@ -1,23 +1,23 @@
 const express = require("express");
 const dotenv = require("dotenv");
 
-const configureSwagger = require("./config/swagger.config");
-const configEnv = require("./config/dotenv.config");
-const applyMiddleware = require("./middlewarers/applyMiddleware");
+const initializeSwagger = require("./config/swagger.config");
+const initializeEnv = require("./config/dotenv.config");
+const initializeMiddlewares = require("./middlewarers/initializeMiddlewares");
 const { bindUserWithReq } = require("./middlewarers/authMiddleware");
 const errorHandler = require("./middlewarers/error-handler.middleware");
-const setupRoutes = require("./routes");
+const initializeRoutes = require("./routes");
 
 const app = express();
 
-/**Dot env config */
-configEnv();
-/**Swagger config with app */
-configureSwagger(app);
-/**Middleware config  with app*/
-applyMiddleware(app);
-/* setup routes */
-setupRoutes(app);
+/**initialize Env */
+initializeEnv();
+/**initialize Swagger */
+initializeSwagger(app);
+/**initialize Middlewares*/
+initializeMiddlewares(app);
+/**initialize Routes */
+initializeRoutes(app);
 
 app.use(bindUserWithReq());
 

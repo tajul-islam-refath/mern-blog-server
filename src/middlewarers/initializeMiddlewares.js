@@ -5,9 +5,11 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 
-const applyMiddleware = (app) => {
+// const { logger, stream } = require("../utils/logger");
+
+const initializeMiddlewares = (app) => {
   app.use(compression());
-  app.use(helmet());
+  app.use(helmet({ crossOriginResourcePolicy: false }));
   app.use(morgan("dev"));
   app.use(cors());
 
@@ -15,4 +17,4 @@ const applyMiddleware = (app) => {
   app.use(bodyParser.urlencoded({ extended: true }));
 };
 
-module.exports = applyMiddleware;
+module.exports = initializeMiddlewares;

@@ -3,11 +3,11 @@ const userRouter = require("./user");
 const postRouter = require("./post");
 const webRouter = require("./web");
 
-const setupRoutes = (app) => {
+const initializeRoutes = (app) => {
   app.use("/api/v1/auth", authRouter);
   app.use("/api/v1/user", userRouter);
   app.use("/api/v1/posts", postRouter);
   app.use("/api/v1/web", webRouter);
 };
 
-module.exports = setupRoutes;
+module.exports = initializeRoutes;

@@ -1,7 +1,7 @@
 const dotenv = require("dotenv");
 
-const configEnv = () => {
+const initializeEnv = () => {
   dotenv.config();
 };
 
-module.exports = configEnv;
+module.exports = initializeEnv;

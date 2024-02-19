@@ -4,7 +4,7 @@ const YAML = require("yamljs");
 const filePath = path.join(__dirname, "../api_doc.yml");
 const swaggerDoc = YAML.load(filePath);
 
-const configureSwagger = (app) => {
+const initializeSwagger = (app) => {
   app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 };
-module.exports = configureSwagger;
+module.exports = initializeSwagger;

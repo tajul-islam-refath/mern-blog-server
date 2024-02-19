@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\.521640566c1d1d078e142bcbaacb5a2f81005bb2-audit.json",
+    "files": [
+        {
+            "date": 1708312844960,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-02-19.log",
+            "hash": "12fed6d9cb63a2e4c5d8efa04499b23fc21bf21e9dbc4cee9fb5cd6220f3ee45"
+        }
+    ],
+    "hashType": "sha256"
+}
