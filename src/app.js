@@ -5,7 +5,6 @@ const configureSwagger = require("./config/swagger.config");
 const configEnv = require("./config/dotenv.config");
 const applyMiddleware = require("./middlewarers/applyMiddleware");
 const { bindUserWithReq } = require("./middlewarers/authMiddleware");
-
 const errorHandler = require("./middlewarers/error-handler.middleware");
 const setupRoutes = require("./routes");
 
