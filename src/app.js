@@ -1,8 +1,9 @@
-const express = require("express");
-const dotenv = require("dotenv");
-
-const initializeSwagger = require("./config/swagger.config");
 const initializeEnv = require("./config/dotenv.config");
+/**initialize Env */
+initializeEnv();
+
+const express = require("express");
+const initializeSwagger = require("./config/swagger.config");
 const initializeMiddlewares = require("./middlewarers/initializeMiddlewares");
 const { bindUserWithReq } = require("./middlewarers/authMiddleware");
 const errorHandler = require("./middlewarers/error-handler.middleware");
@@ -10,8 +11,6 @@ const initializeRoutes = require("./routes");
 
 const app = express();
 
-/**initialize Env */
-initializeEnv();
 /**initialize Swagger */
 initializeSwagger(app);
 /**initialize Middlewares*/
