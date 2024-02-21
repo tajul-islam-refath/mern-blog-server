@@ -6,14 +6,9 @@
     "auditLog": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\.521640566c1d1d078e142bcbaacb5a2f81005bb2-audit.json",
     "files": [
         {
-            "date": 1708312844960,
-            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-02-19.log",
-            "hash": "12fed6d9cb63a2e4c5d8efa04499b23fc21bf21e9dbc4cee9fb5cd6220f3ee45"
-        },
-        {
-            "date": 1708395428368,
-            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-02-20.log",
-            "hash": "b16bbdae3e72fdbe7d2df6665478a62b9629a47c1f41602d465015204bc58324"
+            "date": 1708492867619,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-02-21.log",
+            "hash": "128218a9f6243194e2c354012436458b1a7d62214fa1576fa57498f3320e2c1f"
         }
     ],
     "hashType": "sha256"

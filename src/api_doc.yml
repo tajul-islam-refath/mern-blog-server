@@ -22,6 +22,48 @@ tags:
     description: "User endpoients (Private)"
 paths:
   # auth
+  "/auth/send-otp":
+    post:
+      description: "Send OTP by Email"
+      tags: [Auth]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: "example@gmail.com"
+              required: [email]
+                  
+      responses:
+        "200":
+          description: Return success response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: Ok
+                  data:
+                    type: object
+                    properties:
+                      email:
+                        type: string
+                        example: "email@gmail.gom"
+                      hash:
+                        type: string
+                        example: "SKDnvkdsnvkadnkfbvkjdfan.omasofgnon"
+
+        "400":
+          $ref: "#/components/responses/400"
   "/auth/registation":
     post:
       description: "Create a new user"

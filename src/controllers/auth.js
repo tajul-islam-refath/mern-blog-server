@@ -1,80 +1,23 @@
-const bcrypt = require("bcrypt");
-
 const Auth = require("../models/Auth");
 const Profile = require("../models/Profile");
-const { sendMail } = require("../service/email.service");
+const AuthService = require("../service/AuthService");
+const { catchAsyncErrorHandle } = require("../middlewarers/catchAsyncErrors");
 const { generateOTP, generateOTPHash, verifyOTPHash } = require("../utils/otp");
 const { signToken } = require("../utils/token");
 const { generateHash, hashMatched } = require("../utils/hashing");
+const { badRequest } = require("../utils/error");
 
-exports.sendOTP = async (req, res, next) => {
+const sendOTP = catchAsyncErrorHandle(async (req, res, next) => {
   let { email } = req.body;
-  let otp = generateOTP();
+  let response = await AuthService.sendOtp(email);
+  res.status(200).json({
+    success: true,
+    message: "Please check your email for OTP!",
+    data: response,
+  });
+});
 
-  try {
-    await sendMail(
-      email,
-      "OTP for authentication",
-      `Your OTP is ( ${otp} ) it will expire in 10 minutes`
-    );
-
-    let hash = generateOTPHash(email, otp);
-
-    res.status(200).json({
-      success: true,
-      message: "Please check your email for OTP!",
-      hash,
-      email,
-    });
-  } catch (e) {
-    console.error("get otp failed");
-    next(e);
-  }
-};
-
-exports.login = async (req, res, next) => {
-  let { email, password } = req.body;
-  try {
-    let user = await Auth.findOne({ email: email });
-
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: "Email or password not match",
-      });
-    }
-
-    let match = await hashMatched(password, user.password);
-    if (!match) {
-      return res.status(404).json({
-        success: false,
-        message: "Email or password not match",
-      });
-    }
-
-    const profile = await Profile.findOne({
-      user: user._id,
-    });
-
-    res.status(200).json({
-      success: false,
-      message: "Login successfully",
-      token: signToken({ _id: user._id }, process.env.JWT_SECRET),
-      user: {
-        _id: user._id,
-        userName: user.userName,
-        email: user.email,
-        profilePic: user.profilePic,
-      },
-      profile,
-    });
-  } catch (error) {
-    console.error("Login error");
-    next(error);
-  }
-};
-
-exports.registration = async (req, res, next) => {
+const registration = async (req, res, next) => {
   let { email, otp, hash, password, userName } = req.body;
 
   try {
@@ -122,7 +65,46 @@ exports.registration = async (req, res, next) => {
   }
 };
 
-exports.forgotPassword = async (req, res, next) => {
+const login = async (req, res, next) => {
+  let { email, password } = req.body;
+  try {
+    let user = await Auth.findOne({ email: email });
+
+    if (!user) {
+      throw badRequest("Bad cradentials");
+    }
+
+    let match = await hashMatched(password, user.password);
+    if (!match) {
+      return res.status(404).json({
+        success: false,
+        message: "Email or password not match",
+      });
+    }
+
+    const profile = await Profile.findOne({
+      user: user._id,
+    });
+
+    res.status(200).json({
+      success: false,
+      message: "Login successfully",
+      token: signToken({ _id: user._id }, process.env.JWT_SECRET),
+      user: {
+        _id: user._id,
+        userName: user.userName,
+        email: user.email,
+        profilePic: user.profilePic,
+      },
+      profile,
+    });
+  } catch (error) {
+    console.error("Login error");
+    next(error);
+  }
+};
+
+const forgotPassword = async (req, res, next) => {
   let { email, otp, hash, password } = req.body;
 
   try {
@@ -160,4 +142,10 @@ exports.forgotPassword = async (req, res, next) => {
     next(error);
   }
 };
-exports.logout = (req, res, next) => {};
+
+module.exports = {
+  sendOTP,
+  login,
+  registration,
+  forgotPassword,
+};
