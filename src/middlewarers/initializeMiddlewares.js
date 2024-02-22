@@ -5,6 +5,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const { stream } = require("../utils/logger");
+const rateLimiterConfig = require("../config/rate-limit.config");
 
 const initializeMiddlewares = (app) => {
   app.use(compression());
@@ -24,6 +25,7 @@ const initializeMiddlewares = (app) => {
     )
   );
   app.use(cors());
+  app.use(rateLimiterConfig);
 
   app.use(bodyParser.json({ limit: "50mb" }));
   app.use(bodyParser.urlencoded({ extended: true }));

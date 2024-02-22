@@ -1,0 +1,16 @@
+2024-02-22 09:00:45 error: uncaughtException: app.use() requires a middleware function
+TypeError: app.use() requires a middleware function
+    at Function.use (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\application.js:217:11)
+    at initializeMiddlewares (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\initializeMiddlewares.js:28:7)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\app.js:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\server.js:1:13)
+2024-02-22 09:00:45 error: uncaughtException: next is not a function
+TypeError: next is not a function
+    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-rate-limit\dist\index.cjs:613:5
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

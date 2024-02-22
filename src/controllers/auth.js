@@ -6,10 +6,12 @@ const { generateOTP, generateOTPHash, verifyOTPHash } = require("../utils/otp");
 const { signToken } = require("../utils/token");
 const { generateHash, hashMatched } = require("../utils/hashing");
 const { badRequest } = require("../utils/error");
+const { sanitizeEmail } = require("../utils/sanitize");
 
 const sendOTP = catchAsyncErrorHandle(async (req, res, next) => {
   let { email } = req.body;
-  let response = await AuthService.sendOtp(email);
+  const sanitizedEmail = sanitizeEmail(email);
+  let response = await AuthService.sendOtp(sanitizedEmail);
   res.status(200).json({
     success: true,
     message: "Please check your email for OTP!",
