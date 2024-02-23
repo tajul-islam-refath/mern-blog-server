@@ -1,18 +1,24 @@
-const { validationResult, matchedData } = require("express-validator");
+const { matchedData } = require("express-validator");
 
 const Auth = require("../models/Auth");
 const Profile = require("../models/Profile");
+
 const AuthService = require("../service/AuthService");
+const EmailService = require("../service/EmailService");
+
+const UserRepository = require("../repository/userRepository");
+
 const { catchAsyncErrorHandle } = require("../middlewarers/catchAsyncErrors");
 const { generateOTP, generateOTPHash, verifyOTPHash } = require("../utils/otp");
 const { signToken } = require("../utils/token");
 const { generateHash, hashMatched } = require("../utils/hashing");
 const { badRequest } = require("../utils/error");
-const validationFormater = require("../utils/validationFormater");
+
+const authService = new AuthService(UserRepository);
 
 const sendOTP = catchAsyncErrorHandle(async (req, res, next) => {
   const data = matchedData(req);
-  let response = await AuthService.sendOTPByEmail(data?.email);
+  let response = await authService.sendOTPByEmail(EmailService, data?.email);
 
   res.status(200).json({
     success: true,
@@ -24,36 +30,14 @@ const sendOTP = catchAsyncErrorHandle(async (req, res, next) => {
 const signup = catchAsyncErrorHandle(async (req, res, next) => {
   const data = matchedData(req);
 
-  let oldUser = await Auth.findOne({ email: data.email });
-  if (oldUser) {
-    return res.status(404).json({
-      success: false,
-      message: "User already exists",
-    });
-  }
-
-  let isVerified = verifyOTPHash(email, otp, hash);
-
-  if (!isVerified) {
-    return res.status(404).json({
-      success: false,
-      message: "registration failed try again with valid credentials",
-    });
-  }
-
-  let hashPass = await generateHash(password, 11);
-
-  let user = await Auth.create({
-    email: email,
-    password: hashPass,
-    userName: userName,
-  });
-
-  await user.save();
+  let token = await authService.signup(data);
 
   res.status(200).json({
     success: true,
-    message: "Registration completed successfully",
+    message: "Registration successful!",
+    data: {
+      token: token,
+    },
   });
 });
 

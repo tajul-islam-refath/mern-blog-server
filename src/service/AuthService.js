@@ -1,24 +1,21 @@
-const { validationResult } = require("express-validator");
-const EmailService = require("./EmailService");
-const validationFormater = "../utils/validationFormater";
 const { serverError } = require("../utils/error");
-const { generateOTP, generateOTPHash } = require("../utils/otp");
+const { generateOTP, generateOTPHash, verifyOTPHash } = require("../utils/otp");
+const { generateHash } = require("../utils/hashing");
+const { signToken } = require("../utils/token");
 
 class AuthService {
-  constructor() {}
+  constructor(userDatabase) {
+    this.userDatabase = userDatabase;
+  }
 
   /**
    * Send OTP by email
    * @param {string} email
    * @returns {object}
    */
-  sendOTPByEmail = async (email) => {
+  sendOTPByEmail = async (EmailService, email) => {
     let otp = generateOTP();
-    await EmailService.sendEmail(
-      email,
-      "OTP for authentication",
-      `Your OTP is ( ${otp} )`
-    );
+    await EmailService.sendOTPEmail(email);
     let hash = generateOTPHash(email, otp);
     return {
       hash,
@@ -26,9 +23,40 @@ class AuthService {
     };
   };
 
-  signup = async (body) => {
-    let { userName, email, otp, hash, password } = body;
+  /**
+   * Signup method
+   * @param {object} data - Contain { username, email, otp, hash, password }
+   * @returns {string} token
+   */
+  signup = async (data) => {
+    let { username, email, otp, hash, password } = data;
+    let existingUser = await this.userDatabase.findByEmail(email);
+    if (existingUser) {
+      throw badRequest("User already exists with this email");
+    }
+
+    let isVerified = verifyOTPHash(email, otp, hash);
+    if (!isVerified) {
+      throw badRequest("Invalied OTP");
+    }
+
+    let hashPassword = await generateHash(password, 11);
+
+    let user = await this.userDatabase.create({
+      email,
+      password: hashPassword,
+      username,
+    });
+
+    let token = await signToken({
+      _id: user._id,
+      username: user.username,
+      email: user.email,
+      profileImage: user.profileImage,
+    });
+
+    return token;
   };
 }
 
-module.exports = new AuthService();
+module.exports = AuthService;

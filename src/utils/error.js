@@ -1,7 +1,7 @@
 const badRequest = (msg = "Bad Request", errors = null) => {
   const error = new Error(msg);
   error.status = 400;
-  error.errors = errors;
+  if (errors) error.errors = errors;
   return error;
 };
 

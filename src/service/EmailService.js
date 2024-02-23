@@ -2,21 +2,22 @@ const { badRequest, serverError } = require("../utils/error");
 const NodeMailerService = require("./NodeMailerService");
 
 class EmailService {
-  constructor() {}
+  constructor() {
+    this.mailService = NodeMailerService;
+  }
 
-  sendEmail = async (email, subject, body) => {
+  sendOTPEmail = async (email) => {
     let mailOptions = {
       from: `${process.env.EMAIL}`,
       to: email,
-      subject: subject,
-      text: body,
+      subject: "You reacived a 6 degit OTP",
+      text: `This is your otp ( ${otp} )`,
     };
 
     try {
-      await NodeMailerService.send(mailOptions);
+      await this.mailService.send(mailOptions);
     } catch (err) {
-      console.log("Err: email service--", err.message);
-      throw serverError();
+      throw serverError("Email send faield!");
     }
   };
 }
