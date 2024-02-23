@@ -18,13 +18,13 @@ exports.isAuthenticated = async (req, res, next) => {
     let user = await User.findById({ _id: decoded._id });
 
     if (!user) {
-      next(authenticationError());
+      return next(authenticationError());
     }
 
     req.user = user;
     next();
   } catch (err) {
-    next(authenticationError());
+    return next(authenticationError());
   }
 };
 

@@ -1,3 +1,5 @@
+const { validationResult, matchedData } = require("express-validator");
+
 const Auth = require("../models/Auth");
 const Profile = require("../models/Profile");
 const AuthService = require("../service/AuthService");
@@ -6,12 +8,12 @@ const { generateOTP, generateOTPHash, verifyOTPHash } = require("../utils/otp");
 const { signToken } = require("../utils/token");
 const { generateHash, hashMatched } = require("../utils/hashing");
 const { badRequest } = require("../utils/error");
-const { sanitizeEmail } = require("../utils/sanitize");
+const validationFormater = require("../utils/validationFormater");
 
 const sendOTP = catchAsyncErrorHandle(async (req, res, next) => {
-  let { email } = req.body;
-  const sanitizedEmail = sanitizeEmail(email);
-  let response = await AuthService.sendOtp(sanitizedEmail);
+  const data = matchedData(req);
+  let response = await AuthService.sendOTPByEmail(data?.email);
+
   res.status(200).json({
     success: true,
     message: "Please check your email for OTP!",
@@ -19,53 +21,41 @@ const sendOTP = catchAsyncErrorHandle(async (req, res, next) => {
   });
 });
 
-const registration = async (req, res, next) => {
-  let { email, otp, hash, password, userName } = req.body;
+const signup = catchAsyncErrorHandle(async (req, res, next) => {
+  const data = matchedData(req);
 
-  try {
-    if (!email || !password || !otp) {
-      return res.status(404).json({
-        success: false,
-        message: "Email , password and OTP is required",
-      });
-    }
-
-    let oldUser = await Auth.findOne({ email: email });
-    if (oldUser) {
-      return res.status(404).json({
-        success: false,
-        message: "User already exists",
-      });
-    }
-
-    let isVerified = verifyOTPHash(email, otp, hash);
-
-    if (!isVerified) {
-      return res.status(404).json({
-        success: false,
-        message: "registration failed try again with valid credentials",
-      });
-    }
-
-    let hashPass = await generateHash(password, 11);
-
-    let user = await Auth.create({
-      email: email,
-      password: hashPass,
-      userName: userName,
+  let oldUser = await Auth.findOne({ email: data.email });
+  if (oldUser) {
+    return res.status(404).json({
+      success: false,
+      message: "User already exists",
     });
-
-    await user.save();
-
-    res.status(200).json({
-      success: true,
-      message: "Registration completed successfully",
-    });
-  } catch (error) {
-    console.error("registration failed");
-    next(error);
   }
-};
+
+  let isVerified = verifyOTPHash(email, otp, hash);
+
+  if (!isVerified) {
+    return res.status(404).json({
+      success: false,
+      message: "registration failed try again with valid credentials",
+    });
+  }
+
+  let hashPass = await generateHash(password, 11);
+
+  let user = await Auth.create({
+    email: email,
+    password: hashPass,
+    userName: userName,
+  });
+
+  await user.save();
+
+  res.status(200).json({
+    success: true,
+    message: "Registration completed successfully",
+  });
+});
 
 const login = async (req, res, next) => {
   let { email, password } = req.body;
@@ -148,6 +138,6 @@ const forgotPassword = async (req, res, next) => {
 module.exports = {
   sendOTP,
   login,
-  registration,
+  signup,
   forgotPassword,
 };

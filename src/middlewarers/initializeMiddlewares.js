@@ -5,8 +5,8 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const { stream } = require("../utils/logger");
-const rateLimiterConfig = require("../config/rate-limit.config");
-
+const rateLimiterMiddleware = require("./rateLimiterMiddleware");
+const { bindUserWithReq } = require("../middlewarers/authMiddleware");
 const initializeMiddlewares = (app) => {
   app.use(compression());
   app.use(helmet({ crossOriginResourcePolicy: false }));
@@ -25,10 +25,10 @@ const initializeMiddlewares = (app) => {
     )
   );
   app.use(cors());
-  app.use(rateLimiterConfig);
-
+  app.use(rateLimiterMiddleware);
   app.use(bodyParser.json({ limit: "50mb" }));
   app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bindUserWithReq());
 };
 
 module.exports = initializeMiddlewares;

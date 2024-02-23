@@ -5,7 +5,6 @@ initializeEnv();
 const express = require("express");
 const initializeSwagger = require("./config/swagger.config");
 const initializeMiddlewares = require("./middlewarers/initializeMiddlewares");
-const { bindUserWithReq } = require("./middlewarers/authMiddleware");
 const errorHandler = require("./middlewarers/error-handler.middleware");
 const initializeRoutes = require("./routes");
 
@@ -17,8 +16,6 @@ initializeSwagger(app);
 initializeMiddlewares(app);
 /**initialize Routes */
 initializeRoutes(app);
-
-app.use(bindUserWithReq());
 
 app.get("/", async (req, res) => {
   res.send("Wow!😯 are you here🙃🙃 application running!!! 😜😜😜");

@@ -5,7 +5,7 @@ const profileSchema = new Schema(
   {
     user: {
       type: Schema.ObjectId,
-      ref: "Auth",
+      ref: "User",
       required: true,
     },
     name: {
@@ -26,9 +26,6 @@ const profileSchema = new Schema(
       required: true,
       maxlength: 500,
     },
-    profilePic: {
-      type: String,
-    },
     links: {
       website: {
         type: String,
@@ -43,18 +40,6 @@ const profileSchema = new Schema(
         default: "",
       },
     },
-    posts: [
-      {
-        type: Schema.ObjectId,
-        ref: "Post",
-      },
-    ],
-    bookmarks: [
-      {
-        type: Schema.ObjectId,
-        ref: "Post",
-      },
-    ],
   },
   {
     timestamps: true,

@@ -15,7 +15,7 @@ const postSchema = new Schema(
     },
     author: {
       type: Schema.ObjectId,
-      ref: "Auth",
+      ref: "User",
     },
     tags: [
       {
@@ -26,44 +26,26 @@ const postSchema = new Schema(
     thumbail: String,
     readTime: String,
     totalViews: Number,
-    likes: [
-      {
-        type: Schema.ObjectId,
-        ref: "Auth",
-      },
-    ],
-    dislike: [
-      {
-        type: Schema.ObjectId,
-        ref: "Auth",
-      },
-    ],
-    comments: [
-      {
-        type: Schema.ObjectId,
-        ref: "Comment",
-      },
-    ],
   },
   {
     timestamps: true,
   }
 );
 
-postSchema.index(
-  {
-    title: "text",
-    body: "text",
-    tags: "text",
-  },
-  {
-    weights: {
-      title: 5,
-      tags: 5,
-      body: 2,
-    },
-  }
-);
+// postSchema.index(
+//   {
+//     title: "text",
+//     body: "text",
+//     tags: "text",
+//   },
+//   {
+//     weights: {
+//       title: 5,
+//       tags: 5,
+//       body: 2,
+//     },
+//   }
+// );
 
 const Post = model("Post", postSchema);
 

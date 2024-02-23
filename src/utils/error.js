@@ -1,6 +1,7 @@
-const badRequest = (msg = "Bad Request") => {
+const badRequest = (msg = "Bad Request", errors = null) => {
   const error = new Error(msg);
   error.status = 400;
+  error.errors = errors;
   return error;
 };
 
