@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+const JWT = require("jsonwebtoken");
 
 /**
  * ---- Sign the Token ----

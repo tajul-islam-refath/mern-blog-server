@@ -1,0 +1,254 @@
+2024-02-24 08:30:36 error: uncaughtException: Unexpected identifier 'badRequest'
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:70
+      hrow badRequest("Invalied cradentials");
+           ^^^^^^^^^^
+
+SyntaxError: Unexpected identifier 'badRequest'
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:6:21)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 08:34:56 error: uncaughtException: Unexpected token ')'
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:88
+  forgotPassword = ()
+                    ^
+
+SyntaxError: Unexpected token ')'
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:6:21)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 08:41:59 error: uncaughtException: missing ) after argument list
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:98
+      email
+      ^^^^^
+
+SyntaxError: missing ) after argument list
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:6:21)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 08:57:05 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 08:58:25 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:03:48 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:04:00 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:04:47 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:05:02 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:05:17 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:07:57 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:09:16 error: TypeError: this.userDatabase.findByEmail is not a function,    at AuthService.signup (G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:33:48),    at G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:33:33,    at G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\catchAsyncErrors.js:7:19,    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:11:3),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:10:49 error: ReferenceError: JWT is not defined,    at signToken (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\token.js:11:3),    at AuthService.signup (G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:46:23),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:34:15
+2024-02-24 09:14:10 error: Error: Internal Server Error,    at serverError (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:27:17),    at AuthService.signup (G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:56:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:34:15
+2024-02-24 09:14:48 error: Error: Internal Server Error,    at serverError (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:27:17),    at AuthService.signup (G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:56:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:34:15
+2024-02-24 09:15:45 error: Error: Internal Server Error,    at serverError (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:27:17),    at AuthService.signup (G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:58:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:34:15
+2024-02-24 09:27:46 error: Error: Internal Server Error,    at serverError (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:27:17),    at AuthService.signup (G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:58:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:34:15
+2024-02-24 09:29:41 error: Error: Internal Server Error,    at serverError (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:27:17),    at AuthService.signup (G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:59:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:34:15
+2024-02-24 09:32:58 error: ReferenceError: badRequest is not defined,    at AuthService.signup (G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:36:7),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:34:15
+2024-02-24 09:33:14 error: Error: User already exists with this email,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at AuthService.signup (G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:36:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:34:15
+2024-02-24 09:37:51 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:38:36 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\validations\authValidation.js:18
+    .custom(async (username) => {
+    ^
+
+SyntaxError: Unexpected token '.'
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\auth.js:8:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 09:38:39 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\validations\authValidation.js:17
+    .custom(async (username) => {
+    ^
+
+SyntaxError: Unexpected token '.'
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\auth.js:8:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 09:38:42 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\validations\authValidation.js:17
+    .custom(async (username) => {
+    ^
+
+SyntaxError: Unexpected token '.'
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\auth.js:8:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 09:38:44 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\validations\authValidation.js:16
+    .custom(async (username) => {
+    ^
+
+SyntaxError: Unexpected token '.'
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\auth.js:8:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 09:38:58 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\validations\authValidation.js:16
+    .custom(async (username) => {
+    ^
+
+SyntaxError: Unexpected token '.'
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\auth.js:8:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 09:39:12 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:39:21 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:40:41 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:43:58 error: uncaughtException: Identifier 'signupValidation' has already been declared
+G:\Programming\projects\FullStack\MERN Blog\server\src\validations\authValidation.js:41
+const signupValidation = [
+      ^
+
+SyntaxError: Identifier 'signupValidation' has already been declared
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\auth.js:8:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 09:45:20 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\validations\authValidation.js:59
+    .custom(async (password) => {
+    ^
+
+SyntaxError: Unexpected token '.'
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\auth.js:8:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 09:45:25 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\validations\authValidation.js:59
+    .custom(async (password) => {
+    ^
+
+SyntaxError: Unexpected token '.'
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\auth.js:8:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 09:45:33 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\validations\authValidation.js:60
+    .custom(async (password) => {
+    ^
+
+SyntaxError: Unexpected token '.'
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\auth.js:8:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 09:45:44 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\validations\authValidation.js:60
+    .custom(async (password) => {
+    ^
+
+SyntaxError: Unexpected token '.'
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\auth.js:8:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 09:46:11 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\validations\authValidation.js:63
+    .custom(async (password) => {
+    ^
+
+SyntaxError: Unexpected token '.'
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\auth.js:8:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-02-24 09:48:26 error: ReferenceError: existingUser is not defined,    at AuthService.login (G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:60:12),    at G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:47:33,    at G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\catchAsyncErrors.js:7:19,    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:49:41 error: TypeError: Cannot read properties of null (reading '_id'),    at AuthService.login (G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:60:25),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:47:15
+2024-02-24 09:50:20 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:51:19 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:53:05 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:53:15 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:54:27 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-02-24 09:55:31 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13)
+2024-02-24 09:55:55 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13)

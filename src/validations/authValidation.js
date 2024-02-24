@@ -1,5 +1,11 @@
 const { body } = require("express-validator");
 
+const UserRepository = require("../repository/userRepository");
+const { compareHash } = require("../utils/hashing");
+const { badRequest } = require("../utils/error");
+
+const userRepository = new UserRepository();
+
 const sendOTPValidation = [
   body("email").notEmpty().escape().withMessage("Email can not be empty"),
   body("email").isEmail().withMessage("Invalid email"),
@@ -8,24 +14,63 @@ const sendOTPValidation = [
 const signupValidation = [
   body("username")
     .notEmpty()
-    .withMessage("Username can not be empty")
+    .bail()
     .isLength({ min: 3, max: 15 })
-    .withMessage("Username must be 3 to 15 chars"),
-  body("email").notEmpty().escape().withMessage("Email can not be empty"),
-  body("email").isEmail().withMessage("Invalid email"),
+    .withMessage("Username must be 3 to 15 chars")
+    .custom(async (username) => {
+      let existingUser = await userRepository.findOne({ username });
+      if (existingUser) {
+        throw new Error("Username already exist");
+      }
+    }),
+  body("email")
+    .notEmpty()
+    .bail()
+    .isEmail()
+    .escape()
+    .withMessage("Provide a valid email address.")
+    .custom(async (email) => {
+      let existingUser = await userRepository.findByEmail(email);
+      if (existingUser) {
+        throw new Error("User already exist using this email");
+      }
+    }),
   body("password")
     .notEmpty()
-    .withMessage("Password can not be empty")
+    .bail()
     .isLength({ min: 8 })
-    .withMessage("Password Must Be Greater Than 6 Chars"),
-  body("otp")
+    .withMessage("Password must be equal or greater than 8 chars"),
+];
+
+const signinValidation = [
+  body("email")
     .notEmpty()
-    .withMessage("OTP can not be empty")
-    .isLength({ min: 6, max: 6 })
-    .withMessage("OTP length must be 6"),
+    .bail()
+    .isEmail()
+    .escape()
+    .withMessage("Provide a valid email address.")
+    .custom(async (email) => {
+      let existingUser = await userRepository.findByEmail(email);
+      if (!existingUser) {
+        throw new Error("Invalid cradentials");
+      }
+    }),
+  body("password")
+    .notEmpty()
+    .bail()
+    .isLength({ min: 8 })
+    .withMessage("Password must be equal or greater than 8 chars")
+    .custom(async (password, { req }) => {
+      let existingUser = await userRepository.findByEmail(req.body.email);
+      let match = await compareHash(password, existingUser.password);
+      if (!match) {
+        throw badRequest("Invalied cradentials");
+      }
+    }),
 ];
 
 module.exports = {
   sendOTPValidation,
   signupValidation,
+  signinValidation,
 };

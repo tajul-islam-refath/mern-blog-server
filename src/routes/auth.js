@@ -5,6 +5,7 @@ const requestValidation = require("../middlewarers/requestValidationMiddleware")
 const {
   sendOTPValidation,
   signupValidation,
+  signinValidation,
 } = require("../validations/authValidation");
 
 router.post(
@@ -13,9 +14,14 @@ router.post(
   requestValidation,
   AuthController.sendOTP
 );
-router.post("/login", AuthController.login);
 router.post(
-  "/registation",
+  "/login",
+  signinValidation,
+  requestValidation,
+  AuthController.login
+);
+router.post(
+  "/signup",
   signupValidation,
   requestValidation,
   AuthController.signup

@@ -12,12 +12,12 @@ const generateHash = async (payload, saltRound = 10) => {
 };
 /**
  * Compare hash
- * @param {string} raw
+ * @param {string} payload
  * @param {string} hash
  * @returns {boolean}
  */
-const compareHash = async (raw, hash) => {
-  const result = await bcrypt.compare(raw, hash);
+const compareHash = async (payload, hash) => {
+  const result = await bcrypt.compare(payload, hash);
   return result;
 };
 

@@ -16,9 +16,13 @@ const userSchema = new Schema(
       type: String,
       default: "user",
     },
-    profilePic: {
-      type: String,
-      default: "",
+    profileImage: {
+      publicId: {
+        type: String,
+      },
+      url: {
+        type: String,
+      },
     },
   },
   {
