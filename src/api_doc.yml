@@ -5,13 +5,13 @@ info:
   contact:
     name: Tajul Islam Refath
     email: tajul16-447@diu.edu.bd
-servers: 
+servers:
   # Added by API Auto Mocking Plugin
   - description: SwaggerHub API Auto Mocking
     url: https://virtserver.swaggerhub.com/TajulIslamRefath/test_api/1.0.0
   - url: http://localhost:5000/api/v1
     description: dev server
-tags: 
+tags:
   - name: Auth
     description: "Authentication endpoint (Public)"
   - name: Article
@@ -37,7 +37,7 @@ paths:
                   format: email
                   example: "example@gmail.com"
               required: [email]
-                  
+
       responses:
         "200":
           description: Return success response
@@ -70,13 +70,13 @@ paths:
       tags: [Auth]
       requestBody:
         content:
-          application/json:
+          multipart/form-data:
             schema:
               type: object
               properties:
                 username:
-                    type: string
-                    example: "refath"
+                  type: string
+                  example: "refath"
                 email:
                   type: string
                   format: email
@@ -85,7 +85,10 @@ paths:
                   type: string
                   format: password
                   example: "12345678"
-              required: [username,email, password]
+                profileImage:
+                  type: string
+                  format: binary
+              required: [username, email, password]
       responses:
         "200":
           description: Return success response
@@ -134,7 +137,7 @@ paths:
                   format: password
                   example: "12345678"
               required: [email, password]
-                  
+
       responses:
         "200":
           description: Return success response
@@ -167,7 +170,7 @@ paths:
   # article
   "/articles":
     get:
-      # security: 
+      # security:
       #   - bearerAuth: []
       tags: [Article]
       description: "Retrive all published articles"
@@ -207,8 +210,48 @@ paths:
                             author:
                               $ref: "#/components/schemas/AuthorDTO"
                         - $ref: "#/components/schemas/Timestamp"
-                        
-                            
+    post:
+      security:
+        - bearerAuth: []
+      description: "Create a new article"
+      tags: [Article]
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                cover:
+                  type: string
+                  format: binary
+                title:
+                  type: string
+                  example: "A new article about swagger"
+                body:
+                  type: string
+                  example: "Test article body"
+                tags:
+                  type: array
+                  items:
+                    type: string
+
+              required: [cover, title, body]
+
+      responses:
+        "200":
+          description: Return success response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    format: int32
+                    example: 200
+                  message:
+                    type: string
+                    example: Ok
 
 components:
   securitySchemes:

@@ -252,3 +252,83 @@ SyntaxError: Unexpected token '.'
 2024-02-24 09:54:27 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
 2024-02-24 09:55:31 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13)
 2024-02-24 09:55:55 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:8:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13)
+2024-02-24 19:18:27 error: uncaughtException: forgotPasswordValidation is not defined
+ReferenceError: forgotPasswordValidation is not defined
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\auth.js:31:3)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\index.js:1:20)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+2024-02-24 19:40:20 error: uncaughtException: Cannot find module '../models/Auth'
+Require stack:
+- G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\authMiddleware.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\initializeMiddlewares.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\app.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\server.js
+Error: Cannot find module '../models/Auth'
+Require stack:
+- G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\authMiddleware.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\initializeMiddlewares.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\app.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)
+    at Module._load (node:internal/modules/cjs/loader:985:27)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\authMiddleware.js:1:14)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+2024-02-24 19:41:41 error: uncaughtException: Cannot find module '../models/Auth'
+Require stack:
+- G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\user.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\routes\user.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\routes\index.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\app.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\server.js
+Error: Cannot find module '../models/Auth'
+Require stack:
+- G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\user.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\routes\user.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\routes\index.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\app.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)
+    at Module._load (node:internal/modules/cjs/loader:985:27)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\user.js:1:14)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+2024-02-24 21:07:49 error: uncaughtException: Cannot find module '../controllers/post'
+Require stack:
+- G:\Programming\projects\FullStack\MERN Blog\server\src\routes\article.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\routes\index.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\app.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\server.js
+Error: Cannot find module '../controllers/post'
+Require stack:
+- G:\Programming\projects\FullStack\MERN Blog\server\src\routes\article.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\routes\index.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\app.js
+- G:\Programming\projects\FullStack\MERN Blog\server\src\server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)
+    at Module._load (node:internal/modules/cjs/loader:985:27)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\article.js:10:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)

@@ -20,10 +20,12 @@ const postSchema = new Schema(
     tags: [
       {
         type: String,
-        required: true,
       },
     ],
-    thumbail: String,
+    cover: {
+      publicId: String,
+      url: String,
+    },
     readTime: String,
     totalViews: Number,
   },

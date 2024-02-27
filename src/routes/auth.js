@@ -1,11 +1,14 @@
 const router = require("express").Router();
 
+const upload = require("../config/multer.config");
 const AuthController = require("../controllers/auth");
 const requestValidation = require("../middlewarers/requestValidationMiddleware");
+
 const {
   sendOTPValidation,
   signupValidation,
   signinValidation,
+  forgotPasswordValidation,
 } = require("../validations/authValidation");
 
 router.post(
@@ -22,10 +25,16 @@ router.post(
 );
 router.post(
   "/signup",
+  upload.single("profileImage"),
   signupValidation,
   requestValidation,
   AuthController.signup
 );
-router.post("/forgotPassword", AuthController.forgotPassword);
+router.post(
+  "/forgotPassword",
+  forgotPasswordValidation,
+  requestValidation,
+  AuthController.forgotPassword
+);
 
 module.exports = router;

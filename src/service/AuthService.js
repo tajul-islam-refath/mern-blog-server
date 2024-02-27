@@ -2,11 +2,10 @@ const { serverError, badRequest } = require("../utils/error");
 const { generateOTP, generateOTPHash, verifyOTPHash } = require("../utils/otp");
 const { generateHash } = require("../utils/hashing");
 const { signToken } = require("../utils/token");
+const cloudinary = require("../config/cloudinary.config");
 
 class AuthService {
-  constructor(userDatabase) {
-    this.userDatabase = userDatabase;
-  }
+  constructor() {}
 
   /**
    * Send OTP by email
@@ -25,25 +24,37 @@ class AuthService {
 
   /**
    * Signup method
+   * @param {UserRepository} UserRepository
    * @param {object} data - Contain { username, email, otp, hash, password }
    * @returns {string} token
    */
-  signup = async (data) => {
-    let { username, email, password } = data;
+  signup = async (UserRepository, data) => {
+    let { username, email, password, image } = data;
+
+    let imageResponse = await cloudinary.uploader.upload(image.path, {
+      folder: process.env.CLOUDINARY_Folder,
+    });
 
     let hashPassword = await generateHash(password, 11);
-    let user = await this.userDatabase.create({
+    let user = await UserRepository.create({
       email,
       password: hashPassword,
       username,
+      profileImage: {
+        publicId: imageResponse.public_id,
+        url: imageResponse.url,
+      },
     });
 
-    let token = await signToken({
-      _id: user._id,
-      username: user.username,
-      email: user.email,
-      profileImage: user.profileImage,
-    });
+    let token = await signToken(
+      {
+        _id: user._id,
+        username: user.username,
+        email: user.email,
+        profileImage: user.profileImage,
+      },
+      process.env.JWT_SECRET
+    );
 
     return token;
   };
@@ -53,23 +64,31 @@ class AuthService {
    * @param {object} data - Contain {  email,  password }
    * @returns {string} token
    */
-  login = async (data) => {
+  login = async (UserRepository, data) => {
     let { email, password } = data;
-    let existingUser = await this.userDatabase.findByEmail(email);
-    let token = await signToken({
-      _id: existingUser._id,
-      username: existingUser?.username,
-      email: existingUser?.email,
-      profileImage: existingUser?.profileImage,
+    let existingUser = await UserRepository.findByEmail(email, {
+      username: 1,
+      email: 1,
+      profileImage: 1,
     });
+
+    let token = await signToken(
+      {
+        _id: existingUser._id,
+        username: existingUser?.username,
+        email: existingUser?.email,
+        profileImage: existingUser?.profileImage,
+      },
+      process.env.JWT_SECRET
+    );
 
     return token;
   };
 
-  forgotPassword = async (data) => {
+  forgotPassword = async (UserRepository, data) => {
     let { email, otp, hash, password } = data;
 
-    let existingUser = await this.userDatabase.findByEmail(email);
+    let existingUser = await UserRepository.findByEmail(email);
     if (!existingUser) {
       throw badRequest("Invalied cradentials");
     }
@@ -87,4 +106,4 @@ class AuthService {
   };
 }
 
-module.exports = AuthService;
+module.exports = new AuthService();

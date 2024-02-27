@@ -1,6 +1,5 @@
-const Auth = require("../models/Auth");
 const Profile = require("../models/Profile");
-const Post = require("../models/Post");
+const Post = require("../models/Article");
 const Comment = require("../models/Comment");
 
 exports.getWebContent = async (req, res, next) => {

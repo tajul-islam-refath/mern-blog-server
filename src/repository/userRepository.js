@@ -6,31 +6,31 @@ class UserRepository {
    * @param {string} _id
    * @returns {user} user object
    */
-  findByID = (_id) => {
-    return UserModel.findById(_id);
+  findByID = (_id, select = {}) => {
+    return UserModel.findById(_id, select);
   };
   /**
    * Find By Email
    * @param {email} email
    * @returns {user} user object
    */
-  findByEmail = (email) => {
-    return UserModel.findOne({ email: email });
+  findByEmail = (email, select = {}) => {
+    return UserModel.findOne({ email: email }, select);
   };
   /**
    * Find One
    * @param {query} query
    * @returns {user} user object
    */
-  findOne = (query = {}) => {
-    return UserModel.findOne(query);
+  findOne = (query = {}, select = {}) => {
+    return UserModel.findOne(query, select);
   };
   /**
    * Find All
    * @returns {array} user array
    */
-  findAll = () => {
-    return UserModel.find();
+  findAll = (select = {}) => {
+    return UserModel.find({}, select);
   };
   /**
    * Create
@@ -66,4 +66,4 @@ class UserRepository {
   };
 }
 
-module.exports = UserRepository;
+module.exports = new UserRepository();

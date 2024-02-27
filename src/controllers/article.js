@@ -1,47 +1,30 @@
 const redingTime = require("reading-time");
 
-const Post = require("../models/Post");
+const Post = require("../models/Article");
 const Profile = require("../models/Profile");
+const ArticleService = require("../service/ArticleService");
+const ArticleRepository = require("../repository/articleRepository");
+const { catchAsyncErrorHandle } = require("../middlewarers/catchAsyncErrors");
 
-exports.createPostControler = async (req, res, next) => {
-  let { title, body, tags, thumbnail } = req.body;
+exports.createArticle = catchAsyncErrorHandle(async (req, res, next) => {
+  const article = matchedData(req);
+  article.cover = req.file;
+  const user = req.user;
 
-  if (tags) {
-    tags = tags.split(",");
-  }
+  let newArticle = await ArticleService.create(
+    ArticleRepository,
+    article,
+    user
+  );
 
-  let readTime = redingTime(body).text;
-
-  let post = new Post({
-    title,
-    body,
-    tags,
-    author: req.user._id,
-    thumbail: thumbnail,
-    readTime,
-    totalViews: 0,
-    likes: [],
-    dislikes: [],
-    comments: [],
+  res.status(201).json({
+    success: true,
+    message: "New article create successfully",
+    data: {
+      article: newArticle,
+    },
   });
-
-  try {
-    let createPost = await post.save();
-
-    await Profile.findOneAndUpdate(
-      { user: req.user._id },
-      { $push: { posts: createPost._id } }
-    );
-
-    res.status(201).json({
-      success: true,
-      message: "New post was created successfully",
-    });
-  } catch (e) {
-    next(e);
-    console.log(e);
-  }
-};
+});
 
 exports.getPostController = async (req, res, next) => {
   const { id } = req.params;
@@ -80,7 +63,6 @@ exports.getMyPostsController = async (req, res, next) => {
 };
 
 exports.bookmarkPostAdd = async (req, res, next) => {
-  console.log(req.body);
   try {
     await Profile.findOneAndUpdate(
       { user: req.user._id },
