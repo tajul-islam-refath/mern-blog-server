@@ -8,13 +8,12 @@ const {
 } = require("../middlewarers/authMiddleware");
 const {
   createArticle,
-  getPostController,
-  getMyPostsController,
-  bookmarkPostAdd,
-  bookmarkDelete,
-  getSearchPosts,
+  getAllController,
+  getSingleController,
 } = require("../controllers/article");
+const { paramIdValidation } = require("../validations/paramValidation");
 
+router.get("/", getAllController);
 router.post(
   "/",
   isAuthenticated,
@@ -24,11 +23,11 @@ router.post(
   authorize(["user"]),
   createArticle
 );
+router.get("/:id", paramIdValidation, requestValidation, getSingleController);
 
-router.get("/:id", getPostController);
-router.get("/self", isAuthenticated, getMyPostsController);
-router.post("/:id/bookmark", isAuthenticated, bookmarkPostAdd);
-router.post("/:id/remove-bookmark", isAuthenticated, bookmarkDelete);
-router.post("/search", getSearchPosts);
+// router.get("/self", isAuthenticated, getMyPostsController);
+// router.post("/:id/bookmark", isAuthenticated, bookmarkPostAdd);
+// router.post("/:id/remove-bookmark", isAuthenticated, bookmarkDelete);
+// router.post("/search", getSearchPosts);
 
 module.exports = router;

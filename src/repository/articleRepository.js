@@ -6,8 +6,8 @@ class ArticleRepository {
    * @param {string} _id
    * @returns {article} article
    */
-  findByID = (_id, select = {}) => {
-    return ArticleModel.findById(_id, select);
+  findByID = (_id, select = {}, populateOptions = []) => {
+    return ArticleModel.findById(_id, select).populate(populateOptions);
   };
   /**
    * Find By Author
@@ -29,8 +29,8 @@ class ArticleRepository {
    * Find All
    * @returns {array} article array
    */
-  findAll = (select = {}) => {
-    return ArticleModel.find({}, select);
+  findAll = (select = {}, populateOptions = []) => {
+    return ArticleModel.find({}, select).populate(populateOptions);
   };
   /**
    * Create

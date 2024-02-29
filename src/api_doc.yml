@@ -252,6 +252,20 @@ paths:
                   message:
                     type: string
                     example: Ok
+  "/articles/{id}":
+    get:
+      tags: [Article]
+      description: "Get single article"
+      parameters:
+        - $ref: "#/components/parameters/idPathParam"
+
+      responses:
+        "200":
+          description: "Success Response"
+          content:
+            application/json:
+              schema:
+                type: object
 
 components:
   securitySchemes:
@@ -329,3 +343,11 @@ components:
         type: string
         enum: [asc, dsc]
         example: dsc
+    idPathParam:
+      in: path
+      name: id
+      description: Article id
+      required: true
+      schema:
+        type: string
+        example: "64d268cdeef8c84bb18912db"

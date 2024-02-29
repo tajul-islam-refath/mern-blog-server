@@ -23,7 +23,7 @@ exports.isAuthenticated = async (req, res, next) => {
     const decoded = verifyToken(token, process.env.JWT_SECRET);
     let user = await UserRepository.findByID(
       { _id: decoded._id },
-      { username: 1, email: 1 }
+      { username: 1, email: 1, role: 1 }
     );
 
     if (!user) {
@@ -45,7 +45,7 @@ exports.isAuthenticated = async (req, res, next) => {
 exports.authorize =
   (roles = ["admin"]) =>
   (req, _res, next) => {
-    console.log("User", req.user);
+    // console.log("User", req.user);
     if (roles.includes(req.user.role)) {
       return next();
     }

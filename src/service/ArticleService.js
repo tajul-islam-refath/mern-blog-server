@@ -4,7 +4,14 @@ const cloudinary = require("../config/cloudinary.config");
 class ArticleService {
   create = async (ArticleRepository, article, author) => {
     let uploadResponse = await this.uploadCover(article.cover.path);
-    let readTime = redingTime(body).text;
+    let readTime = redingTime(article.body).text;
+    let tags = [];
+    if (article.tags) {
+      tags =
+        typeof article.tags == "string"
+          ? article.tags.split(",")
+          : article.tags;
+    }
 
     let newArticle = await ArticleRepository.create({
       title: article.title,
@@ -15,10 +22,23 @@ class ArticleService {
         url: uploadResponse.url,
       },
       readTime,
-      tags: article.tags,
+      tags: tags,
     });
 
     return newArticle;
+  };
+  getById = async (ArticleRepository, _id) => {
+    let populateOptions = [{ path: "author", select: "username profileImage" }];
+    return ArticleRepository.findByID(_id, {}, populateOptions);
+  };
+  getAll = async (ArticleRepository) => {
+    let populateOptions = [
+      { path: "author", select: "username profileImage -_id" },
+    ];
+    return ArticleRepository.findAll(
+      { title: 1, cover: 1, readTime: 1, createdAt: 1 },
+      populateOptions
+    );
   };
 
   uploadCover = async (coverPath) => {

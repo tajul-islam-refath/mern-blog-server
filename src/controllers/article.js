@@ -1,4 +1,4 @@
-const redingTime = require("reading-time");
+const { matchedData } = require("express-validator");
 
 const Post = require("../models/Article");
 const Profile = require("../models/Profile");
@@ -19,35 +19,35 @@ exports.createArticle = catchAsyncErrorHandle(async (req, res, next) => {
 
   res.status(201).json({
     success: true,
-    message: "New article create successfully",
+    message: "New article create successfully 🎉",
     data: {
       article: newArticle,
     },
   });
 });
 
-exports.getPostController = async (req, res, next) => {
-  const { id } = req.params;
-
-  const post = await Post.findByIdAndUpdate(
-    { _id: id },
-    {
-      $inc: {
-        totalViews: 1,
-      },
-    },
-    { new: true }
-  );
-
+exports.getAllController = catchAsyncErrorHandle(async (req, res, next) => {
+  let articles = await ArticleService.getAll(ArticleRepository);
   res.status(200).json({
     success: true,
-    post,
+    message: "All Articles 🎉",
+    data: {
+      articles,
+    },
   });
-  try {
-  } catch (err) {
-    next(err);
-  }
-};
+});
+
+exports.getSingleController = catchAsyncErrorHandle(async (req, res, next) => {
+  let _id = req.params.id;
+  let article = await ArticleService.getById(ArticleRepository, _id);
+  res.status(200).json({
+    success: true,
+    message: "Single Article 🎉",
+    data: {
+      article,
+    },
+  });
+});
 
 exports.getMyPostsController = async (req, res, next) => {
   try {
