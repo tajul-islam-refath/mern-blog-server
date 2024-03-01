@@ -30,10 +30,13 @@ class AuthService {
    */
   signup = async (UserRepository, data) => {
     let { username, email, password, image } = data;
+    let imageResponse = null;
 
-    let imageResponse = await cloudinary.uploader.upload(image.path, {
-      folder: process.env.CLOUDINARY_Folder,
-    });
+    if (image) {
+      imageResponse = await cloudinary.uploader.upload(image.path, {
+        folder: process.env.CLOUDINARY_Folder,
+      });
+    }
 
     let hashPassword = await generateHash(password, 11);
     let user = await UserRepository.create({
@@ -41,8 +44,8 @@ class AuthService {
       password: hashPassword,
       username,
       profileImage: {
-        publicId: imageResponse.public_id,
-        url: imageResponse.url,
+        publicId: imageResponse ? imageResponse.public_id : "",
+        url: imageResponse ? imageResponse.url : "",
       },
     });
 

@@ -281,6 +281,47 @@ paths:
             application/json:
               schema:
                 type: object
+  "/articles/author/self":
+    get:
+      security:
+        - bearerAuth: []
+      tags: [Article]
+      description: "The endpoint will return a list of articles for self"
+      parameters:
+        - $ref: "#/components/parameters/pageNumber"
+        - $ref: "#/components/parameters/pageLimit"
+        - $ref: "#/components/parameters/sortType"
+      responses:
+        "200":
+          description: "Return a list of articles"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: "Get all articles successfully"
+                  data:
+                    type: array
+                    items:
+                      allOf:
+                        - type: object
+                          properties:
+                            id:
+                              type: string
+                              example: "msvmosfons516damflvdnm"
+                            title:
+                              type: string
+                              example: "Learn Python"
+                            cover:
+                              type: string
+                              example: "https://example.com/img/2"
+                            author:
+                              $ref: "#/components/schemas/AuthorDTO"
 
 components:
   securitySchemes:

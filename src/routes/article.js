@@ -10,11 +10,14 @@ const {
   createArticle,
   getArticles,
   getArticle,
+  getArticlesByAuthor,
   deleteArticle,
 } = require("../controllers/article");
 const { paramIdValidation } = require("../validations/paramValidation");
 
 router.get("/", getArticles);
+router.get("/:id", paramIdValidation, requestValidation, getArticle);
+router.get("/author/self", isAuthenticated, getArticlesByAuthor);
 router.post(
   "/",
   isAuthenticated,
@@ -24,7 +27,6 @@ router.post(
   requestValidation,
   createArticle
 );
-router.get("/:id", paramIdValidation, requestValidation, getArticle);
 router.delete(
   "/:id",
   isAuthenticated,
@@ -33,7 +35,7 @@ router.delete(
   requestValidation,
   deleteArticle
 );
-// router.get("/self", isAuthenticated, getMyPostsController);
+
 // router.post("/:id/bookmark", isAuthenticated, bookmarkPostAdd);
 // router.post("/:id/remove-bookmark", isAuthenticated, bookmarkDelete);
 // router.post("/search", getSearchPosts);

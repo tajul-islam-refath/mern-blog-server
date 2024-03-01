@@ -50,6 +50,19 @@ exports.getArticle = catchAsyncErrorHandle(async (req, res, next) => {
   });
 });
 
+exports.getArticlesByAuthor = catchAsyncErrorHandle(async (req, res, next) => {
+  let user = req.user;
+
+  let articles = await ArticleService.getByAuthor(ArticleRepository, user);
+  res.status(200).json({
+    success: true,
+    message: "List of articles 🎉",
+    data: {
+      articles,
+    },
+  });
+});
+
 exports.deleteArticle = catchAsyncErrorHandle(async (req, res, next) => {
   let _id = req.params.id;
   const user = req.user;

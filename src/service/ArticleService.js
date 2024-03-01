@@ -36,6 +36,7 @@ class ArticleService {
     }
     return article;
   };
+
   getAll = async (ArticleRepository) => {
     let populateOptions = [
       { path: "author", select: "username profileImage -_id" },
@@ -45,6 +46,20 @@ class ArticleService {
       populateOptions
     );
   };
+
+  getByAuthor = async (ArticleRepository, author) => {
+    let articles = await ArticleRepository.findByAuthor(author._id, {
+      title: 1,
+      cover: 1,
+      readTime: 1,
+      createdAt: 1,
+    });
+    if (!articles) {
+      throw notFound(`Resource not found`);
+    }
+    return articles;
+  };
+
   deleteById = async (ArticleRepository, _id, user) => {
     let article = await ArticleRepository.findByID(_id);
     if (!article) {
