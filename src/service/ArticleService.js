@@ -1,5 +1,6 @@
 const redingTime = require("reading-time");
 const cloudinary = require("../config/cloudinary.config");
+const { authorizationError, notFound } = require("../utils/error");
 
 class ArticleService {
   create = async (ArticleRepository, article, author) => {
@@ -29,7 +30,11 @@ class ArticleService {
   };
   getById = async (ArticleRepository, _id) => {
     let populateOptions = [{ path: "author", select: "username profileImage" }];
-    return ArticleRepository.findByID(_id, {}, populateOptions);
+    let article = await ArticleRepository.findByID(_id, {}, populateOptions);
+    if (!article) {
+      throw notFound(`Resource not found with this ${_id}`);
+    }
+    return article;
   };
   getAll = async (ArticleRepository) => {
     let populateOptions = [
@@ -40,7 +45,23 @@ class ArticleService {
       populateOptions
     );
   };
+  deleteById = async (ArticleRepository, _id, user) => {
+    let article = await ArticleRepository.findByID(_id);
+    if (!article) {
+      throw notFound(`Resource not found with this ${_id}`);
+    }
 
+    let isOwner = await ArticleRepository.findOne({ _id, author: user._id });
+    if (!isOwner) {
+      throw authorizationError();
+    }
+
+    let deletedArticle = await ArticleRepository.deleteById(_id);
+    await cloudinary.uploader.destroy(deletedArticle.cover.publicId);
+    return {
+      _id: deletedArticle._id,
+    };
+  };
   uploadCover = async (coverPath) => {
     return await cloudinary.uploader.upload(coverPath, {
       folder: process.env.CLOUDINARY_Folder,

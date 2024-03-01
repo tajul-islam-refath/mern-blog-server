@@ -266,6 +266,21 @@ paths:
             application/json:
               schema:
                 type: object
+    delete:
+      security:
+        - bearerAuth: []
+      tags: [Article]
+      description: "Delete article"
+      parameters:
+        - $ref: "#/components/parameters/idPathParam"
+
+      responses:
+        "200":
+          description: "Success Response"
+          content:
+            application/json:
+              schema:
+                type: object
 
 components:
   securitySchemes:

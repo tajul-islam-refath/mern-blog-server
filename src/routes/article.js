@@ -8,23 +8,31 @@ const {
 } = require("../middlewarers/authMiddleware");
 const {
   createArticle,
-  getAllController,
-  getSingleController,
+  getArticles,
+  getArticle,
+  deleteArticle,
 } = require("../controllers/article");
 const { paramIdValidation } = require("../validations/paramValidation");
 
-router.get("/", getAllController);
+router.get("/", getArticles);
 router.post(
   "/",
   isAuthenticated,
+  authorize(["user"]),
   upload.single("cover"),
   articleValidation,
   requestValidation,
-  authorize(["user"]),
   createArticle
 );
-router.get("/:id", paramIdValidation, requestValidation, getSingleController);
-
+router.get("/:id", paramIdValidation, requestValidation, getArticle);
+router.delete(
+  "/:id",
+  isAuthenticated,
+  authorize(["user"]),
+  paramIdValidation,
+  requestValidation,
+  deleteArticle
+);
 // router.get("/self", isAuthenticated, getMyPostsController);
 // router.post("/:id/bookmark", isAuthenticated, bookmarkPostAdd);
 // router.post("/:id/remove-bookmark", isAuthenticated, bookmarkDelete);

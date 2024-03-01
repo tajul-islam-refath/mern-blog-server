@@ -26,7 +26,7 @@ exports.createArticle = catchAsyncErrorHandle(async (req, res, next) => {
   });
 });
 
-exports.getAllController = catchAsyncErrorHandle(async (req, res, next) => {
+exports.getArticles = catchAsyncErrorHandle(async (req, res, next) => {
   let articles = await ArticleService.getAll(ArticleRepository);
   res.status(200).json({
     success: true,
@@ -37,12 +37,26 @@ exports.getAllController = catchAsyncErrorHandle(async (req, res, next) => {
   });
 });
 
-exports.getSingleController = catchAsyncErrorHandle(async (req, res, next) => {
+exports.getArticle = catchAsyncErrorHandle(async (req, res, next) => {
   let _id = req.params.id;
+
   let article = await ArticleService.getById(ArticleRepository, _id);
   res.status(200).json({
     success: true,
     message: "Single Article 🎉",
+    data: {
+      article,
+    },
+  });
+});
+
+exports.deleteArticle = catchAsyncErrorHandle(async (req, res, next) => {
+  let _id = req.params.id;
+  const user = req.user;
+  let article = await ArticleService.deleteById(ArticleRepository, _id, user);
+  res.status(200).json({
+    success: true,
+    message: "Delete Article success 🎉",
     data: {
       article,
     },
