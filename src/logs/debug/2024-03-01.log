@@ -98,3 +98,41 @@
 2024-03-01 22:59:31 info: 🚀 App listening on the port 5000
 2024-03-01 22:59:49 error: TypeError: Cannot read properties of null (reading 'public_id'),    at AuthService.signup (G:\Programming\projects\FullStack\MERN Blog\server\src\service\AuthService.js:47:33),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\auth.js:24:15
 2024-03-01 22:59:49 info: {"method":"POST","url":"/api/v1/auth/signup","status":500,"content_length":"62","response_time":1191.592}
+2024-03-01 23:00:49 info: 🚀 App listening on the port 5000
+2024-03-01 23:00:59 info: {"method":"POST","url":"/api/v1/auth/signup","status":200,"content_length":"356","response_time":1892.525}
+2024-03-01 23:01:39 info: {"method":"GET","url":"/api/v1/articles/author/self?page=1&limit=10&sort_type=dsc","status":200,"content_length":"73","response_time":1776.495}
+2024-03-01 23:20:44 info: 🚀 App listening on the port 5000
+2024-03-01 23:21:23 info: 🚀 App listening on the port 5000
+2024-03-01 23:21:36 info: 🚀 App listening on the port 5000
+2024-03-01 23:22:09 info: 🚀 App listening on the port 5000
+2024-03-01 23:22:19 info: 🚀 App listening on the port 5000
+2024-03-01 23:22:44 info: 🚀 App listening on the port 5000
+2024-03-01 23:23:08 info: 🚀 App listening on the port 5000
+2024-03-01 23:23:31 info: 🚀 App listening on the port 5000
+2024-03-01 23:23:53 info: 🚀 App listening on the port 5000
+2024-03-01 23:27:43 info: 🚀 App listening on the port 5000
+2024-03-01 23:28:14 info: 🚀 App listening on the port 5000
+2024-03-01 23:28:31 info: 🚀 App listening on the port 5000
+2024-03-01 23:28:44 info: 🚀 App listening on the port 5000
+2024-03-01 23:29:22 info: 🚀 App listening on the port 5000
+2024-03-01 23:29:38 info: 🚀 App listening on the port 5000
+2024-03-01 23:31:44 info: 🚀 App listening on the port 5000
+2024-03-01 23:32:00 info: 🚀 App listening on the port 5000
+2024-03-01 23:32:08 info: 🚀 App listening on the port 5000
+2024-03-01 23:32:16 info: 🚀 App listening on the port 5000
+2024-03-01 23:33:14 info: 🚀 App listening on the port 5000
+2024-03-01 23:36:35 info: 🚀 App listening on the port 5000
+2024-03-01 23:39:30 info: 🚀 App listening on the port 5000
+2024-03-01 23:40:38 info: 🚀 App listening on the port 5000
+2024-03-01 23:40:57 info: 🚀 App listening on the port 5000
+2024-03-01 23:42:47 info: 🚀 App listening on the port 5000
+2024-03-01 23:42:58 info: 🚀 App listening on the port 5000
+2024-03-01 23:43:11 info: 🚀 App listening on the port 5000
+2024-03-01 23:43:27 info: 🚀 App listening on the port 5000
+2024-03-01 23:44:48 info: 🚀 App listening on the port 5000
+2024-03-01 23:45:24 info: 🚀 App listening on the port 5000
+2024-03-01 23:47:54 info: 🚀 App listening on the port 5000
+2024-03-01 23:48:24 info: 🚀 App listening on the port 5000
+2024-03-01 23:49:43 info: 🚀 App listening on the port 5000
+2024-03-01 23:50:17 info: 🚀 App listening on the port 5000
+2024-03-01 23:50:28 info: 🚀 App listening on the port 5000

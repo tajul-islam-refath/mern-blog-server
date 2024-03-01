@@ -1,90 +1,31 @@
 const User = require("../models/User");
 const Profile = require("../models/Profile");
 const { ObjectId } = require("mongoose");
+const UserService = require("../service/UserService");
+const userRepository = require("../repository/userRepository");
+const { catchAsyncErrorHandle } = require("../middlewarers/catchAsyncErrors");
 
-exports.getMyProfile = async (req, res, next) => {
-  try {
-    const profile = await Profile.findOne({
-      user: req.user._id,
-    });
+exports.getSelfProfile = catchAsyncErrorHandle(async (req, res, next) => {
+  const profile = await UserService.findById(userRepository, req.user);
 
-    res.status(200).json({
-      profile: profile,
-    });
-  } catch (error) {
-    next(error);
-  }
-};
-
-exports.getUserProfile = (req, res, next) => {};
-exports.createUserProfile = async (req, res, next) => {
-  const { name, title, bio, links, profilePic } = req.body;
-  try {
-    // console.log(req.body);
-    const userProfile = new Profile({
-      user: req.user._id,
-      name,
-      title,
-      bio,
-      links,
-      profilePic,
-    });
-
-    await userProfile.save();
-
-    const user = await User.findByIdAndUpdate(
-      { _id: req.user._id },
-      {
-        $set: {
-          profilePic: profilePic,
-        },
-      },
-      {
-        new: true,
-      }
-    );
-
-    res.status(201).json({
-      message: "User profile created successfully",
-      profile: userProfile,
-    });
-  } catch (e) {
-    next(e);
-  }
-};
-exports.updateUserProfile = async (req, res, next) => {
-  // console.log(req.body);
-
-  try {
-    let profile = await Profile.findOneAndUpdate(
-      { user: req.user._id },
-      {
-        $set: req.body,
-      },
-      {
-        new: true,
-      }
-    );
-
-    if (req.body.profilePic) {
-      await User.findByIdAndUpdate(
-        { _id: req.user._id },
-        {
-          $set: {
-            profilePic: req.body.profilePic,
-          },
-        },
-        { new: true }
-      );
-    }
-    res.status(200).json({
-      success: true,
-      message: "Updated profile successfully",
+  res.status(200).json({
+    success: true,
+    message: "User Profile Information 🎉",
+    data: {
       profile,
-    });
-  } catch (error) {
-    next(error);
-  }
-};
+    },
+  });
+});
 
-exports.deleteUserProfile = (req, res, next) => {};
+exports.getByUsername = catchAsyncErrorHandle(async (req, res, next) => {
+  let username = req.params.username;
+  const profile = await UserService.findByUsername(userRepository, username);
+
+  res.status(200).json({
+    success: true,
+    message: "User Profile With Articles 🎉",
+    data: {
+      profile,
+    },
+  });
+});

@@ -42,7 +42,7 @@ class ArticleService {
       { path: "author", select: "username profileImage -_id" },
     ];
     return ArticleRepository.findAll(
-      { title: 1, cover: 1, readTime: 1, createdAt: 1 },
+      { title: 1, cover: 1, tags: 1, readTime: 1, createdAt: 1 },
       populateOptions
     );
   };
@@ -50,7 +50,7 @@ class ArticleService {
   getByAuthor = async (ArticleRepository, author) => {
     let articles = await ArticleRepository.findByAuthor(author._id, {
       title: 1,
-      cover: 1,
+      tags: 1,
       readTime: 1,
       createdAt: 1,
     });

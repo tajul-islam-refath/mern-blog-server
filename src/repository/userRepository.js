@@ -17,6 +17,15 @@ class UserRepository {
   findByEmail = (email, select = {}) => {
     return UserModel.findOne({ email: email }, select);
   };
+  findByUsername = (username, select = {}) => {
+    return UserModel.findOne({ username: username }, select);
+  };
+  findByUsernameWithArticles = (username, select = {}) => {
+    return UserModel.findOne({ username: username }, select).populate(
+      "articles",
+      "title tags readTime createdAt"
+    );
+  };
   /**
    * Find One
    * @param {query} query
