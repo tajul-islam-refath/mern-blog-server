@@ -21,10 +21,28 @@ class UserRepository {
     return UserModel.findOne({ username: username }, select);
   };
   findByUsernameWithArticles = (username, select = {}) => {
-    return UserModel.findOne({ username: username }, select).populate(
-      "articles",
-      "title tags readTime createdAt"
-    );
+    return UserModel.aggregate([
+      {
+        $match: { username: username },
+      },
+      {
+        $lookup: {
+          from: "posts",
+          localField: "_id",
+          foreignField: "author",
+          as: "articles",
+          pipeline: [{ $unset: ["body", "author", "updatedAt"] }], // unset to use remove field
+        },
+      },
+      {
+        $project: {
+          username: 1,
+          email: 1,
+          profileImage: 1,
+          articles: 1,
+        },
+      },
+    ]);
   };
   /**
    * Find One

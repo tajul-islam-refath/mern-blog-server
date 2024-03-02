@@ -6,7 +6,7 @@ const userRepository = require("../repository/userRepository");
 const { catchAsyncErrorHandle } = require("../middlewarers/catchAsyncErrors");
 
 exports.getSelfProfile = catchAsyncErrorHandle(async (req, res, next) => {
-  const profile = await UserService.findById(userRepository, req.user);
+  const profile = await UserService.findById(userRepository, req.user._id);
 
   res.status(200).json({
     success: true,

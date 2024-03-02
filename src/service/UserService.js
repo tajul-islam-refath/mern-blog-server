@@ -3,8 +3,8 @@ const { notFound } = require("../utils/error");
 class UserService {
   constructor() {}
 
-  findById = async (UserRepository, user) => {
-    let profile = await UserRepository.findByID(user._id, {
+  findById = async (UserRepository, id) => {
+    let profile = await UserRepository.findByID(id, {
       username: 1,
       email: 1,
       profileImage: 1,
@@ -18,15 +18,12 @@ class UserService {
       email: 1,
       profileImage: 1,
     });
-    if (!profile) {
+    if (profile.length == 0) {
       throw notFound();
     }
-    return profile;
-  };
 
-  create = () => {};
-  delete = () => {};
-  update = () => {};
+    return profile[0];
+  };
 }
 
 module.exports = new UserService();

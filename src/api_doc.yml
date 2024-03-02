@@ -19,7 +19,7 @@ tags:
   - name: Comment
     description: "Comment endpoients (Private)"
   - name: User
-    description: "User endpoients (Private)"
+    description: "User endpoients (Private) + (Public)"
 paths:
   # auth
   "/auth/send-otp":
@@ -322,6 +322,56 @@ paths:
                               example: "https://example.com/img/2"
                             author:
                               $ref: "#/components/schemas/AuthorDTO"
+  # users
+  "/users/self/profile":
+    get:
+      security:
+        - bearerAuth: []
+      tags: [User]
+      description: "The endpoint will return self profile"
+      responses:
+        "200":
+          description: "Return user profile"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: "Get user profile successfull"
+                  data:
+                    type: object
+  "/users/{username}":
+    get:
+      tags: [User]
+      description: "The endpoint will return user profile with articles"
+      parameters:
+        - in: path
+          name: username
+          required: true
+          schema:
+            type: string
+            example: refath
+      responses:
+        "200":
+          description: "Return user profile"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: "Get user profile successfull"
+                  data:
+                    type: object
 
 components:
   securitySchemes:
