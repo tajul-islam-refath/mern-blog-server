@@ -1,6 +1,8 @@
 const redingTime = require("reading-time");
 const cloudinary = require("../config/cloudinary.config");
+const { getPagination } = require("../utils/query");
 const { authorizationError, notFound } = require("../utils/error");
+const defaults = require("../config/queryParam.config");
 
 class ArticleService {
   create = async (ArticleRepository, article, author) => {
@@ -37,14 +39,36 @@ class ArticleService {
     return article;
   };
 
-  getAll = async (ArticleRepository) => {
-    let populateOptions = [
-      { path: "author", select: "username profileImage -_id" },
-    ];
-    return ArticleRepository.findAll(
-      { title: 1, cover: 1, tags: 1, readTime: 1, createdAt: 1 },
-      populateOptions
-    );
+  getAll = async (
+    ArticleRepository,
+    {
+      page = defaults.page,
+      limit = defaults.limit,
+      sortType = defaults.sortType,
+      sortBy = defaults.sortBy,
+      search = defaults.search,
+    }
+  ) => {
+    const newSortType = `${sortType === "dsc" ? -1 : 1}`;
+    let articles = await ArticleRepository.findAll({
+      page: parseInt(page),
+      limit: parseInt(limit),
+      sortBy,
+      sortType: newSortType,
+      search,
+    });
+    let count = await ArticleRepository.count(search);
+
+    let pagination = getPagination({
+      totalItems: count[0].total,
+      page,
+      limit,
+    });
+
+    return {
+      articles,
+      pagination,
+    };
   };
 
   getByAuthor = async (ArticleRepository, author) => {

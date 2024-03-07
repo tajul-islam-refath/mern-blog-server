@@ -1,0 +1,458 @@
+2024-03-07 09:06:06 error: ReferenceError: query is not defined,    at G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:30:65,    at G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\catchAsyncErrors.js:7:19,    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at Route.dispatch (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:114:3),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\index.js:284:15,    at Function.process_params (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\index.js:346:12),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\index.js:280:10),    at Function.handle (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\index.js:175:3)
+2024-03-07 09:10:42 error: uncaughtException: Unexpected token ']'
+G:\Programming\projects\FullStack\MERN Blog\server\src\repository\articleRepository.js:33
+    return ArticleModel.aggregate[];
+                                  ^
+
+SyntaxError: Unexpected token ']'
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:6:27)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:10:52 error: Error: Aggregate has empty pipeline,    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongoose\lib\aggregate.js:1040:19,    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\kareem\index.js:51:7,    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+2024-03-07 09:11:08 error: Error: Aggregate has empty pipeline,    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongoose\lib\aggregate.js:1040:19,    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\kareem\index.js:51:7,    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+2024-03-07 09:11:28 error: Error: Aggregate has empty pipeline,    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongoose\lib\aggregate.js:1040:19,    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\kareem\index.js:51:7,    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+2024-03-07 09:15:27 error: uncaughtException: Unexpected token '}'
+G:\Programming\projects\FullStack\MERN Blog\server\src\repository\articleRepository.js:37
+          $or: [{ title: {$regex:} }],
+                                 ^
+
+SyntaxError: Unexpected token '}'
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:6:27)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:26:32 error: uncaughtException: Unexpected token '{'
+G:\Programming\projects\FullStack\MERN Blog\server\src\repository\articleRepository.js:65
+      {
+      ^
+
+SyntaxError: Unexpected token '{'
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:6:27)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:26:56 error: MongoServerError: invalid argument to $limit stage: Expected a number in: $limit: "1",    at Connection.onMessage (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\connection.js:231:30),    at MessageStream.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\connection.js:61:60),    at MessageStream.emit (node:events:513:28),    at processIncomingData (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\message_stream.js:125:16),    at MessageStream._write (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\message_stream.js:33:9),    at writeOrBuffer (node:internal/streams/writable:391:12),    at _write (node:internal/streams/writable:332:10),    at MessageStream.Writable.write (node:internal/streams/writable:336:10),    at TLSSocket.ondata (node:internal/streams/readable:754:22),    at TLSSocket.emit (node:events:513:28)
+2024-03-07 09:27:33 error: uncaughtException: Unexpected token ','
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:53
+      parseInt(page),
+                    ^
+
+SyntaxError: Unexpected token ','
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:27:53 error: uncaughtException: Unexpected identifier
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:54
+      parseInt(limit)
+      ^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:27:59 error: uncaughtException: Unexpected token ','
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:53
+      parseInt(page),
+                    ^
+
+SyntaxError: Unexpected token ','
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:28:01 error: uncaughtException: Unexpected token ','
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:53
+      parseInt(page),
+                    ^
+
+SyntaxError: Unexpected token ','
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:30:05 error: MongoServerError: the $sort key specification must be an object,    at Connection.onMessage (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\connection.js:231:30),    at MessageStream.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\connection.js:61:60),    at MessageStream.emit (node:events:513:28),    at processIncomingData (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\message_stream.js:125:16),    at MessageStream._write (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\message_stream.js:33:9),    at writeOrBuffer (node:internal/streams/writable:391:12),    at _write (node:internal/streams/writable:332:10),    at MessageStream.Writable.write (node:internal/streams/writable:336:10),    at TLSSocket.ondata (node:internal/streams/readable:754:22),    at TLSSocket.emit (node:events:513:28)
+2024-03-07 09:31:03 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\repository\articleRepository.js:69
+        $sort: {query.sort},
+                     ^
+
+SyntaxError: Unexpected token '.'
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:6:27)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:32:13 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\repository\articleRepository.js:69
+        $sort: {query.sort},
+                     ^
+
+SyntaxError: Unexpected token '.'
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:6:27)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:32:45 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\repository\articleRepository.js:69
+        $sort: {query.sort},
+                     ^
+
+SyntaxError: Unexpected token '.'
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:6:27)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:32:59 error: uncaughtException: Identifier 'sortType' has already been declared
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:51
+    const sortType = `${sortType === "dsc" ? -1 : 1}`;
+          ^^^^^^^^
+
+SyntaxError: Identifier 'sortType' has already been declared
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:33:05 error: uncaughtException: Identifier 'sortType' has already been declared
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:51
+    const sortType = `${sortType === "dsc" ? -1 : 1}`;
+          ^^^^^^^^
+
+SyntaxError: Identifier 'sortType' has already been declared
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:33:30 error: uncaughtException: Identifier 'sortType' has already been declared
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:51
+    const sortType = `${sortType === "dsc" ? -1 : 1}`;
+          ^^^^^^^^
+
+SyntaxError: Identifier 'sortType' has already been declared
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:33:53 error: uncaughtException: Identifier 'sortType' has already been declared
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:51
+    const sortType = `${sortType === "dsc" ? -1 : 1}`;
+          ^^^^^^^^
+
+SyntaxError: Identifier 'sortType' has already been declared
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:34:00 error: uncaughtException: Identifier 'sortType' has already been declared
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:51
+    const sortType = `${sortType === "dsc" ? -1 : 1}`;
+          ^^^^^^^^
+
+SyntaxError: Identifier 'sortType' has already been declared
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:34:03 error: uncaughtException: Identifier 'sortType' has already been declared
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:51
+    const sortType = `${sortType === "dsc" ? -1 : 1}`;
+          ^^^^^^^^
+
+SyntaxError: Identifier 'sortType' has already been declared
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:34:05 error: uncaughtException: Identifier 'sortType' has already been declared
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:51
+    const sortType = `${sortType === "dsc" ? -1 : 1}`;
+          ^^^^^^^^
+
+SyntaxError: Identifier 'sortType' has already been declared
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:34:08 error: uncaughtException: Identifier 'sortType' has already been declared
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:51
+    const sortType = `${sortType === "dsc" ? -1 : 1}`;
+          ^^^^^^^^
+
+SyntaxError: Identifier 'sortType' has already been declared
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:34:25 error: uncaughtException: Identifier 'sortType' has already been declared
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:51
+    const sortType = `${sortType === "dsc" ? -1 : 1}`;
+          ^^^^^^^^
+
+SyntaxError: Identifier 'sortType' has already been declared
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:34:49 error: uncaughtException: Identifier 'sortType' has already been declared
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:51
+    const sortType = `${sortType === "dsc" ? -1 : 1}`;
+          ^^^^^^^^
+
+SyntaxError: Identifier 'sortType' has already been declared
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:36:22 error: uncaughtException: Identifier 'sortType' has already been declared
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:51
+    const sortType = `${sortType === "dsc" ? -1 : 1}`;
+          ^^^^^^^^
+
+SyntaxError: Identifier 'sortType' has already been declared
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:36:28 error: uncaughtException: Identifier 'sortType' has already been declared
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:51
+    const sortType = `${sortType === "dsc" ? -1 : 1}`;
+          ^^^^^^^^
+
+SyntaxError: Identifier 'sortType' has already been declared
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:37:44 error: TypeError: Cannot read properties of undefined (reading 'sortType'),    at ArticleRepository.findAll (G:\Programming\projects\FullStack\MERN Blog\server\src\repository\articleRepository.js:69:39),    at ArticleService.getAll (G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:52:44),    at G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:31:37,    at G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\catchAsyncErrors.js:7:19,    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at Route.dispatch (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:114:3),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\index.js:284:15,    at Function.process_params (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\index.js:346:12)
+2024-03-07 09:38:04 error: MongoServerError: Illegal key in $sort specification: updateAt: "-1",    at Connection.onMessage (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\connection.js:231:30),    at MessageStream.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\connection.js:61:60),    at MessageStream.emit (node:events:513:28),    at processIncomingData (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\message_stream.js:125:16),    at MessageStream._write (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\message_stream.js:33:9),    at writeOrBuffer (node:internal/streams/writable:391:12),    at _write (node:internal/streams/writable:332:10),    at MessageStream.Writable.write (node:internal/streams/writable:336:10),    at TLSSocket.ondata (node:internal/streams/readable:754:22),    at TLSSocket.emit (node:events:513:28)
+2024-03-07 09:38:57 error: MongoServerError: Illegal key in $sort specification: updatedAt: "-1",    at Connection.onMessage (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\connection.js:231:30),    at MessageStream.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\connection.js:61:60),    at MessageStream.emit (node:events:513:28),    at processIncomingData (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\message_stream.js:125:16),    at MessageStream._write (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongodb\lib\cmap\message_stream.js:33:9),    at writeOrBuffer (node:internal/streams/writable:391:12),    at _write (node:internal/streams/writable:332:10),    at MessageStream.Writable.write (node:internal/streams/writable:336:10),    at TLSSocket.ondata (node:internal/streams/readable:754:22),    at TLSSocket.emit (node:events:513:28)
+2024-03-07 09:41:41 error: uncaughtException: Unexpected token '('
+G:\Programming\projects\FullStack\MERN Blog\server\src\repository\articleRepository.js:102
+    (create = (data) => {
+    ^
+
+SyntaxError: Unexpected token '('
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:6:27)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:41:55 error: uncaughtException: Unexpected token '('
+G:\Programming\projects\FullStack\MERN Blog\server\src\repository\articleRepository.js:101
+    (create = (data) => {
+    ^
+
+SyntaxError: Unexpected token '('
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:6:27)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:42:00 error: uncaughtException: Unexpected token '('
+G:\Programming\projects\FullStack\MERN Blog\server\src\repository\articleRepository.js:101
+    (create = (data) => {
+    ^
+
+SyntaxError: Unexpected token '('
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:6:27)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:42:08 error: uncaughtException: Unexpected token '('
+G:\Programming\projects\FullStack\MERN Blog\server\src\repository\articleRepository.js:101
+    (create = (data) => {
+    ^
+
+SyntaxError: Unexpected token '('
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:6:27)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:43:34 error: uncaughtException: Unexpected token '}'
+G:\Programming\projects\FullStack\MERN Blog\server\src\repository\articleRepository.js:97
+      }
+      ^
+
+SyntaxError: Unexpected token '}'
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:6:27)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:50:21 error: uncaughtException: Unexpected token '['
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:64
+      count[0],
+           ^
+
+SyntaxError: Unexpected token '['
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1126:15)
+    at Module._compile (node:internal/modules/cjs/loader:1162:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+2024-03-07 09:52:36 error: ReferenceError: getPagination is not defined,    at ArticleService.getAll (G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:60:22),    at processTicksAndRejections (node:internal/process/task_queues:96:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:31:16

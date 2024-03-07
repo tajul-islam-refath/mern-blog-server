@@ -49,3 +49,7 @@
 2024-03-02 23:00:07 info: {"method":"GET","url":"/api/v1/users/sadi","status":404,"content_length":"59","response_time":208.422}
 2024-03-02 23:00:17 info: {"method":"GET","url":"/api/v1/users/refath","status":304,"response_time":189.483}
 2024-03-02 23:00:50 info: 🚀 App listening on the port 5000
+2024-03-02 23:01:10 info: 🚀 App listening on the port 5000
+2024-03-02 23:01:26 info: {"method":"GET","url":"/api/v1/users/refath","status":200,"content_length":"957","response_time":226.762}
+2024-03-02 23:17:20 info: 🚀 App listening on the port 5000
+2024-03-02 23:18:41 info: 🚀 App listening on the port 5000

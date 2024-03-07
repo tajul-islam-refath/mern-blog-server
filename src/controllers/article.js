@@ -27,12 +27,13 @@ exports.createArticle = catchAsyncErrorHandle(async (req, res, next) => {
 });
 
 exports.getArticles = catchAsyncErrorHandle(async (req, res, next) => {
-  let articles = await ArticleService.getAll(ArticleRepository);
+  let query = req.query;
+  let result = await ArticleService.getAll(ArticleRepository, query);
   res.status(200).json({
     success: true,
     message: "All Articles 🎉",
     data: {
-      articles,
+      ...result,
     },
   });
 });

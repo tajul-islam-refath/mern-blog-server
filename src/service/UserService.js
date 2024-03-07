@@ -13,11 +13,7 @@ class UserService {
   };
 
   findByUsername = async (UserRepository, username) => {
-    let profile = await UserRepository.findByUsernameWithArticles(username, {
-      username: 1,
-      email: 1,
-      profileImage: 1,
-    });
+    let profile = await UserRepository.findByUsernameWithArticles(username);
     if (profile.length == 0) {
       throw notFound();
     }

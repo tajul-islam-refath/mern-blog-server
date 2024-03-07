@@ -49,6 +49,16 @@
             "date": 1709391629582,
             "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\error\\2024-03-02.log",
             "hash": "21319b551a44b461efef9fdcfed2fb8204eeb89772e88233d96ea5ded0e850a3"
+        },
+        {
+            "date": 1709655701478,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\error\\2024-03-05.log",
+            "hash": "312073ab28407454f8d437d143240b6645abe4331af9312aa9549e5a35ca9094"
+        },
+        {
+            "date": 1709776950440,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\error\\2024-03-07.log",
+            "hash": "36de4b140f43f60fbe6c2bdcfc3977c360ae3524825136b79d5ec405635176ca"
         }
     ],
     "hashType": "sha256"

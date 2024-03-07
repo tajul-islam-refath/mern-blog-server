@@ -175,9 +175,10 @@ paths:
       tags: [Article]
       description: "Retrive all published articles"
       parameters:
+        - $ref: "#/components/parameters/search"
         - $ref: "#/components/parameters/pageNumber"
         - $ref: "#/components/parameters/pageLimit"
-        - $ref: "#/components/parameters/sortType"
+
       responses:
         "200":
           description: "Return a list of articles"
@@ -440,7 +441,6 @@ components:
       description: "Return maximum articles"
       schema:
         type: integer
-        example: 10
     sortType:
       in: query
       name: sort_type
@@ -448,7 +448,12 @@ components:
       schema:
         type: string
         enum: [asc, dsc]
-        example: dsc
+    search:
+      in: query
+      name: search
+      description: Search text
+      schema:
+        type: string
     idPathParam:
       in: path
       name: id

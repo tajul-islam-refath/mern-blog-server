@@ -20,7 +20,7 @@ class UserRepository {
   findByUsername = (username, select = {}) => {
     return UserModel.findOne({ username: username }, select);
   };
-  findByUsernameWithArticles = (username, select = {}) => {
+  findByUsernameWithArticles = (username) => {
     return UserModel.aggregate([
       {
         $match: { username: username },
