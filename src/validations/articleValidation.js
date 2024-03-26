@@ -14,6 +14,7 @@ const articleValidation = [
     .withMessage("Body cannot be empty")
     .isLength({ max: 5000 })
     .withMessage("Body length can not be greater than 5000"),
+  body("tags").optional(),
 ];
 
 module.exports = {

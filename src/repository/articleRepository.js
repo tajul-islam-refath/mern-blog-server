@@ -11,11 +11,44 @@ class ArticleRepository {
   };
   /**
    * Find By Author
-   * @param {_id} _id - Author _id
+   * @param {authorId} authorId - Author id
    * @returns {array} Author all articles
    */
-  findByAuthor = (_id, select = {}) => {
-    return ArticleModel.find({ author: _id }, select);
+  findByAuthor = (authorId, query) => {
+    return ArticleModel.aggregate([
+      // search stage
+      {
+        $match: {
+          author: authorId,
+          $or: [
+            { title: { $regex: query.search, $options: "i" } },
+            { tags: { $in: [query.search] } },
+          ],
+        },
+      },
+      // slip items
+      { $skip: query.page * query.limit - query.limit },
+      // limit stage
+      {
+        $limit: query.limit,
+      },
+      // sort stage
+      {
+        $sort: { updatedAt: -1 },
+      },
+
+      // project stage -> format each document
+      {
+        $project: {
+          _id: 1,
+          title: 1,
+          tags: 1,
+          createdAt: 1,
+          readTime: 1,
+          cover: 1,
+        },
+      },
+    ]);
   };
   /**
    * Find One
@@ -40,7 +73,7 @@ class ArticleRepository {
           ],
         },
       },
-      // populate author
+      // join with author
       {
         $lookup: {
           from: "users",
@@ -57,9 +90,12 @@ class ArticleRepository {
           ],
         },
       },
+      // remove field
       {
         $unwind: "$author",
       },
+      // slip items
+      { $skip: query.page * query.limit - query.limit },
       // limit stage
       {
         $limit: query.limit,
@@ -68,7 +104,7 @@ class ArticleRepository {
       {
         $sort: { updatedAt: -1 },
       },
-      // project stage format each document
+      // project stage -> format each document
       {
         $project: {
           _id: 1,
@@ -76,16 +112,47 @@ class ArticleRepository {
           tags: 1,
           createdAt: 1,
           readTime: 1,
+          cover: 1,
           author: 1,
         },
       },
     ]);
   };
+
+  /**
+   * Total articles
+   * @param {*} search
+   * @returns
+   */
   count = (search) => {
     return ArticleModel.aggregate([
       // search stage
       {
         $match: {
+          $or: [
+            { title: { $regex: search, $options: "i" } },
+            { tags: { $in: [search] } },
+          ],
+        },
+      },
+      {
+        $count: "total",
+      },
+    ]);
+  };
+
+  /**
+   * Total articles by author
+   * @param {*} search
+   * @param {*} authorId
+   * @returns
+   */
+  countByAuthor = (search, authorId) => {
+    return ArticleModel.aggregate([
+      // search stage
+      {
+        $match: {
+          author: authorId,
           $or: [
             { title: { $regex: search, $options: "i" } },
             { tags: { $in: [search] } },

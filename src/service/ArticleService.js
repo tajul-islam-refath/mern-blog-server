@@ -8,13 +8,6 @@ class ArticleService {
   create = async (ArticleRepository, article, author) => {
     let uploadResponse = await this.uploadCover(article.cover.path);
     let readTime = redingTime(article.body).text;
-    let tags = [];
-    if (article.tags) {
-      tags =
-        typeof article.tags == "string"
-          ? article.tags.split(",")
-          : article.tags;
-    }
 
     let newArticle = await ArticleRepository.create({
       title: article.title,
@@ -25,7 +18,7 @@ class ArticleService {
         url: uploadResponse.url,
       },
       readTime,
-      tags: tags,
+      tags: article.tags,
     });
 
     return newArticle;
@@ -39,6 +32,12 @@ class ArticleService {
     return article;
   };
 
+  /**
+   * Get articles
+   * @param {*} ArticleRepository
+   * @param {*} param1
+   * @returns
+   */
   getAll = async (
     ArticleRepository,
     {
@@ -57,10 +56,10 @@ class ArticleService {
       sortType: newSortType,
       search,
     });
-    let count = await ArticleRepository.count(search);
 
+    let count = await ArticleRepository.count(search);
     let pagination = getPagination({
-      totalItems: count[0].total,
+      totalItems: count[0]?.total || 0,
       page,
       limit,
     });
@@ -71,17 +70,43 @@ class ArticleService {
     };
   };
 
-  getByAuthor = async (ArticleRepository, author) => {
-    let articles = await ArticleRepository.findByAuthor(author._id, {
-      title: 1,
-      tags: 1,
-      readTime: 1,
-      createdAt: 1,
-    });
-    if (!articles) {
-      throw notFound(`Resource not found`);
+  /**
+   * Get article by author
+   * @param {*} ArticleRepository
+   * @param {*} author
+   * @param {*} param2
+   * @returns
+   */
+  getByAuthor = async (
+    ArticleRepository,
+    author,
+    {
+      page = defaults.page,
+      limit = defaults.limit,
+      sortType = defaults.sortType,
+      sortBy = defaults.sortBy,
+      search = defaults.search,
     }
-    return articles;
+  ) => {
+    let articles = await ArticleRepository.findByAuthor(author._id, {
+      page: parseInt(page),
+      limit: parseInt(limit),
+      sortBy,
+      sortType,
+      search,
+    });
+
+    let count = await ArticleRepository.countByAuthor(search, author._id);
+    let pagination = getPagination({
+      totalItems: count[0]?.total || 0,
+      page,
+      limit,
+    });
+
+    return {
+      articles,
+      pagination,
+    };
   };
 
   deleteById = async (ArticleRepository, _id, user) => {

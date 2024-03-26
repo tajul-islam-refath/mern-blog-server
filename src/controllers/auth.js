@@ -1,14 +1,10 @@
 const { matchedData } = require("express-validator");
-
 const AuthService = require("../service/AuthService");
-const EmailService = require("../service/EmailService");
-const UserRepository = require("../repository/userRepository");
-
 const { catchAsyncErrorHandle } = require("../middlewarers/catchAsyncErrors");
 
 const sendOTP = catchAsyncErrorHandle(async (req, res, next) => {
   const data = matchedData(req);
-  let response = await AuthService.sendOTPByEmail(EmailService, data?.email);
+  let response = await AuthService.sendOTPByEmail(data?.email);
 
   res.status(200).json({
     success: true,
@@ -21,7 +17,7 @@ const signup = catchAsyncErrorHandle(async (req, res, next) => {
   const data = matchedData(req);
   data.image = req.file;
 
-  let token = await AuthService.signup(UserRepository, data);
+  let token = await AuthService.signup(data);
 
   res.status(200).json({
     success: true,
@@ -34,7 +30,7 @@ const signup = catchAsyncErrorHandle(async (req, res, next) => {
 
 const login = catchAsyncErrorHandle(async (req, res, next) => {
   const data = matchedData(req);
-  let token = await AuthService.login(UserRepository, data);
+  let token = await AuthService.login(data);
 
   res.status(200).json({
     success: false,
@@ -47,7 +43,7 @@ const login = catchAsyncErrorHandle(async (req, res, next) => {
 
 const forgotPassword = catchAsyncErrorHandle(async (req, res, next) => {
   const data = matchedData(req);
-  await AuthService.forgotPassword(UserRepository, data);
+  await AuthService.forgotPassword(data);
   res.status(200).json({
     success: true,
     message: "Password changed successfully",

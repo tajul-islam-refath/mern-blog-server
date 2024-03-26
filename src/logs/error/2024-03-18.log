@@ -1,0 +1,12 @@
+2024-03-18 22:17:01 error: uncaughtException: jwt expired
+TokenExpiredError: jwt expired
+    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\jsonwebtoken\verify.js:190:21
+    at getSecret (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\jsonwebtoken\verify.js:97:14)
+    at Object.module.exports [as verify] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\jsonwebtoken\verify.js:101:10)
+    at verifyToken (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\token.js:21:14)
+    at G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\authMiddleware.js:10:21
+    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\index.js:328:13)
+    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\index.js:346:12)
+    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\index.js:280:10)

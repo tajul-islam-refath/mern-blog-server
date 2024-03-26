@@ -39,6 +39,12 @@ class UserRepository {
           username: 1,
           email: 1,
           profileImage: 1,
+          name: 1,
+          location: 1,
+          bio: 1,
+          website: 1,
+          github: 1,
+          linkedin: 1,
           articles: 1,
         },
       },
@@ -73,13 +79,17 @@ class UserRepository {
    * @param {object} updatedData
    * @returns {object} updated user object
    */
-  findByEmailAndUpdate = (email, updatedData) => {
+  findByIdAndUpdate = (id, updatedData) => {
     return UserModel.findOneAndUpdate(
-      { email: email },
+      { _id: id },
       {
         $set: updatedData,
       },
-      { new: true }
+      {
+        new: true,
+        select:
+          "username name email bio location website github linkedin profileImage",
+      }
     );
   };
   deleteById = (_id) => {

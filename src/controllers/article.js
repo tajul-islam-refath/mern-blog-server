@@ -2,12 +2,14 @@ const { matchedData } = require("express-validator");
 
 const Post = require("../models/Article");
 const Profile = require("../models/Profile");
+
 const ArticleService = require("../service/ArticleService");
 const ArticleRepository = require("../repository/articleRepository");
 const { catchAsyncErrorHandle } = require("../middlewarers/catchAsyncErrors");
 
 exports.createArticle = catchAsyncErrorHandle(async (req, res, next) => {
   const article = matchedData(req);
+  console.log(article);
   article.cover = req.file;
   const user = req.user;
 
@@ -53,13 +55,14 @@ exports.getArticle = catchAsyncErrorHandle(async (req, res, next) => {
 
 exports.getArticlesByAuthor = catchAsyncErrorHandle(async (req, res, next) => {
   let user = req.user;
+  let query = req.query;
 
-  let articles = await ArticleService.getByAuthor(ArticleRepository, user);
+  let result = await ArticleService.getByAuthor(ArticleRepository, user, query);
   res.status(200).json({
     success: true,
     message: "List of articles 🎉",
     data: {
-      articles,
+      ...result,
     },
   });
 });

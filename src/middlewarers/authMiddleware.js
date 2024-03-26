@@ -6,14 +6,18 @@ const { verifyToken } = require("../utils/token");
 exports.bindUserWithReq = () => async (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];
 
-  if (token) {
-    const decoded = verifyToken(token, process.env.JWT_SECRET);
-    req.user = await UserRepository.findByID(
-      { _id: decoded._id },
-      { username: 1, email: 1 }
-    );
+  try {
+    if (token) {
+      const decoded = verifyToken(token, process.env.JWT_SECRET);
+      req.user = await UserRepository.findByID(
+        { _id: decoded._id },
+        { username: 1, email: 1 }
+      );
+    }
+    next();
+  } catch (err) {
+    next();
   }
-  next();
 };
 
 exports.isAuthenticated = async (req, res, next) => {

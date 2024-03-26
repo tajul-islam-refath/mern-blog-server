@@ -1,0 +1,79 @@
+2024-03-15 00:11:59 info: 🚀 App listening on the port 5000
+2024-03-15 00:15:06 info: {"method":"OPTIONS","url":"/api/v1/auth/signin","status":204,"content_length":"0","response_time":5.055}
+2024-03-15 00:15:07 info: {"method":"POST","url":"/api/v1/auth/signin","status":200,"content_length":"528","response_time":1088.88}
+2024-03-15 00:23:44 info: {"method":"OPTIONS","url":"/api/v1/auth/signin","status":204,"content_length":"0","response_time":6.459}
+2024-03-15 00:23:45 info: {"method":"POST","url":"/api/v1/auth/signin","status":200,"content_length":"528","response_time":664.256}
+2024-03-15 00:24:51 info: {"method":"OPTIONS","url":"/api/v1/auth/signin","status":204,"content_length":"0","response_time":0.208}
+2024-03-15 00:24:52 info: {"method":"POST","url":"/api/v1/auth/signin","status":200,"content_length":"528","response_time":853.926}
+2024-03-15 01:09:01 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":20.983}
+2024-03-15 01:09:02 info: {"method":"GET","url":"/api/v1/articles/author/self","status":200,"content_length":"364","response_time":796.854}
+2024-03-15 01:09:22 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.422}
+2024-03-15 01:09:23 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.852}
+2024-03-15 01:09:23 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":450.131}
+2024-03-15 01:09:23 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":308.618}
+2024-03-15 01:09:59 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.865}
+2024-03-15 01:09:59 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":351.187}
+2024-03-15 01:10:04 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":467.288}
+2024-03-15 01:10:04 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":302.797}
+2024-03-15 01:10:53 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.4}
+2024-03-15 01:10:53 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":610.843}
+2024-03-15 01:11:58 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":1.026}
+2024-03-15 01:11:58 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.479}
+2024-03-15 01:11:58 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":334.922}
+2024-03-15 01:11:58 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":297.877}
+2024-03-15 01:14:25 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":1.602}
+2024-03-15 01:14:25 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":302.826}
+2024-03-15 01:14:51 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.602}
+2024-03-15 01:14:51 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":301.393}
+2024-03-15 01:15:03 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.239}
+2024-03-15 01:15:04 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":1337.128}
+2024-03-15 01:15:08 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.533}
+2024-03-15 01:15:09 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":288.462}
+2024-03-15 01:15:55 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.251}
+2024-03-15 01:15:55 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":297.295}
+2024-03-15 01:15:57 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":304.406}
+2024-03-15 01:16:03 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.231}
+2024-03-15 01:16:03 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":290.522}
+2024-03-15 01:16:49 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.288}
+2024-03-15 01:16:49 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.29}
+2024-03-15 01:16:50 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":303.875}
+2024-03-15 01:16:50 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":292.009}
+2024-03-15 01:17:11 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.297}
+2024-03-15 01:17:11 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":295.504}
+2024-03-15 01:19:23 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":6.628}
+2024-03-15 01:19:23 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.42}
+2024-03-15 01:19:23 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":427.276}
+2024-03-15 01:19:24 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":304.875}
+2024-03-15 01:20:11 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.299}
+2024-03-15 01:20:11 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.245}
+2024-03-15 01:20:11 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":293.906}
+2024-03-15 01:20:12 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":314.833}
+2024-03-15 01:20:18 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.294}
+2024-03-15 01:20:18 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.215}
+2024-03-15 01:20:18 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":285.997}
+2024-03-15 01:20:19 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":302.208}
+2024-03-15 01:28:37 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":14.8}
+2024-03-15 01:28:38 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.14}
+2024-03-15 01:29:54 info: 🚀 App listening on the port 5000
+2024-03-15 01:30:04 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":3.413}
+2024-03-15 01:30:04 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.432}
+2024-03-15 01:31:43 info: 🚀 App listening on the port 5000
+2024-03-15 01:31:55 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":2.593}
+2024-03-15 01:31:55 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.438}
+2024-03-15 15:08:52 info: 🚀 App listening on the port 5000
+2024-03-15 15:16:59 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":8.039}
+2024-03-15 15:16:59 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":1.048}
+2024-03-15 15:19:37 info: 🚀 App listening on the port 5000
+2024-03-15 15:19:57 info: 🚀 App listening on the port 5000
+2024-03-15 15:20:04 info: {"method":"OPTIONS","url":"/api/v1/auth/signin","status":204,"content_length":"0","response_time":1.847}
+2024-03-15 15:20:06 info: {"method":"POST","url":"/api/v1/auth/signin","status":200,"content_length":"528","response_time":1712.074}
+2024-03-15 15:20:11 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.461}
+2024-03-15 15:20:11 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self","status":204,"content_length":"0","response_time":0.31}
+2024-03-15 15:20:11 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":262.413}
+2024-03-15 15:20:12 info: {"method":"GET","url":"/api/v1/articles/author/self","status":304,"response_time":535.168}
+2024-03-15 16:40:02 info: {"method":"OPTIONS","url":"/api/v1/articles","status":204,"content_length":"0","response_time":15.721}
+2024-03-15 16:40:02 error: TypeError: Cannot read properties of undefined (reading 'path'),    at ArticleService.create (G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:9:63),    at G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:14:41,    at G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\catchAsyncErrors.js:7:19,    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:13:3),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at runMicrotasks (<anonymous>)
+2024-03-15 16:40:02 info: {"method":"POST","url":"/api/v1/articles","status":500,"content_length":"62","response_time":424.715}
+2024-03-15 16:47:49 info: {"method":"OPTIONS","url":"/api/v1/articles","status":204,"content_length":"0","response_time":5.721}
+2024-03-15 16:47:49 error: TypeError: Cannot read properties of undefined (reading 'path'),    at ArticleService.create (G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:9:63),    at G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:14:41,    at G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\catchAsyncErrors.js:7:19,    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:13:3),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at runMicrotasks (<anonymous>)
+2024-03-15 16:47:49 info: {"method":"POST","url":"/api/v1/articles","status":500,"content_length":"62","response_time":258.133}

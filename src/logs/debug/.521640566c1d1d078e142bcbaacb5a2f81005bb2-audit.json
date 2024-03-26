@@ -64,6 +64,66 @@
             "date": 1709776950406,
             "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-03-07.log",
             "hash": "7b0de1454b3b46816a2543739252beb4164db07038d566ec4fad70cedd3e2873"
+        },
+        {
+            "date": 1709869484757,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-03-08.log",
+            "hash": "471b2b11faa92a2d212be51e0daca44ccc961384b56c49226b0c92567506fbb4"
+        },
+        {
+            "date": 1710121718176,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-03-11.log",
+            "hash": "95c5b2518df508c4ae4828a020c3168d9254e66ca3758d460c2aac7234c1d0e9"
+        },
+        {
+            "date": 1710348238305,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-03-13.log",
+            "hash": "bb1ceb570520feeca86b8a75dbe5deeccc94026bf7143066cea3185195d1939f"
+        },
+        {
+            "date": 1710354044562,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-03-14.log",
+            "hash": "813a45085d992a48516822b83662444568b70ec5090e6c96576def4a2905640a"
+        },
+        {
+            "date": 1710439893702,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-03-15.log",
+            "hash": "00a0702f1a24df4a03cf1cbe73f15b47017e4a66947cfde0a8b0f34b9017c1fc"
+        },
+        {
+            "date": 1710612478943,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-03-17.log",
+            "hash": "702a859ce06ad08cf8efb5fd6ea1a5c528933e180fae0ac3a1e04d1d72e2b924"
+        },
+        {
+            "date": 1710701954558,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-03-18.log",
+            "hash": "3c94a74c51d83dbfd09ba3166ca255ed4c8a2ea7bc407cba3b7ac7eab5b8313d"
+        },
+        {
+            "date": 1710787513093,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-03-19.log",
+            "hash": "449329f3815a7db321e2662d755e6cfc8b1a4eedf953caacabab24e6aae04e99"
+        },
+        {
+            "date": 1710957115595,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-03-20.log",
+            "hash": "5ea7dd796234745a40a6b2ec8bdac9e76b99858c48dbf514f896a1fd6a7a90f8"
+        },
+        {
+            "date": 1710957620137,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-03-21.log",
+            "hash": "c25acda9852f8cb249afcc78d6d4a5c8967920510cadcb25b1e1d45e2e170b29"
+        },
+        {
+            "date": 1711221334595,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-03-24.log",
+            "hash": "0c0a3f6fe5a251c7ed6db3391d7011a2eec9e5468dd57baaa884701342a796fb"
+        },
+        {
+            "date": 1711430731189,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\debug\\2024-03-26.log",
+            "hash": "5ba3458b6516808f8660a8caed303fd3d13306e8e45f875f5dede635c82914cc"
         }
     ],
     "hashType": "sha256"

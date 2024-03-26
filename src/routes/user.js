@@ -1,11 +1,20 @@
 const router = require("express").Router();
-
-const { getSelfProfile, getByUsername } = require("../controllers/user");
+const upload = require("../config/multer.config");
+const {
+  getSelfProfile,
+  getByUsername,
+  updateUser,
+} = require("../controllers/user");
 const { isAuthenticated } = require("../middlewarers/authMiddleware");
 
-router.get("/self/profile", isAuthenticated, getSelfProfile);
+router.get("/self", isAuthenticated, getSelfProfile);
 router.get("/:username", getByUsername);
 
-// router.put("/update/profile, isAuthenticated, updateUserProfile);
+router.put(
+  "/profile",
+  isAuthenticated,
+  upload.single("profileImage"),
+  updateUser
+);
 
 module.exports = router;

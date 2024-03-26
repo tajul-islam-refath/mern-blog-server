@@ -1,3 +1,6 @@
+const UserRepository = require("../repository/userRepository");
+const EmailService = require("../service/EmailService");
+
 const { serverError, badRequest } = require("../utils/error");
 const { generateOTP, generateOTPHash, verifyOTPHash } = require("../utils/otp");
 const { generateHash } = require("../utils/hashing");
@@ -12,7 +15,7 @@ class AuthService {
    * @param {string} email
    * @returns {object}
    */
-  sendOTPByEmail = async (EmailService, email) => {
+  sendOTPByEmail = async (email) => {
     let otp = generateOTP();
     await EmailService.sendOTPEmail(email);
     let hash = generateOTPHash(email, otp);
@@ -24,11 +27,10 @@ class AuthService {
 
   /**
    * Signup method
-   * @param {UserRepository} UserRepository
    * @param {object} data - Contain { username, email, otp, hash, password }
    * @returns {string} token
    */
-  signup = async (UserRepository, data) => {
+  signup = async (data) => {
     let { username, email, password, image } = data;
     let imageResponse = null;
 
@@ -56,7 +58,8 @@ class AuthService {
         email: user.email,
         profileImage: user.profileImage,
       },
-      process.env.JWT_SECRET
+      process.env.JWT_SECRET,
+      "24h"
     );
 
     return token;
@@ -67,7 +70,7 @@ class AuthService {
    * @param {object} data - Contain {  email,  password }
    * @returns {string} token
    */
-  login = async (UserRepository, data) => {
+  login = async (data) => {
     let { email, password } = data;
     let existingUser = await UserRepository.findByEmail(email, {
       username: 1,
@@ -82,13 +85,14 @@ class AuthService {
         email: existingUser?.email,
         profileImage: existingUser?.profileImage,
       },
-      process.env.JWT_SECRET
+      process.env.JWT_SECRET,
+      "24h"
     );
 
     return token;
   };
 
-  forgotPassword = async (UserRepository, data) => {
+  forgotPassword = async (data) => {
     let { email, otp, hash, password } = data;
 
     let existingUser = await UserRepository.findByEmail(email);

@@ -1,0 +1,6 @@
+2024-03-19 00:45:12 info: {"method":"OPTIONS","url":"/api/v1/articles?page=2&limit=10&search=","status":204,"content_length":"0","response_time":6.471}
+2024-03-19 00:45:13 info: {"method":"GET","url":"/api/v1/articles?page=2&limit=10&search=","status":200,"response_time":547.619}
+2024-03-19 00:45:14 info: {"method":"GET","url":"/api/v1/articles?page=2&limit=10&search=","status":304,"response_time":387.236}
+2024-03-19 00:45:14 info: {"method":"GET","url":"/api/v1/articles?page=2&limit=10&search=","status":304,"response_time":361.108}
+2024-03-19 00:45:31 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":304,"response_time":235.744}
+2024-03-19 00:46:58 info: {"method":"GET","url":"/api/v1/articles?page=2&limit=10&search=","status":304,"response_time":293.765}

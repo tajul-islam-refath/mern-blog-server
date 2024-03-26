@@ -18,7 +18,7 @@ router.post(
   AuthController.sendOTP
 );
 router.post(
-  "/login",
+  "/signin",
   signinValidation,
   requestValidation,
   AuthController.login

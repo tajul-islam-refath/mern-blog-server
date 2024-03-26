@@ -140,3 +140,6 @@
 2024-03-07 09:57:31 info: 🚀 App listening on the port 5000
 2024-03-07 09:57:39 info: 🚀 App listening on the port 5000
 2024-03-07 09:57:44 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=1","status":200,"content_length":"512","response_time":192.95}
+2024-03-07 09:58:11 info: 🚀 App listening on the port 5000
+2024-03-07 09:58:14 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=1","status":200,"content_length":"511","response_time":185.6}
+2024-03-07 10:01:34 info: 🚀 App listening on the port 5000
