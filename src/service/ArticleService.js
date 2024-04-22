@@ -6,16 +6,19 @@ const defaults = require("../config/queryParam.config");
 
 class ArticleService {
   create = async (ArticleRepository, article, author) => {
-    let uploadResponse = await this.uploadCover(article.cover.path);
-    let readTime = redingTime(article.body).text;
+    let imageResponse = null;
+    if (article.cover) {
+      imageResponse = await this.uploadCover(article.cover.path);
+    }
 
+    let readTime = redingTime(article.body).text;
     let newArticle = await ArticleRepository.create({
       title: article.title,
       body: article.body,
       author: author._id,
       cover: {
-        publicId: uploadResponse.public_id,
-        url: uploadResponse.url,
+        publicId: imageResponse?.public_id || "",
+        url: imageResponse?.url || "",
       },
       readTime,
       tags: article.tags,

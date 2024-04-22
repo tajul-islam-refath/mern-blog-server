@@ -74,7 +74,7 @@ class UserRepository {
     return UserModel.create(data);
   };
   /**
-   * findByEmailAndUpdate
+   * findByIdAndUpdate
    * @param {email} email
    * @param {object} updatedData
    * @returns {object} updated user object

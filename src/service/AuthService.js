@@ -17,7 +17,7 @@ class AuthService {
    */
   sendOTPByEmail = async (email) => {
     let otp = generateOTP();
-    await EmailService.sendOTPEmail(email);
+    await EmailService.sendOTPEmail(email, otp);
     let hash = generateOTPHash(email, otp);
     return {
       hash,
@@ -107,7 +107,7 @@ class AuthService {
 
     let hashPassword = await generateHash(password, 11);
 
-    await this.userDatabase.findByEmailAndUpdate(email, {
+    await UserRepository.findByIdAndUpdate(existingUser._id, {
       password: hashPassword,
     });
   };

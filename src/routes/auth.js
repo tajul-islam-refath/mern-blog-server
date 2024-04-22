@@ -31,7 +31,7 @@ router.post(
   AuthController.signup
 );
 router.post(
-  "/forgotPassword",
+  "/forgot-password",
   forgotPasswordValidation,
   requestValidation,
   AuthController.forgotPassword

@@ -42,11 +42,10 @@ const login = catchAsyncErrorHandle(async (req, res, next) => {
 });
 
 const forgotPassword = catchAsyncErrorHandle(async (req, res, next) => {
-  const data = matchedData(req);
-  await AuthService.forgotPassword(data);
+  await AuthService.forgotPassword(req.body);
   res.status(200).json({
     success: true,
-    message: "Password changed successfully",
+    message: "Password reset successfully 🎉",
   });
 });
 

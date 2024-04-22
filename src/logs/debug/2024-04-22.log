@@ -1,0 +1,105 @@
+2024-04-22 20:34:36 info: 🚀 App listening on the port 5000
+2024-04-22 20:35:28 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":304,"response_time":686.856}
+2024-04-22 20:38:19 info: {"method":"GET","url":"/api/v1/articles?page=2&limit=10&search=","status":304,"response_time":672.087}
+2024-04-22 20:38:19 info: {"method":"GET","url":"/api/v1/articles?page=2&limit=10&search=","status":304,"response_time":504.069}
+2024-04-22 20:38:21 info: {"method":"GET","url":"/api/v1/articles?page=3&limit=10&search=","status":304,"response_time":1859.1}
+2024-04-22 20:38:22 info: {"method":"GET","url":"/api/v1/articles?page=3&limit=10&search=","status":304,"response_time":855.385}
+2024-04-22 20:38:23 info: {"method":"GET","url":"/api/v1/articles?page=4&limit=10&search=","status":304,"response_time":597.414}
+2024-04-22 20:42:06 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":304,"response_time":1404.904}
+2024-04-22 20:42:16 info: {"method":"GET","url":"/api/v1/articles/65f5e808262d138d69abf9cb","status":200,"response_time":942.662}
+2024-04-22 20:45:17 info: {"method":"GET","url":"/api/v1/articles/65f5e808262d138d69abf9cb","status":304,"response_time":489.025}
+2024-04-22 20:45:52 info: {"method":"OPTIONS","url":"/api/v1/auth/signin","status":204,"content_length":"0","response_time":3.819}
+2024-04-22 20:45:56 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:10:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-22 20:45:56 info: {"method":"POST","url":"/api/v1/auth/signin","status":400,"content_length":"152","response_time":3577.361}
+2024-04-22 20:46:00 info: {"method":"OPTIONS","url":"/api/v1/auth/signin","status":204,"content_length":"0","response_time":0.225}
+2024-04-22 20:46:02 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:10:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-22 20:46:02 info: {"method":"POST","url":"/api/v1/auth/signin","status":400,"content_length":"152","response_time":1382.316}
+2024-04-22 20:46:09 info: {"method":"OPTIONS","url":"/api/v1/auth/signin","status":204,"content_length":"0","response_time":0.163}
+2024-04-22 20:46:10 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:10:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13)
+2024-04-22 20:46:10 info: {"method":"POST","url":"/api/v1/auth/signin","status":400,"content_length":"103","response_time":1221.33}
+2024-04-22 20:46:31 info: {"method":"OPTIONS","url":"/api/v1/auth/signin","status":204,"content_length":"0","response_time":0.191}
+2024-04-22 20:46:33 info: {"method":"POST","url":"/api/v1/auth/signin","status":200,"content_length":"528","response_time":2074.188}
+2024-04-22 20:46:33 info: {"method":"OPTIONS","url":"/api/v1/articles?page=1&limit=10&search=","status":204,"content_length":"0","response_time":0.712}
+2024-04-22 20:46:34 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":304,"response_time":799.609}
+2024-04-22 20:46:43 info: {"method":"OPTIONS","url":"/api/v1/users/self","status":204,"content_length":"0","response_time":0.415}
+2024-04-22 20:46:44 info: {"method":"GET","url":"/api/v1/users/self","status":304,"response_time":1052.204}
+2024-04-22 20:47:05 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":204,"content_length":"0","response_time":1.005}
+2024-04-22 20:47:06 info: {"method":"GET","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":304,"response_time":1540.748}
+2024-04-22 20:47:17 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self?page=1&limit=10&search=task","status":204,"content_length":"0","response_time":0.463}
+2024-04-22 20:47:19 info: {"method":"GET","url":"/api/v1/articles/author/self?page=1&limit=10&search=task","status":200,"content_length":"137","response_time":1870.226}
+2024-04-22 20:47:21 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":204,"content_length":"0","response_time":1.183}
+2024-04-22 20:47:24 info: {"method":"GET","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":304,"response_time":2613.023}
+2024-04-22 21:28:44 info: {"method":"OPTIONS","url":"/api/v1/articles","status":204,"content_length":"0","response_time":29.686}
+2024-04-22 21:28:51 info: {"method":"POST","url":"/api/v1/articles","status":201,"content_length":"485","response_time":6711.825}
+2024-04-22 21:28:52 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":204,"content_length":"0","response_time":0.478}
+2024-04-22 21:28:53 info: {"method":"GET","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":200,"response_time":971.61}
+2024-04-22 21:31:01 info: {"method":"OPTIONS","url":"/api/v1/articles","status":204,"content_length":"0","response_time":9.639}
+2024-04-22 21:31:02 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:10:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13)
+2024-04-22 21:31:02 info: {"method":"POST","url":"/api/v1/articles","status":400,"content_length":"119","response_time":374.73}
+2024-04-22 21:33:24 info: 🚀 App listening on the port 5000
+2024-04-22 21:33:30 info: {"method":"OPTIONS","url":"/api/v1/articles","status":204,"content_length":"0","response_time":6.394}
+2024-04-22 21:33:34 info: {"method":"POST","url":"/api/v1/articles","status":201,"response_time":4716.527}
+2024-04-22 21:33:35 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":204,"content_length":"0","response_time":0.423}
+2024-04-22 21:33:36 info: {"method":"GET","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":200,"response_time":941.959}
+2024-04-22 21:34:07 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self?page=4&limit=10&search=","status":204,"content_length":"0","response_time":0.314}
+2024-04-22 21:34:08 info: {"method":"GET","url":"/api/v1/articles/author/self?page=4&limit=10&search=","status":200,"content_length":"808","response_time":454.827}
+2024-04-22 21:35:54 info: 🚀 App listening on the port 5000
+2024-04-22 21:36:03 info: {"method":"OPTIONS","url":"/api/v1/articles/6626834e6d797035a319a17f","status":204,"content_length":"0","response_time":5.256}
+2024-04-22 21:36:04 info: {"method":"GET","url":"/api/v1/articles/6626834e6d797035a319a17f","status":200,"response_time":494.473}
+2024-04-22 21:36:29 info: {"method":"OPTIONS","url":"/api/v1/articles?page=1&limit=10&search=","status":204,"content_length":"0","response_time":0.327}
+2024-04-22 21:36:29 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":200,"response_time":388.401}
+2024-04-22 21:38:04 info: {"method":"OPTIONS","url":"/api/v1/articles/65f5e6625bc16402f19e798c","status":204,"content_length":"0","response_time":2.274}
+2024-04-22 21:38:04 info: {"method":"GET","url":"/api/v1/articles/65f5e6625bc16402f19e798c","status":304,"response_time":464.812}
+2024-04-22 21:38:25 info: {"method":"OPTIONS","url":"/api/v1/articles/65f5e6625bc16402f19e798c","status":204,"content_length":"0","response_time":0.402}
+2024-04-22 21:38:25 info: {"method":"GET","url":"/api/v1/articles/65f5e6625bc16402f19e798c","status":304,"response_time":524.404}
+2024-04-22 21:38:57 info: 🚀 App listening on the port 5000
+2024-04-22 21:40:00 info: 🚀 App listening on the port 5000
+2024-04-22 21:40:20 info: {"method":"OPTIONS","url":"/api/v1/articles?page=1&limit=10&search=","status":204,"content_length":"0","response_time":4.384}
+2024-04-22 21:40:21 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":200,"response_time":509.848}
+2024-04-22 21:41:17 info: 🚀 App listening on the port 5000
+2024-04-22 21:43:00 info: {"method":"OPTIONS","url":"/api/v1/articles?page=1&limit=10&search=","status":204,"content_length":"0","response_time":4.402}
+2024-04-22 21:43:02 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":304,"response_time":1899.368}
+2024-04-22 21:43:55 info: 🚀 App listening on the port 5000
+2024-04-22 21:44:02 info: {"method":"OPTIONS","url":"/api/v1/articles?page=1&limit=10&search=","status":204,"content_length":"0","response_time":3.111}
+2024-04-22 21:44:03 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":200,"response_time":1352.123}
+2024-04-22 21:44:33 info: {"method":"OPTIONS","url":"/api/v1/articles?page=2&limit=10&search=","status":204,"content_length":"0","response_time":0.686}
+2024-04-22 21:44:34 info: {"method":"GET","url":"/api/v1/articles?page=2&limit=10&search=","status":200,"response_time":750.716}
+2024-04-22 21:44:38 info: {"method":"OPTIONS","url":"/api/v1/articles?page=3&limit=10&search=","status":204,"content_length":"0","response_time":0.68}
+2024-04-22 21:44:38 info: {"method":"GET","url":"/api/v1/articles?page=3&limit=10&search=","status":200,"response_time":557.905}
+2024-04-22 21:44:46 info: {"method":"OPTIONS","url":"/api/v1/articles?page=4&limit=10&search=","status":204,"content_length":"0","response_time":0.766}
+2024-04-22 21:44:46 info: {"method":"GET","url":"/api/v1/articles?page=4&limit=10&search=","status":200,"response_time":437.46}
+2024-04-22 21:46:41 info: 🚀 App listening on the port 5000
+2024-04-22 21:46:56 info: {"method":"OPTIONS","url":"/api/v1/articles?page=1&limit=10&search=","status":204,"content_length":"0","response_time":6.586}
+2024-04-22 21:46:57 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":200,"response_time":496.594}
+2024-04-22 21:47:42 info: 🚀 App listening on the port 5000
+2024-04-22 21:47:52 info: {"method":"OPTIONS","url":"/api/v1/articles?page=1&limit=10&search=","status":204,"content_length":"0","response_time":1.991}
+2024-04-22 21:47:53 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":304,"response_time":701.256}
+2024-04-22 21:48:01 info: {"method":"OPTIONS","url":"/api/v1/articles/6626834e6d797035a319a17f","status":204,"content_length":"0","response_time":0.895}
+2024-04-22 21:48:03 info: {"method":"GET","url":"/api/v1/articles/6626834e6d797035a319a17f","status":304,"response_time":1451.28}
+2024-04-22 21:48:12 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":204,"content_length":"0","response_time":0.333}
+2024-04-22 21:48:13 info: {"method":"GET","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":200,"response_time":579.023}
+2024-04-22 21:57:07 info: {"method":"OPTIONS","url":"/api/v1/articles","status":204,"content_length":"0","response_time":5.35}
+2024-04-22 21:57:07 error: TypeError: Cannot read properties of undefined (reading 'path'),    at ArticleService.create (G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:9:63),    at G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:16:41,    at G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\catchAsyncErrors.js:7:19,    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:13:3),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-22 21:57:07 info: {"method":"POST","url":"/api/v1/articles","status":500,"content_length":"62","response_time":508.804}
+2024-04-22 21:59:22 info: 🚀 App listening on the port 5000
+2024-04-22 21:59:41 info: 🚀 App listening on the port 5000
+2024-04-22 21:59:47 info: {"method":"OPTIONS","url":"/api/v1/articles","status":204,"content_length":"0","response_time":3.102}
+2024-04-22 21:59:49 info: {"method":"POST","url":"/api/v1/articles","status":201,"response_time":1133.879}
+2024-04-22 21:59:49 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":204,"content_length":"0","response_time":0.51}
+2024-04-22 21:59:50 info: {"method":"GET","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":200,"response_time":740.352}
+2024-04-22 22:00:00 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f","status":204,"content_length":"0","response_time":0.706}
+2024-04-22 22:00:01 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f","status":200,"response_time":854.542}
+2024-04-22 22:01:20 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f","status":204,"content_length":"0","response_time":3.452}
+2024-04-22 22:01:21 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f","status":304,"response_time":1383.237}
+2024-04-22 22:01:26 info: {"method":"OPTIONS","url":"/api/v1/articles?page=1&limit=10&search=","status":204,"content_length":"0","response_time":1.725}
+2024-04-22 22:01:26 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":200,"response_time":571.989}
+2024-04-22 22:02:11 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":204,"content_length":"0","response_time":0.575}
+2024-04-22 22:02:12 info: {"method":"GET","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":304,"response_time":344.674}
+2024-04-22 22:03:12 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":204,"content_length":"0","response_time":1.293}
+2024-04-22 22:03:13 info: {"method":"GET","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":304,"response_time":383.107}
+2024-04-22 22:03:58 info: {"method":"OPTIONS","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":204,"content_length":"0","response_time":0.692}
+2024-04-22 22:03:59 info: {"method":"GET","url":"/api/v1/articles/author/self?page=1&limit=10&search=","status":304,"response_time":784.709}
+2024-04-22 22:04:40 info: {"method":"OPTIONS","url":"/api/v1/articles?page=1&limit=10&search=","status":204,"content_length":"0","response_time":0.328}
+2024-04-22 22:04:40 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":304,"response_time":265.768}
+2024-04-22 22:04:47 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f","status":204,"content_length":"0","response_time":0.852}
+2024-04-22 22:04:47 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f","status":304,"response_time":487.517}

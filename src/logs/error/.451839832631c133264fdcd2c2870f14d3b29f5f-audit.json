@@ -114,6 +114,26 @@
             "date": 1711430731277,
             "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\error\\2024-03-26.log",
             "hash": "1e515db15b9868e2cd8e3d5eee55cb25590a077fb877dec56888e67f09d8c289"
+        },
+        {
+            "date": 1711702541550,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\error\\2024-03-29.log",
+            "hash": "af953cdc196adc057ea2d4ae3089a43ed40f50e7a0e6b1bdeca03ed7eeecee6a"
+        },
+        {
+            "date": 1711820915547,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\error\\2024-03-30.log",
+            "hash": "d47f0919921ec3294e7136871c526ab268d0424eeee0982b215100fdf45233c3"
+        },
+        {
+            "date": 1711824495974,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\error\\2024-03-31.log",
+            "hash": "1d58f9cd7cdbe145c1086aeef5858979708bf02625cb6230af8a7087a18ed496"
+        },
+        {
+            "date": 1713796431229,
+            "name": "G:\\Programming\\projects\\FullStack\\MERN Blog\\server\\src\\logs\\error\\2024-04-22.log",
+            "hash": "e623e37a3bb25a154faa24ca276ac367e94cf059b1bdd2db197dd6689b5a693c"
         }
     ],
     "hashType": "sha256"

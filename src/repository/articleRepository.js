@@ -16,6 +16,10 @@ class ArticleRepository {
    */
   findByAuthor = (authorId, query) => {
     return ArticleModel.aggregate([
+      // sort stage
+      {
+        $sort: { updatedAt: -1 },
+      },
       // search stage
       {
         $match: {
@@ -31,10 +35,6 @@ class ArticleRepository {
       // limit stage
       {
         $limit: query.limit,
-      },
-      // sort stage
-      {
-        $sort: { updatedAt: -1 },
       },
 
       // project stage -> format each document
@@ -64,6 +64,10 @@ class ArticleRepository {
    */
   findAll = (query) => {
     return ArticleModel.aggregate([
+      // sort stage
+      {
+        $sort: { updatedAt: -1 },
+      },
       // search stage
       {
         $match: {
@@ -100,10 +104,7 @@ class ArticleRepository {
       {
         $limit: query.limit,
       },
-      // sort stage
-      {
-        $sort: { updatedAt: -1 },
-      },
+
       // project stage -> format each document
       {
         $project: {

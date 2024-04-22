@@ -6,7 +6,7 @@ class EmailService {
     this.mailService = NodeMailerService;
   }
 
-  sendOTPEmail = async (email) => {
+  sendOTPEmail = async (email, otp) => {
     let mailOptions = {
       from: `${process.env.EMAIL}`,
       to: email,
