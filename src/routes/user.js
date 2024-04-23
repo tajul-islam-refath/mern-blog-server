@@ -4,10 +4,13 @@ const {
   getSelfProfile,
   getByUsername,
   updateUser,
+  getBookmarks,
 } = require("../controllers/user");
+
 const { isAuthenticated } = require("../middlewarers/authMiddleware");
 
 router.get("/self", isAuthenticated, getSelfProfile);
+router.get("/me/bookmarks", isAuthenticated, getBookmarks);
 router.get("/:username", getByUsername);
 
 router.put(

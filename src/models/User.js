@@ -48,6 +48,12 @@ const userSchema = new Schema(
       type: String,
       trim: true,
     },
+    bookmarks: [
+      {
+        type: Schema.ObjectId,
+        ref: "Post",
+      },
+    ],
   },
   {
     timestamps: true,

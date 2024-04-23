@@ -1,0 +1,16 @@
+2024-04-23 22:58:31 info: 🚀 App listening on the port 5000
+2024-04-23 22:58:31 info: 🚀 App listening on the port 5000
+2024-04-23 22:58:31 info: 🚀 App listening on the port 5000
+2024-04-23 22:58:31 info: 🚀 App listening on the port 5000
+2024-04-23 22:58:36 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/bookmark/add","status":204,"content_length":"0","response_time":5.015}
+2024-04-23 22:58:37 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/bookmark/add","status":200,"content_length":"82","response_time":490.381}
+2024-04-23 23:00:07 info: {"method":"OPTIONS","url":"/api/v1/articles?page=2&limit=10&search=","status":204,"content_length":"0","response_time":3.581}
+2024-04-23 23:00:09 info: {"method":"GET","url":"/api/v1/articles?page=2&limit=10&search=","status":304,"response_time":1189.999}
+2024-04-23 23:00:09 info: {"method":"OPTIONS","url":"/api/v1/articles?page=3&limit=10&search=","status":204,"content_length":"0","response_time":0.33}
+2024-04-23 23:00:10 info: {"method":"GET","url":"/api/v1/articles?page=3&limit=10&search=","status":304,"response_time":423.199}
+2024-04-23 23:01:07 info: 🚀 App listening on the port 5000
+2024-04-23 23:01:07 info: 🚀 App listening on the port 5000
+2024-04-23 23:01:07 info: 🚀 App listening on the port 5000
+2024-04-23 23:01:07 info: 🚀 App listening on the port 5000
+2024-04-23 23:02:25 info: {"method":"OPTIONS","url":"/api/v1/articles/65f60b12e0d5686814f53d39/bookmark/add","status":204,"content_length":"0","response_time":3.415}
+2024-04-23 23:02:26 info: {"method":"GET","url":"/api/v1/articles/65f60b12e0d5686814f53d39/bookmark/add","status":200,"content_length":"91","response_time":848.631}

@@ -101,6 +101,18 @@ class UserRepository {
   deleteMany = (query) => {
     return UserModel.deleteMany(query);
   };
+  addArticleToBookmark = (userId, articleId) => {
+    return UserModel.findOneAndUpdate(
+      { _id: userId },
+      { $push: { bookmarks: articleId } }
+    );
+  };
+  removeArticleFromBookmark = (userId, articleId) => {
+    return UserModel.findOneAndUpdate(
+      { _id: userId },
+      { $pull: { bookmarks: articleId } }
+    );
+  };
 }
 
 module.exports = new UserRepository();

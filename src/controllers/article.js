@@ -4,7 +4,7 @@ const Post = require("../models/Article");
 const Profile = require("../models/Profile");
 
 const ArticleService = require("../service/ArticleService");
-const ArticleRepository = require("../repository/articleRepository");
+
 const { catchAsyncErrorHandle } = require("../middlewarers/catchAsyncErrors");
 
 exports.createArticle = catchAsyncErrorHandle(async (req, res, next) => {
@@ -13,11 +13,7 @@ exports.createArticle = catchAsyncErrorHandle(async (req, res, next) => {
   article.cover = req.file;
   const user = req.user;
 
-  let newArticle = await ArticleService.create(
-    ArticleRepository,
-    article,
-    user
-  );
+  let newArticle = await ArticleService.create(article, user);
 
   res.status(201).json({
     success: true,
@@ -30,7 +26,7 @@ exports.createArticle = catchAsyncErrorHandle(async (req, res, next) => {
 
 exports.getArticles = catchAsyncErrorHandle(async (req, res, next) => {
   let query = req.query;
-  let result = await ArticleService.getAll(ArticleRepository, query);
+  let result = await ArticleService.getAll(query);
   res.status(200).json({
     success: true,
     message: "All Articles 🎉",
@@ -43,7 +39,7 @@ exports.getArticles = catchAsyncErrorHandle(async (req, res, next) => {
 exports.getArticle = catchAsyncErrorHandle(async (req, res, next) => {
   let _id = req.params.id;
 
-  let article = await ArticleService.getById(ArticleRepository, _id);
+  let article = await ArticleService.getById(_id);
   res.status(200).json({
     success: true,
     message: "Single Article 🎉",
@@ -57,7 +53,7 @@ exports.getArticlesByAuthor = catchAsyncErrorHandle(async (req, res, next) => {
   let user = req.user;
   let query = req.query;
 
-  let result = await ArticleService.getByAuthor(ArticleRepository, user, query);
+  let result = await ArticleService.getByAuthor(user, query);
   res.status(200).json({
     success: true,
     message: "List of articles 🎉",
@@ -70,7 +66,7 @@ exports.getArticlesByAuthor = catchAsyncErrorHandle(async (req, res, next) => {
 exports.deleteArticle = catchAsyncErrorHandle(async (req, res, next) => {
   let _id = req.params.id;
   const user = req.user;
-  let article = await ArticleService.deleteById(ArticleRepository, _id, user);
+  let article = await ArticleService.deleteById(_id, user);
   res.status(200).json({
     success: true,
     message: "Delete Article success 🎉",
@@ -80,53 +76,32 @@ exports.deleteArticle = catchAsyncErrorHandle(async (req, res, next) => {
   });
 });
 
-exports.getMyPostsController = async (req, res, next) => {
-  try {
-    const posts = await Post.find({ author: req.user._id });
+exports.addPostToBookmark = catchAsyncErrorHandle(async (req, res, next) => {
+  let articleId = req.params.id;
+  await ArticleService.addToBookmark(req.user._id, articleId);
 
-    res.status(200).send({
-      success: true,
-      posts,
-    });
-  } catch (error) {
-    next(error);
-  }
-};
+  res.status(200).json({
+    success: true,
+    message: "Add post to bookmarks",
+    data: {
+      id: articleId,
+    },
+  });
+});
 
-exports.bookmarkPostAdd = async (req, res, next) => {
-  try {
-    await Profile.findOneAndUpdate(
-      { user: req.user._id },
-      { $push: { bookmarks: req.body.id } }
-    );
-
-    res.status(200).json({
-      success: true,
-      message: "Post saved as bookmarks",
-      id: req.body.id,
-    });
-  } catch (error) {
-    next(error);
-  }
-};
-
-exports.bookmarkDelete = async (req, res, next) => {
-  console.log(req.body);
-  try {
-    await Profile.findOneAndUpdate(
-      { user: req.user._id },
-      { $pull: { bookmarks: req.body.id } }
-    );
-
+exports.removePostFromBookmark = catchAsyncErrorHandle(
+  async (req, res, next) => {
+    let articleId = req.params.id;
+    await ArticleService.removeFromBookmark(req.user._id, articleId);
     res.status(200).json({
       success: true,
       message: "Remove post from bookmarks",
-      id: req.body.id,
+      data: {
+        id: articleId,
+      },
     });
-  } catch (error) {
-    next(error);
   }
-};
+);
 
 exports.getSearchPosts = async (req, res, next) => {
   let { term } = req.body;

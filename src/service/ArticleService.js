@@ -1,11 +1,14 @@
 const redingTime = require("reading-time");
+const ArticleRepository = require("../repository/articleRepository");
+
 const cloudinary = require("../config/cloudinary.config");
 const { getPagination } = require("../utils/query");
 const { authorizationError, notFound } = require("../utils/error");
 const defaults = require("../config/queryParam.config");
+const userRepository = require("../repository/userRepository");
 
 class ArticleService {
-  create = async (ArticleRepository, article, author) => {
+  create = async (article, author) => {
     let imageResponse = null;
     if (article.cover) {
       imageResponse = await this.uploadCover(article.cover.path);
@@ -26,7 +29,7 @@ class ArticleService {
 
     return newArticle;
   };
-  getById = async (ArticleRepository, _id) => {
+  getById = async (_id) => {
     let populateOptions = [{ path: "author", select: "username profileImage" }];
     let article = await ArticleRepository.findByID(_id, {}, populateOptions);
     if (!article) {
@@ -37,20 +40,16 @@ class ArticleService {
 
   /**
    * Get articles
-   * @param {*} ArticleRepository
    * @param {*} param1
    * @returns
    */
-  getAll = async (
-    ArticleRepository,
-    {
-      page = defaults.page,
-      limit = defaults.limit,
-      sortType = defaults.sortType,
-      sortBy = defaults.sortBy,
-      search = defaults.search,
-    }
-  ) => {
+  getAll = async ({
+    page = defaults.page,
+    limit = defaults.limit,
+    sortType = defaults.sortType,
+    sortBy = defaults.sortBy,
+    search = defaults.search,
+  }) => {
     const newSortType = `${sortType === "dsc" ? -1 : 1}`;
     let articles = await ArticleRepository.findAll({
       page: parseInt(page),
@@ -75,13 +74,12 @@ class ArticleService {
 
   /**
    * Get article by author
-   * @param {*} ArticleRepository
+   
    * @param {*} author
    * @param {*} param2
    * @returns
    */
   getByAuthor = async (
-    ArticleRepository,
     author,
     {
       page = defaults.page,
@@ -112,7 +110,7 @@ class ArticleService {
     };
   };
 
-  deleteById = async (ArticleRepository, _id, user) => {
+  deleteById = async (_id, user) => {
     let article = await ArticleRepository.findByID(_id);
     if (!article) {
       throw notFound(`Resource not found with this ${_id}`);
@@ -129,6 +127,14 @@ class ArticleService {
       _id: deletedArticle._id,
     };
   };
+
+  addToBookmark = async (user, articleId) => {
+    return userRepository.addArticleToBookmark(user._id, articleId);
+  };
+  removeFromBookmark = async (user, articleId) => {
+    return userRepository.removeArticleFromBookmark(user._id, articleId);
+  };
+
   uploadCover = async (coverPath) => {
     return await cloudinary.uploader.upload(coverPath, {
       folder: process.env.CLOUDINARY_Folder,

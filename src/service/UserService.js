@@ -68,6 +68,14 @@ class UserService {
     console.log(updatedUser);
     return updatedUser;
   };
+
+  getBookmarks = async (user) => {
+    let bookmarks = await UserRepository.findByID(user._id, {
+      bookmarks: 1,
+      _id: 0,
+    });
+    return bookmarks;
+  };
 }
 
 module.exports = new UserService();

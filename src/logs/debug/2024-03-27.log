@@ -1,5 +1,0 @@
-2024-03-27 00:34:09 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":304,"response_time":241.048}
-2024-03-27 00:34:18 info: {"method":"OPTIONS","url":"/api/v1/auth/signin","status":204,"content_length":"0","response_time":2.849}
-2024-03-27 00:34:19 info: {"method":"POST","url":"/api/v1/auth/signin","status":200,"content_length":"528","response_time":1170.119}
-2024-03-27 00:34:19 info: {"method":"OPTIONS","url":"/api/v1/articles?page=1&limit=10&search=","status":204,"content_length":"0","response_time":0.318}
-2024-03-27 00:34:19 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":304,"response_time":232.472}

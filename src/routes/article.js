@@ -12,6 +12,8 @@ const {
   getArticle,
   getArticlesByAuthor,
   deleteArticle,
+  addPostToBookmark,
+  removePostFromBookmark,
 } = require("../controllers/article");
 const { paramIdValidation } = require("../validations/paramValidation");
 
@@ -36,8 +38,20 @@ router.delete(
   deleteArticle
 );
 
-// router.post("/:id/bookmark", isAuthenticated, bookmarkPostAdd);
-// router.post("/:id/remove-bookmark", isAuthenticated, bookmarkDelete);
+router.get(
+  "/:id/bookmark/add",
+  isAuthenticated,
+  paramIdValidation,
+  requestValidation,
+  addPostToBookmark
+);
+router.get(
+  "/:id/bookmark/remove",
+  isAuthenticated,
+  paramIdValidation,
+  requestValidation,
+  removePostFromBookmark
+);
 // router.post("/search", getSearchPosts);
 
 module.exports = router;
