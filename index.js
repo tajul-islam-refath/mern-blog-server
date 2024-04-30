@@ -3,7 +3,7 @@ const os = require("os");
 
 const app = require("./src/app");
 const connectDB = require("./src/config/db.config");
-const { logger } = require("./src/utils/logger");
+// const { logger } = require("./src/utils/logger");
 
 if (cluster.isMaster) {
   // Master process
@@ -23,12 +23,13 @@ if (cluster.isMaster) {
     cluster.fork();
   });
 } else {
-  const PORT = process.env.PORT || 5000;
+  const PORT = process.env.PORT || 8080;
   const main = async () => {
     try {
       await connectDB();
       app.listen(PORT, () => {
-        logger.info(`🚀 App listening on the port ${PORT}`);
+        // logger.info(`🚀 App listening on the port ${PORT}`);
+        console.log(`🚀 App listening on the port ${PORT}`);
       });
     } catch (e) {
       console.log("Database connect failed!", e);
