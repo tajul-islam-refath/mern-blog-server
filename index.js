@@ -1,9 +1,9 @@
 const cluster = require("cluster");
 const os = require("os");
 
-const app = require("./app");
-const connectDB = require("./config/db.config");
-const { logger } = require("./utils/logger");
+const app = require("./src/app");
+const connectDB = require("./src/config/db.config");
+const { logger } = require("./src/utils/logger");
 
 if (cluster.isMaster) {
   // Master process
