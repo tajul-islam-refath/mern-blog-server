@@ -70,11 +70,11 @@ class UserService {
   };
 
   getBookmarks = async (user) => {
-    let bookmarks = await UserRepository.findByID(user._id, {
+    let data = await UserRepository.findByID(user._id, {
       bookmarks: 1,
       _id: 0,
     });
-    return bookmarks;
+    return data.bookmarks;
   };
 }
 

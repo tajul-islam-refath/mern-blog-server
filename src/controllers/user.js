@@ -29,7 +29,6 @@ exports.getByUsername = catchAsyncErrorHandle(async (req, res, next) => {
 exports.getBookmarks = catchAsyncErrorHandle(async (req, res, next) => {
   let user = req.user;
   const bookmarks = await UserService.getBookmarks(user);
-  console.log("bookmarks -- ", bookmarks);
   res.status(200).json({
     success: true,
     message: "User Profile With Articles 🎉",
