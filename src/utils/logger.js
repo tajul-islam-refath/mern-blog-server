@@ -4,7 +4,8 @@ const winston = require("winston");
 const winstonDaily = require("winston-daily-rotate-file");
 
 // get log dir
-const logDir = join(__dirname, "../", process.env.LOG_DIR);
+// const logDir = join(__dirname, "../../", process.env.LOG_DIR);
+const logDir = join(__dirname, "../../tmp");
 
 // check if dir exist
 if (!existsSync(logDir)) {
