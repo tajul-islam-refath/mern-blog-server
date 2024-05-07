@@ -1,0 +1,13 @@
+version: "3.6"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./ Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ".:/server"
+      - "/server/node_modules"
+    ports:
+      - 5000:5000
+    command: ["npm", "start"]
