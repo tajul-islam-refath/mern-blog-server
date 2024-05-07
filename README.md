@@ -20,14 +20,14 @@ npm install
 
 ## Features
 
-- 🌟 Trying To Follow "N-Tier" Architecture
+- 🌟 A Good Architecture
 - 🌟 Using Swagger For API Documentation
 - 🌟 Set-up Logging Using "Winston"
 - 🌟 JWT Authentication
 - 🌟 Request Body, Param Validation
 - 🌟 Server side pagination
+- 🌟 Docker
 - 🌟 Testing(comming soon)
-- 🌟 Docker(comming soon)
 - 🌟 Redis(comming soon)
 
 ## Contributing
