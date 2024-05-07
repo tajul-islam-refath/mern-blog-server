@@ -1,10 +1,10 @@
 # Use official node image as base
 FROM node:16-alpine
 
-WORKDIR /app
+WORKDIR /server
 
 # add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
+ENV PATH /server/node_modules/.bin:$PATH
 
 #install app dependencies
 COPY package.json .
