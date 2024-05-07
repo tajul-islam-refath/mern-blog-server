@@ -10,12 +10,40 @@ This is a multi-author blog application built using the MERN stack. Where user c
 
 ## Installation
 
-1. Clone the repository:
+1. **Clone the repository**
 
 ```bash
 git clone <repository-url>
-cd project-name
-npm install
+```
+
+2. **If pulled for the first time or the package.json changed run**
+
+```bash
+docker compose build
+```
+
+3. **Starting the environment in background**
+
+```bash
+docker compose up -d
+```
+
+4. **To see the logs of your app**
+
+```bash
+docker compose logs -f web
+```
+
+5. **If you need to install any npm package.**
+
+```bash
+docker compose exec web npm install <pacakge-name>
+```
+
+6. **Stop the containers.**
+
+```bash
+docker compose down
 ```
 
 ## Features
