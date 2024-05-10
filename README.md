@@ -25,7 +25,7 @@ docker compose build
 3. **Starting the environment in background**
 
 ```bash
-docker compose up -d
+docker compose up
 ```
 
 4. **To see the logs of your app**
