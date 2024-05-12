@@ -1,5 +1,6 @@
 const redingTime = require("reading-time");
 const ArticleRepository = require("../repository/articleRepository");
+const CommentRepository = require("../repository/commentRepository");
 
 const cloudinary = require("../config/cloudinary.config");
 const { getPagination } = require("../utils/query");
@@ -8,6 +9,9 @@ const defaults = require("../config/queryParam.config");
 const userRepository = require("../repository/userRepository");
 
 class ArticleService {
+  constructor() {
+    this.commentRepository = new CommentRepository();
+  }
   create = async (article, author) => {
     let imageResponse = null;
     if (article.cover) {
@@ -131,8 +135,25 @@ class ArticleService {
   addToBookmark = async (user, articleId) => {
     return userRepository.addArticleToBookmark(user._id, articleId);
   };
+
   removeFromBookmark = async (user, articleId) => {
     return userRepository.removeArticleFromBookmark(user._id, articleId);
+  };
+
+  getCommentsByArticle = async (articleId) => {
+    return this.commentRepository.findByArticle(articleId);
+  };
+
+  createComment = async (userId, articleId, commentBody) => {
+    return this.commentRepository.create({
+      user: userId,
+      article: articleId,
+      body: commentBody,
+    });
+  };
+
+  deleteCommentById = async (commentId) => {
+    return this.commentRepository.deleteById(commentId);
   };
 
   uploadCover = async (coverPath) => {

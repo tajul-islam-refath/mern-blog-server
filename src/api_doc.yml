@@ -119,7 +119,7 @@ paths:
                         example: "/auth/signup"
         "400":
           $ref: "#/components/responses/400"
-  "/auth/login":
+  "/auth/signin":
     post:
       description: "Sign in user"
       tags: [Auth]
@@ -367,14 +367,7 @@ paths:
                     type: string
                     example: First comment
                   user:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        example: kjnsdjfnksdnfkajdnsf1515sd
-                      name:
-                        type: string
-                        example: Tajul Islam Refath
+                    $ref: "#/components/schemas/AuthorDTO"
         "400":
           $ref: "#/components/responses/400"
         "500":
@@ -417,15 +410,7 @@ paths:
                               type: string
                               example: First comment
                             user:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  example: kjnsdjfnksdnfkajdnsf1515sd
-                                name:
-                                  type: string
-                                  example: Tajul Islam Refath
-
+                              $ref: "#/components/schemas/AuthorDTO"
         "400":
           $ref: "#/components/responses/400"
         "500":
@@ -501,9 +486,8 @@ components:
       type: object
       properties:
         id:
-          type: integer
-          format: int32
-          example: 1
+          type: string
+          example: oefjawijfiojsdoi165sadndf
         name:
           type: string
           example: "Tajul Islam Refath"

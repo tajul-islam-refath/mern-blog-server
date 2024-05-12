@@ -14,6 +14,7 @@ const {
   deleteArticle,
   addPostToBookmark,
   removePostFromBookmark,
+  createComment,
 } = require("../controllers/article");
 const { paramIdValidation } = require("../validations/paramValidation");
 
@@ -52,6 +53,14 @@ router.get(
   requestValidation,
   removePostFromBookmark
 );
-// router.post("/search", getSearchPosts);
 
+// comments
+router.post(
+  "/:id/comments",
+  isAuthenticated,
+  authorize(["user"]),
+  paramIdValidation,
+  requestValidation,
+  createComment
+);
 module.exports = router;

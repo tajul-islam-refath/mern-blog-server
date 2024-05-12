@@ -1,0 +1,67 @@
+2024-05-12 20:20:09 error: uncaughtException: missing ) after argument list
+G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:110
+  await ArticleService.addToBookmark(req.user._id, articleId, commentBody:body);
+                                                              ^^^^^^^^^^^
+
+SyntaxError: missing ) after argument list
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\article.js:17:5)
+    at Module._compile (node:internal/modules/cjs/loader:1369:14)
+2024-05-12 21:29:47 error: uncaughtException: Unexpected token '.'
+G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:145
+      user._id, articleId
+          ^
+
+SyntaxError: Unexpected token '.'
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:6:24)
+    at Module._compile (node:internal/modules/cjs/loader:1369:14)
+2024-05-12 21:38:39 error: uncaughtException: missing ) after argument list
+G:\Programming\projects\FullStack\MERN Blog\server\src\routes\article.js:62
+  paramIdValidation
+  ^^^^^^^^^^^^^^^^^
+
+SyntaxError: missing ) after argument list
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\index.js:3:23)
+    at Module._compile (node:internal/modules/cjs/loader:1369:14)
+2024-05-12 21:41:19 error: SyntaxError: Bad control character in string literal in JSON at position 37,    at JSON.parse (<anonymous>),    at parse (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\body-parser\lib\types\json.js:89:19),    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\body-parser\lib\read.js:128:18,    at AsyncResource.runInAsyncScope (node:async_hooks:206:9),    at invokeCallback (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\raw-body\index.js:231:16),    at done (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\raw-body\index.js:220:7),    at IncomingMessage.onEnd (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\raw-body\index.js:280:7),    at IncomingMessage.emit (node:events:518:28),    at endReadableNT (node:internal/streams/readable:1696:12),    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+2024-05-12 21:42:49 error: TypeError: Cannot read properties of undefined (reading 'length'),    at readingTime (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\reading-time\lib\reading-time.js:86:40),    at ArticleService.create (G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:21:20),    at G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:16:41,    at G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\catchAsyncErrors.js:7:19,    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:13:3),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13)
+2024-05-12 21:45:06 error: ValidationError: Comment validation failed: article: Path `article` is required.,    at Document.invalidate (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongoose\lib\document.js:3192:32),    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongoose\lib\document.js:2980:17,    at G:\Programming\projects\FullStack\MERN Blog\server\node_modules\mongoose\lib\schematype.js:1350:9,    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-05-12 21:46:48 error: uncaughtException: missing ) after argument list
+G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:112
+    article:articleId,
+    ^^^^^^^
+
+SyntaxError: missing ) after argument list
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (G:\Programming\projects\FullStack\MERN Blog\server\src\routes\article.js:18:5)
+    at Module._compile (node:internal/modules/cjs/loader:1369:14)

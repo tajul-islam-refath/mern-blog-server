@@ -103,22 +103,22 @@ exports.removePostFromBookmark = catchAsyncErrorHandle(
   }
 );
 
-exports.getSearchPosts = async (req, res, next) => {
-  let { term } = req.body;
-  try {
-    let posts = await Post.find({
-      $text: {
-        $search: term,
-      },
-    })
-      .select("title")
-      .populate("author", "userName");
+exports.createComment = catchAsyncErrorHandle(async (req, res, next) => {
+  let articleId = req.params.id;
+  let { body } = req.body;
 
-    res.status(200).json({
-      success: true,
-      searchResults: posts,
-    });
-  } catch (error) {
-    next(error);
-  }
-};
+  let response = await ArticleService.createComment(
+    req.user._id,
+    articleId,
+    body
+  );
+
+  console.log("create comment -- ", response);
+
+  res.status(201).json({
+    success: true,
+    code: 200,
+    message: "New comment created",
+    ...response._doc,
+  });
+});
