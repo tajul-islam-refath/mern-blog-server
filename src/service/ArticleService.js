@@ -152,7 +152,25 @@ class ArticleService {
     });
   };
 
-  deleteCommentById = async (commentId) => {
+  deleteCommentById = async (userId, articleId, commentId) => {
+    let isOwner = await this.commentRepository.findByIdAndUser(
+      commentId,
+      userId
+    );
+    console.log(userId);
+    if (!isOwner.length) {
+      throw authorizationError();
+    }
+
+    let comment = await this.commentRepository.findByIdAndArticle(
+      commentId,
+      articleId
+    );
+
+    if (!comment.length) {
+      throw badRequest();
+    }
+
     return this.commentRepository.deleteById(commentId);
   };
 

@@ -151,3 +151,92 @@
 2024-05-12 22:22:17 info: 🚀 App listening on the port 5000
 2024-05-12 22:22:18 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":1.661}
 2024-05-12 22:22:19 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":304,"response_time":790.345}
+2024-05-12 22:52:07 info: 🚀 App listening on the port 5000
+2024-05-12 22:52:11 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":2.263}
+2024-05-12 22:52:11 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":200,"content_length":"778","response_time":733.168}
+2024-05-12 22:52:24 info: {"method":"OPTIONS","url":"/api/v1/articles/6640e7eb7de40e3c90815342/comments","status":204,"content_length":"0","response_time":0.555}
+2024-05-12 22:52:24 info: {"method":"GET","url":"/api/v1/articles/6640e7eb7de40e3c90815342/comments","status":200,"content_length":"64","response_time":376.373}
+2024-05-12 22:53:54 info: 🚀 App listening on the port 5000
+2024-05-12 22:54:26 info: 🚀 App listening on the port 5000
+2024-05-12 22:54:41 info: 🚀 App listening on the port 5000
+2024-05-12 22:54:56 info: 🚀 App listening on the port 5000
+2024-05-12 22:55:10 info: 🚀 App listening on the port 5000
+2024-05-12 22:55:18 info: 🚀 App listening on the port 5000
+2024-05-12 22:55:23 info: 🚀 App listening on the port 5000
+2024-05-12 22:55:31 info: 🚀 App listening on the port 5000
+2024-05-12 22:55:45 info: 🚀 App listening on the port 5000
+2024-05-12 22:56:06 info: 🚀 App listening on the port 5000
+2024-05-12 22:56:39 info: 🚀 App listening on the port 5000
+2024-05-12 22:57:08 info: 🚀 App listening on the port 5000
+2024-05-12 22:57:13 info: 🚀 App listening on the port 5000
+2024-05-12 22:58:24 info: 🚀 App listening on the port 5000
+2024-05-12 22:58:31 info: 🚀 App listening on the port 5000
+2024-05-12 22:58:41 info: 🚀 App listening on the port 5000
+2024-05-12 22:58:46 info: 🚀 App listening on the port 5000
+2024-05-12 22:58:53 info: 🚀 App listening on the port 5000
+2024-05-12 22:59:06 info: 🚀 App listening on the port 5000
+2024-05-12 22:59:14 info: 🚀 App listening on the port 5000
+2024-05-12 22:59:36 info: 🚀 App listening on the port 5000
+2024-05-12 22:59:46 info: 🚀 App listening on the port 5000
+2024-05-12 23:00:03 info: 🚀 App listening on the port 5000
+2024-05-12 23:00:21 info: 🚀 App listening on the port 5000
+2024-05-12 23:00:56 info: 🚀 App listening on the port 5000
+2024-05-12 23:01:12 info: 🚀 App listening on the port 5000
+2024-05-12 23:01:28 info: 🚀 App listening on the port 5000
+2024-05-12 23:02:52 info: 🚀 App listening on the port 5000
+2024-05-12 23:03:15 info: 🚀 App listening on the port 5000
+2024-05-12 23:04:17 info: 🚀 App listening on the port 5000
+2024-05-12 23:04:25 info: 🚀 App listening on the port 5000
+2024-05-12 23:04:49 info: 🚀 App listening on the port 5000
+2024-05-12 23:05:02 info: 🚀 App listening on the port 5000
+2024-05-12 23:05:39 info: 🚀 App listening on the port 5000
+2024-05-12 23:05:49 info: 🚀 App listening on the port 5000
+2024-05-12 23:06:17 info: 🚀 App listening on the port 5000
+2024-05-12 23:06:37 info: 🚀 App listening on the port 5000
+2024-05-12 23:06:42 info: 🚀 App listening on the port 5000
+2024-05-12 23:07:08 info: 🚀 App listening on the port 5000
+2024-05-12 23:08:50 info: 🚀 App listening on the port 5000
+2024-05-12 23:08:59 info: 🚀 App listening on the port 5000
+2024-05-12 23:09:10 info: 🚀 App listening on the port 5000
+2024-05-12 23:09:24 info: 🚀 App listening on the port 5000
+2024-05-12 23:09:46 info: 🚀 App listening on the port 5000
+2024-05-12 23:09:52 info: 🚀 App listening on the port 5000
+2024-05-12 23:10:10 info: 🚀 App listening on the port 5000
+2024-05-12 23:10:41 info: 🚀 App listening on the port 5000
+2024-05-12 23:10:52 info: 🚀 App listening on the port 5000
+2024-05-12 23:15:29 info: {"method":"OPTIONS","url":"/api/v1/articles/64d268cdeef8c84bb18912db/comments","status":204,"content_length":"0","response_time":1.704}
+2024-05-12 23:15:30 info: {"method":"GET","url":"/api/v1/articles/64d268cdeef8c84bb18912db/comments","status":200,"content_length":"64","response_time":404.757}
+2024-05-12 23:15:45 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":0.572}
+2024-05-12 23:15:46 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":304,"response_time":395.231}
+2024-05-12 23:18:14 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8/comments/662689747f68b50c41300e8","status":204,"content_length":"0","response_time":0.206}
+2024-05-12 23:18:15 error: Error: Bad Request,    at badRequest (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:2:17),    at requestValidation (G:\Programming\projects\FullStack\MERN Blog\server\src\middlewarers\requestValidationMiddleware.js:10:17),    at Layer.handle [as handle_request] (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\layer.js:95:5),    at next (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express\lib\router\route.js:144:13),    at middleware (G:\Programming\projects\FullStack\MERN Blog\server\node_modules\express-validator\src\middlewares\check.js:16:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-05-12 23:18:15 info: {"method":"DELETE","url":"/api/v1/articles/662689747f68b50c41300e8/comments/662689747f68b50c41300e8","status":400,"content_length":"124","response_time":538.644}
+2024-05-12 23:18:27 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":204,"content_length":"0","response_time":0.493}
+2024-05-12 23:18:27 error: TypeError: Cannot read properties of null (reading '_id'),    at G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:147:24,    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-05-12 23:18:27 info: {"method":"DELETE","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":500,"content_length":"62","response_time":597.628}
+2024-05-12 23:19:36 info: 🚀 App listening on the port 5000
+2024-05-12 23:19:39 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":204,"content_length":"0","response_time":3.714}
+2024-05-12 23:19:40 error: TypeError: Cannot read properties of null (reading '_id'),    at G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:148:24,    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-05-12 23:19:40 info: {"method":"DELETE","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":500,"content_length":"62","response_time":941.683}
+2024-05-12 23:20:36 info: 🚀 App listening on the port 5000
+2024-05-12 23:20:40 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":204,"content_length":"0","response_time":3.166}
+2024-05-12 23:20:41 error: TypeError: Cannot read properties of null (reading '_id'),    at G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:148:24,    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-05-12 23:20:41 info: {"method":"DELETE","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":500,"content_length":"62","response_time":1306.985}
+2024-05-12 23:21:07 info: 🚀 App listening on the port 5000
+2024-05-12 23:21:17 info: 🚀 App listening on the port 5000
+2024-05-12 23:21:18 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":204,"content_length":"0","response_time":3.296}
+2024-05-12 23:21:19 error: Error: Permission Denied,    at authorizationError (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:21:17),    at ArticleService.deleteCommentById (G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:162:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:139:17
+2024-05-12 23:21:19 info: {"method":"DELETE","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":403,"content_length":"58","response_time":758.232}
+2024-05-12 23:21:49 info: 🚀 App listening on the port 5000
+2024-05-12 23:22:23 info: 🚀 App listening on the port 5000
+2024-05-12 23:22:25 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":204,"content_length":"0","response_time":2.84}
+2024-05-12 23:22:25 error: Error: Permission Denied,    at authorizationError (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:21:17),    at ArticleService.deleteCommentById (G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:162:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:139:17
+2024-05-12 23:22:25 info: {"method":"DELETE","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":403,"content_length":"58","response_time":395.354}
+2024-05-12 23:22:44 info: 🚀 App listening on the port 5000
+2024-05-12 23:22:46 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":204,"content_length":"0","response_time":1.912}
+2024-05-12 23:22:46 error: Error: Permission Denied,    at authorizationError (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:21:17),    at ArticleService.deleteCommentById (G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:162:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:139:17
+2024-05-12 23:22:46 info: {"method":"DELETE","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":403,"content_length":"58","response_time":453.187}
+2024-05-12 23:23:04 info: 🚀 App listening on the port 5000
+2024-05-12 23:23:06 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":204,"content_length":"0","response_time":2.53}
+2024-05-12 23:23:06 error: Error: Permission Denied,    at authorizationError (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:21:17),    at ArticleService.deleteCommentById (G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:162:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:139:17
+2024-05-12 23:23:06 info: {"method":"DELETE","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":403,"content_length":"58","response_time":492.909}

@@ -16,6 +16,7 @@ const {
   removePostFromBookmark,
   createComment,
   getCommentsByArticle,
+  deleteComment,
 } = require("../controllers/article");
 const { paramIdValidation } = require("../validations/paramValidation");
 
@@ -71,5 +72,13 @@ router.post(
   paramIdValidation,
   requestValidation,
   createComment
+);
+router.delete(
+  "/:id/comments/:id",
+  isAuthenticated,
+  authorize(["user"]),
+  paramIdValidation,
+  requestValidation,
+  deleteComment
 );
 module.exports = router;

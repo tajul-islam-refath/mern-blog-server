@@ -415,6 +415,47 @@ paths:
           $ref: "#/components/responses/400"
         "500":
           $ref: "#/components/responses/500"
+  "/articles/{id}/comments/{id}":
+    delete:
+      tags: [Comment]
+      security:
+        - bearerAuth: []
+      description: Get all comments for a single article
+      parameters:
+        - $ref: "#/components/parameters/idPathParam"
+        - in: path
+          name: commentId
+          description: Comment ID
+          required: true
+          schema:
+            type: string
+            example: "64d268cdeef8c84bb18912db"
+      responses:
+        "200":
+          description: Successfully delete comment
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  code:
+                    type: integer
+                    format: int32
+                    example: 201
+                  message:
+                    type: string
+                    example: Delete comment success
+                  id:
+                    type: string
+                    example: kjnsdjfnksdnfkajdnsf1515sd
+
+        "400":
+          $ref: "#/components/responses/400"
+        "500":
+          $ref: "#/components/responses/500"
 
   # users
   "/users/self/profile":
@@ -563,7 +604,7 @@ components:
     idPathParam:
       in: path
       name: id
-      description: Article id
+      description: id
       required: true
       schema:
         type: string

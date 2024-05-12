@@ -67,6 +67,20 @@ class CommentRepository {
     ]);
   };
 
+  findByIdAndUser = (_id, userId) => {
+    return Model.find({
+      _id,
+      user: userId,
+    });
+  };
+
+  findByIdAndArticle = (_id, articleId) => {
+    return Model.find({
+      _id,
+      article: articleId,
+    });
+  };
+
   create = async (data) => {
     let aerticle = await Model.create(data);
     return aerticle.populate("user", "username profileImage");
