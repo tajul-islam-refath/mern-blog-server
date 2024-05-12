@@ -20,6 +20,7 @@ tags:
     description: "Comment endpoients (Private)"
   - name: User
     description: "User endpoients (Private) + (Public)"
+
 paths:
   # auth
   "/auth/send-otp":
@@ -323,6 +324,113 @@ paths:
                               example: "https://example.com/img/2"
                             author:
                               $ref: "#/components/schemas/AuthorDTO"
+  # comment
+  "/articles/{id}/comments":
+    post:
+      tags: [Comment]
+      security:
+        - bearerAuth: []
+      description: Create a new comment
+      parameters:
+        - $ref: "#/components/parameters/idPathParam"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                body:
+                  type: string
+                  example: First comment
+      responses:
+        "201":
+          description: Successfully create a comment
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  code:
+                    type: integer
+                    format: int32
+                    example: 201
+                  message:
+                    type: string
+                    example: New comment added successfully
+                  id:
+                    type: string
+                    example: kjnsdjfnksdnfkajdnsf1515sd
+                  body:
+                    type: string
+                    example: First comment
+                  user:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: kjnsdjfnksdnfkajdnsf1515sd
+                      name:
+                        type: string
+                        example: Tajul Islam Refath
+        "400":
+          $ref: "#/components/responses/400"
+        "500":
+          $ref: "#/components/responses/500"
+    get:
+      tags: [Comment]
+      security:
+        - bearerAuth: []
+      description: Get all comments for a single article
+      parameters:
+        - $ref: "#/components/parameters/idPathParam"
+      responses:
+        "200":
+          description: Successfully get all comments
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  code:
+                    type: integer
+                    format: int32
+                    example: 201
+                  message:
+                    type: string
+                    example: Get all comments successfully
+                  comments:
+                    type: array
+                    items:
+                      allOf:
+                        - type: object
+                          properties:
+                            id:
+                              type: string
+                              example: kjnsdjfnksdnfkajdnsf1515sd
+                            body:
+                              type: string
+                              example: First comment
+                            user:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                  example: kjnsdjfnksdnfkajdnsf1515sd
+                                name:
+                                  type: string
+                                  example: Tajul Islam Refath
+
+        "400":
+          $ref: "#/components/responses/400"
+        "500":
+          $ref: "#/components/responses/500"
+
   # users
   "/users/self/profile":
     get:
@@ -413,10 +521,10 @@ components:
               code:
                 type: integer
                 example: 400
-              error:
+              message:
                 type: string
                 example: "Bad Request"
-              data:
+              errors:
                 type: array
                 items:
                   type: object
@@ -427,6 +535,20 @@ components:
                     message:
                       type: string
                       example: "Invalid email"
+    "500":
+      description: "Server error"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 500
+              message:
+                type: string
+                example: "Internal server error"
+
   parameters:
     pageNumber:
       in: query
