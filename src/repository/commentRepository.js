@@ -1,10 +1,14 @@
+const mongoose = require("mongoose");
+const ObjectId = mongoose.Types.ObjectId;
 const Model = require("../models/Comment");
 
 class CommentRepository {
-  findByArticle = (_articleId) => {
+  findByArticle = (articleId) => {
     return Model.aggregate([
       {
-        $match: { article: _articleId },
+        $match: {
+          article: ObjectId(`${articleId}`),
+        },
       },
       {
         $lookup: {
@@ -22,6 +26,10 @@ class CommentRepository {
           ],
         },
       },
+      // remove field
+      {
+        $unwind: "$user",
+      },
       // sort stage
       {
         $sort: { updatedAt: -1 },
@@ -31,8 +39,9 @@ class CommentRepository {
         $project: {
           _id: 1,
           body: 1,
-          createdAt: 1,
           user: 1,
+          createdAt: 1,
+          article: 1,
         },
       },
     ]);

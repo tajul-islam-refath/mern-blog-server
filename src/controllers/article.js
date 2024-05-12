@@ -103,6 +103,17 @@ exports.removePostFromBookmark = catchAsyncErrorHandle(
   }
 );
 
+exports.getCommentsByArticle = catchAsyncErrorHandle(async (req, res, next) => {
+  let _id = req.params.id;
+
+  let comments = await ArticleService.getCommentsByArticle(_id);
+  res.status(200).json({
+    success: true,
+    message: "Get all comments 🎉",
+    comments,
+  });
+});
+
 exports.createComment = catchAsyncErrorHandle(async (req, res, next) => {
   let articleId = req.params.id;
   let { body } = req.body;
@@ -112,8 +123,6 @@ exports.createComment = catchAsyncErrorHandle(async (req, res, next) => {
     articleId,
     body
   );
-
-  console.log("create comment -- ", response);
 
   res.status(201).json({
     success: true,

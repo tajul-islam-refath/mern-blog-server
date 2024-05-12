@@ -15,6 +15,7 @@ const {
   addPostToBookmark,
   removePostFromBookmark,
   createComment,
+  getCommentsByArticle,
 } = require("../controllers/article");
 const { paramIdValidation } = require("../validations/paramValidation");
 
@@ -55,6 +56,14 @@ router.get(
 );
 
 // comments
+router.get(
+  "/:id/comments",
+  isAuthenticated,
+  authorize(["user"]),
+  paramIdValidation,
+  requestValidation,
+  getCommentsByArticle
+);
 router.post(
   "/:id/comments",
   isAuthenticated,

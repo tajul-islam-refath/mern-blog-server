@@ -100,3 +100,54 @@
 2024-05-12 21:48:44 info: 🚀 App listening on the port 5000
 2024-05-12 22:00:30 info: 🚀 App listening on the port 5000
 2024-05-12 22:00:51 info: 🚀 App listening on the port 5000
+2024-05-12 22:01:26 info: 🚀 App listening on the port 5000
+2024-05-12 22:01:46 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":4.17}
+2024-05-12 22:01:49 info: {"method":"POST","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":201,"content_length":"462","response_time":2682.565}
+2024-05-12 22:03:31 info: 🚀 App listening on the port 5000
+2024-05-12 22:04:05 info: 🚀 App listening on the port 5000
+2024-05-12 22:04:10 info: 🚀 App listening on the port 5000
+2024-05-12 22:04:28 info: 🚀 App listening on the port 5000
+2024-05-12 22:04:47 info: 🚀 App listening on the port 5000
+2024-05-12 22:05:28 info: 🚀 App listening on the port 5000
+2024-05-12 22:05:37 info: 🚀 App listening on the port 5000
+2024-05-12 22:05:51 info: 🚀 App listening on the port 5000
+2024-05-12 22:05:55 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":2.92}
+2024-05-12 22:05:56 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":200,"content_length":"64","response_time":736.974}
+2024-05-12 22:07:01 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":0.259}
+2024-05-12 22:07:01 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":304,"response_time":649.439}
+2024-05-12 22:07:37 info: 🚀 App listening on the port 5000
+2024-05-12 22:08:02 info: 🚀 App listening on the port 5000
+2024-05-12 22:08:04 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":3.11}
+2024-05-12 22:08:06 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":200,"content_length":"708","response_time":1083.128}
+2024-05-12 22:08:35 info: 🚀 App listening on the port 5000
+2024-05-12 22:09:08 info: 🚀 App listening on the port 5000
+2024-05-12 22:09:16 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":4.833}
+2024-05-12 22:09:16 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":200,"content_length":"778","response_time":732.302}
+2024-05-12 22:10:14 info: 🚀 App listening on the port 5000
+2024-05-12 22:11:26 info: 🚀 App listening on the port 5000
+2024-05-12 22:11:34 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":1.842}
+2024-05-12 22:11:37 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":200,"content_length":"64","response_time":3154.505}
+2024-05-12 22:12:25 info: 🚀 App listening on the port 5000
+2024-05-12 22:12:29 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":4.744}
+2024-05-12 22:12:30 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":304,"response_time":461.436}
+2024-05-12 22:12:43 info: 🚀 App listening on the port 5000
+2024-05-12 22:12:45 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":3.705}
+2024-05-12 22:12:55 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":200,"content_length":"778","response_time":10321.334}
+2024-05-12 22:13:27 info: 🚀 App listening on the port 5000
+2024-05-12 22:13:31 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":3.961}
+2024-05-12 22:13:31 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":304,"response_time":811.495}
+2024-05-12 22:13:57 info: 🚀 App listening on the port 5000
+2024-05-12 22:14:10 info: 🚀 App listening on the port 5000
+2024-05-12 22:14:14 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":2.732}
+2024-05-12 22:14:15 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":200,"content_length":"64","response_time":712.459}
+2024-05-12 22:19:48 info: 🚀 App listening on the port 5000
+2024-05-12 22:19:51 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":1.623}
+2024-05-12 22:19:52 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":304,"response_time":403.517}
+2024-05-12 22:20:42 info: 🚀 App listening on the port 5000
+2024-05-12 22:20:44 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":2.135}
+2024-05-12 22:20:45 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":304,"response_time":400.837}
+2024-05-12 22:21:52 info: 🚀 App listening on the port 5000
+2024-05-12 22:21:57 info: 🚀 App listening on the port 5000
+2024-05-12 22:22:17 info: 🚀 App listening on the port 5000
+2024-05-12 22:22:18 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":1.661}
+2024-05-12 22:22:19 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":304,"response_time":790.345}
