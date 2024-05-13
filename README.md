@@ -58,6 +58,12 @@ docker compose down
 - 🌟 Testing(comming soon)
 - 🌟 Redis(comming soon)
 
+## API Documentation
+
+```bash
+http://localhost:5000/api-doc
+```
+
 ## Contributing
 
 Welcome contributions! Whether it's fixing a bug, adding a new feature, or improving documentation, your help is greatly appreciated.
