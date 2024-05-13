@@ -128,7 +128,9 @@ exports.createComment = catchAsyncErrorHandle(async (req, res, next) => {
     success: true,
     code: 200,
     message: "New comment created",
-    ...response._doc,
+    comment: {
+      ...response._doc,
+    },
   });
 });
 

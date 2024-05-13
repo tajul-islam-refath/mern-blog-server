@@ -360,14 +360,17 @@ paths:
                   message:
                     type: string
                     example: New comment added successfully
-                  id:
-                    type: string
-                    example: kjnsdjfnksdnfkajdnsf1515sd
-                  body:
-                    type: string
-                    example: First comment
-                  user:
-                    $ref: "#/components/schemas/AuthorDTO"
+                  comment:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: kjnsdjfnksdnfkajdnsf1515sd
+                      body:
+                        type: string
+                        example: First comment
+                      user:
+                        $ref: "#/components/schemas/AuthorDTO"
         "400":
           $ref: "#/components/responses/400"
         "500":

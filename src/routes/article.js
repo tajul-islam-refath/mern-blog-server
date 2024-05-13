@@ -59,8 +59,6 @@ router.get(
 // comments
 router.get(
   "/:id/comments",
-  isAuthenticated,
-  authorize(["user"]),
   paramIdValidation,
   requestValidation,
   getCommentsByArticle
