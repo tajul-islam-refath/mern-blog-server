@@ -1,0 +1,30 @@
+2024-05-13 19:40:49 info: 🚀 App listening on the port 5000
+2024-05-13 19:41:47 info: 🚀 App listening on the port 5000
+2024-05-13 19:42:16 info: 🚀 App listening on the port 5000
+2024-05-13 19:42:24 info: 🚀 App listening on the port 5000
+2024-05-13 19:42:39 info: 🚀 App listening on the port 5000
+2024-05-13 19:42:54 info: 🚀 App listening on the port 5000
+2024-05-13 19:44:38 info: 🚀 App listening on the port 5000
+2024-05-13 19:44:51 info: 🚀 App listening on the port 5000
+2024-05-13 19:45:06 info: 🚀 App listening on the port 5000
+2024-05-13 19:45:54 info: {"method":"OPTIONS","url":"/api/v1/auth/signin","status":204,"content_length":"0","response_time":1.828}
+2024-05-13 19:45:55 info: {"method":"POST","url":"/api/v1/auth/signin","status":200,"content_length":"528","response_time":1295.596}
+2024-05-13 19:46:35 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10","status":304,"response_time":2828.303}
+2024-05-13 19:46:58 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":204,"content_length":"0","response_time":0.516}
+2024-05-13 19:46:59 info: {"method":"GET","url":"/api/v1/articles/662689747f68b50c41300e8f/comments","status":304,"response_time":989.942}
+2024-05-13 19:47:30 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":204,"content_length":"0","response_time":0.187}
+2024-05-13 19:47:31 error: TypeError: Cannot read properties of null (reading '_id'),    at G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:148:24,    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-05-13 19:47:31 info: {"method":"DELETE","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":500,"content_length":"62","response_time":985.646}
+2024-05-13 19:50:17 info: 🚀 App listening on the port 5000
+2024-05-13 19:51:04 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":204,"content_length":"0","response_time":3.555}
+2024-05-13 19:51:05 error: TypeError: Cannot read properties of null (reading '_id'),    at G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:148:24,    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-05-13 19:51:05 info: {"method":"DELETE","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/662689747f68b50c41300e8f","status":500,"content_length":"62","response_time":936.493}
+2024-05-13 19:53:50 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/6640e7eb7de40e3c90815342","status":204,"content_length":"0","response_time":0.197}
+2024-05-13 19:53:51 info: {"method":"DELETE","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/6640e7eb7de40e3c90815342","status":200,"content_length":"100","response_time":1234.102}
+2024-05-13 19:55:05 info: 🚀 App listening on the port 5000
+2024-05-13 19:55:19 info: 🚀 App listening on the port 5000
+2024-05-13 19:56:05 info: 🚀 App listening on the port 5000
+2024-05-13 19:56:29 info: 🚀 App listening on the port 5000
+2024-05-13 19:56:36 info: {"method":"OPTIONS","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/6640e7eb7de40e3c90815342","status":204,"content_length":"0","response_time":1.934}
+2024-05-13 19:56:52 error: Error: Permission Denied,    at authorizationError (G:\Programming\projects\FullStack\MERN Blog\server\src\utils\error.js:21:17),    at ArticleService.deleteCommentById (G:\Programming\projects\FullStack\MERN Blog\server\src\service\ArticleService.js:164:13),    at process.processTicksAndRejections (node:internal/process/task_queues:95:5),    at async G:\Programming\projects\FullStack\MERN Blog\server\src\controllers\article.js:139:17
+2024-05-13 19:56:52 info: {"method":"DELETE","url":"/api/v1/articles/662689747f68b50c41300e8f/comments/6640e7eb7de40e3c90815342","status":403,"content_length":"58","response_time":16060.888}

@@ -68,17 +68,26 @@ class CommentRepository {
   };
 
   findByIdAndUser = (_id, userId) => {
-    return Model.find({
-      _id,
-      user: userId,
-    });
+    return Model.aggregate([
+      {
+        $match: {
+          $and: [{ _id: ObjectId(`${_id}`) }, { user: ObjectId(`${userId}`) }],
+        },
+      },
+    ]);
   };
 
   findByIdAndArticle = (_id, articleId) => {
-    return Model.find({
-      _id,
-      article: articleId,
-    });
+    return Model.aggregate([
+      {
+        $match: {
+          $and: [
+            { _id: ObjectId(`${_id}`) },
+            { article: ObjectId(`${articleId}`) },
+          ],
+        },
+      },
+    ]);
   };
 
   create = async (data) => {

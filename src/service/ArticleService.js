@@ -157,7 +157,7 @@ class ArticleService {
       commentId,
       userId
     );
-    console.log(userId);
+
     if (!isOwner.length) {
       throw authorizationError();
     }

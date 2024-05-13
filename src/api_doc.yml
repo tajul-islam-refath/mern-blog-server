@@ -415,7 +415,7 @@ paths:
           $ref: "#/components/responses/400"
         "500":
           $ref: "#/components/responses/500"
-  "/articles/{id}/comments/{id}":
+  "/articles/{id}/comments/{commentId}":
     delete:
       tags: [Comment]
       security:

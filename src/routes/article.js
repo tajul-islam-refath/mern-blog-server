@@ -74,7 +74,7 @@ router.post(
   createComment
 );
 router.delete(
-  "/:id/comments/:id",
+  "/:id/comments/:commentId",
   isAuthenticated,
   authorize(["user"]),
   paramIdValidation,

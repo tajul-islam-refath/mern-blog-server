@@ -134,14 +134,14 @@ exports.createComment = catchAsyncErrorHandle(async (req, res, next) => {
 
 exports.deleteComment = catchAsyncErrorHandle(async (req, res, next) => {
   let articleId = req.params.id;
-  let commentId = req.params.id;
+  let commentId = req.params.commentId;
   const userId = req.user._id;
   let comment = await ArticleService.deleteCommentById(
     userId,
     articleId,
     commentId
   );
-  console.log(comment);
+
   res.status(200).json({
     success: true,
     message: "Delete Comment successfully 🎉",
