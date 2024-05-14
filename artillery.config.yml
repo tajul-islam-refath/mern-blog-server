@@ -1,0 +1,12 @@
+config:
+  target: "http://localhost:5000"
+  phases:
+    - name: "warmup"
+      duration: 30
+      arrivalRate: 10
+
+scenarios:
+  - name: "Articles 😜"
+    flow:
+      - get:
+          url: "/api/v1/articles?page=1&limit=10"

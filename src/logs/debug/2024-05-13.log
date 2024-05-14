@@ -2240,3 +2240,4 @@
 2024-05-13 22:42:47 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":304,"response_time":372.482}
 2024-05-13 22:42:47 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=10&search=","status":304,"response_time":263.303}
 2024-05-13 22:42:51 info: {"method":"GET","url":"/api/v1/articles?page=2&limit=10&search=","status":304,"response_time":242.659}
+2024-05-13 22:50:44 info: 🚀 App listening on the port 5000
