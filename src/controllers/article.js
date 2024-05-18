@@ -6,10 +6,10 @@ const Profile = require("../models/Profile");
 const ArticleService = require("../service/ArticleService");
 
 const { catchAsyncErrorHandle } = require("../middlewarers/catchAsyncErrors");
+const RedisService = require("../service/RedisService");
 
 exports.createArticle = catchAsyncErrorHandle(async (req, res, next) => {
   const article = matchedData(req);
-  console.log(article);
   article.cover = req.file;
   const user = req.user;
 
@@ -22,11 +22,23 @@ exports.createArticle = catchAsyncErrorHandle(async (req, res, next) => {
       article: newArticle,
     },
   });
+
+  RedisService.delete({
+    pattern: "articles:page=*",
+  });
 });
 
 exports.getArticles = catchAsyncErrorHandle(async (req, res, next) => {
   let query = req.query;
-  let result = await ArticleService.getAll(query);
+
+  const key = `articles:page=${query.page}&limit=${query.limit}&search=${
+    query?.search || ""
+  }`;
+  let result = await RedisService.getOrSet(async () => {
+    let data = await ArticleService.getAll(query);
+    return data;
+  }, key);
+
   res.status(200).json({
     success: true,
     message: "All Articles 🎉",
@@ -37,9 +49,14 @@ exports.getArticles = catchAsyncErrorHandle(async (req, res, next) => {
 });
 
 exports.getArticle = catchAsyncErrorHandle(async (req, res, next) => {
-  let _id = req.params.id;
+  const _id = req.params.id;
+  const key = `article:_id=${_id}`;
 
-  let article = await ArticleService.getById(_id);
+  const article = await RedisService.getOrSet(async () => {
+    let data = await ArticleService.getById(_id);
+    return data;
+  }, key);
+
   res.status(200).json({
     success: true,
     message: "Single Article 🎉",
@@ -66,13 +83,20 @@ exports.getArticlesByAuthor = catchAsyncErrorHandle(async (req, res, next) => {
 exports.deleteArticle = catchAsyncErrorHandle(async (req, res, next) => {
   let _id = req.params.id;
   const user = req.user;
+
   let article = await ArticleService.deleteById(_id, user);
+
   res.status(200).json({
     success: true,
-    message: "Delete Article success 🎉",
+    message: "Delete article success 🎉",
     data: {
       article,
     },
+  });
+
+  RedisService.delete({
+    keys: [`article:_id=${_id}`],
+    pattern: "articles:page=*",
   });
 });
 

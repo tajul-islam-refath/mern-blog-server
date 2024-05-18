@@ -25,7 +25,7 @@ docker compose build
 3. **Starting the environment in background**
 
 ```bash
-docker compose up
+docker compose  up -d
 ```
 
 4. **To see the logs of your app**
@@ -55,8 +55,8 @@ docker compose down
 - 🌟 Request Body, Param Validation
 - 🌟 Server side pagination
 - 🌟 Docker
+- 🌟 Redis
 - 🌟 Testing(comming soon)
-- 🌟 Redis(comming soon)
 
 ## API Documentation
 
