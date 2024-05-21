@@ -1,0 +1,18 @@
+2024-05-20 13:30:06 info: 🚀 App listening on the port 5000
+2024-05-20 13:30:35 info: {"method":"GET","url":"/","status":200,"content_length":"65","response_time":153.043}
+2024-05-20 13:30:43 info: {"method":"GET","url":"/favicon.ico","status":404,"content_length":150,"response_time":111.107}
+2024-05-20 14:43:00 info: 🚀 App listening on the port 5000
+2024-05-20 14:59:10 info: 🚀 App listening on the port 5000
+2024-05-20 15:03:51 info: 🚀 App listening on the port 5000
+2024-05-20 15:08:23 info: {"method":"GET","url":"/","status":304,"response_time":150.531}
+2024-05-20 15:09:31 error: MaxRetriesPerRequestError: Reached the max retries per request limit (which is 20). Refer to "maxRetriesPerRequest" option for details.,    at Socket.<anonymous> (/server/node_modules/ioredis/built/redis/event_handler.js:182:37),    at Object.onceWrapper (node:events:628:26),    at Socket.emit (node:events:513:28),    at TCP.<anonymous> (node:net:301:12)
+2024-05-20 15:09:31 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=5","status":500,"content_length":"62","response_time":35040.603}
+2024-05-20 15:14:43 info: 🚀 App listening on the port 5000
+2024-05-20 21:17:57 info: 🚀 App listening on the port 5000
+2024-05-20 21:18:19 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=5","status":200,"response_time":296.132}
+2024-05-20 21:19:49 info: 🚀 App listening on the port 5000
+2024-05-20 21:20:42 info: 🚀 App listening on the port 5000
+2024-05-20 21:20:49 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=5","status":304,"response_time":24.933}
+2024-05-20 21:20:57 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=5","status":304,"response_time":8.851}
+2024-05-20 15:24:38 info: 🚀 App listening on the port 5000
+2024-05-20 15:32:05 info: 🚀 App listening on the port 5000

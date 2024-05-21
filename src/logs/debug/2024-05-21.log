@@ -1,0 +1,7 @@
+2024-05-21 01:19:45 info: 🚀 App listening on the port 5000
+2024-05-21 01:23:59 info: 🚀 App listening on the port 5000
+2024-05-21 01:26:15 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=5","status":304,"response_time":712.561}
+2024-05-21 01:26:25 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=5","status":304,"response_time":79.244}
+2024-05-21 01:26:38 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=5","status":304,"response_time":9.805}
+2024-05-21 01:26:40 info: {"method":"GET","url":"/api/v1/articles?page=1&limit=5","status":304,"response_time":7.025}
+2024-05-21 01:35:29 info: 🚀 App listening on the port 5000
