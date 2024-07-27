@@ -55,7 +55,7 @@ class ArticleService {
     search = defaults.search,
   }) => {
     const newSortType = `${sortType === "dsc" ? -1 : 1}`;
-    let articles = await ArticleRepository.findAll({
+    let articles = await ArticleRepository.findAllWithAuthor({
       page: parseInt(page),
       limit: parseInt(limit),
       sortBy,

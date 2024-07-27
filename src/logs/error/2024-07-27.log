@@ -1,0 +1,1 @@
+2024-07-27 07:11:04 error: MongoNetworkError: connection 4 to 13.233.226.135:27017 closed,    at Connection.onClose (/server/node_modules/mongodb/lib/cmap/connection.js:136:19),    at TLSSocket.<anonymous> (/server/node_modules/mongodb/lib/cmap/connection.js:63:46),    at TLSSocket.emit (node:events:513:28),    at node:net:301:12,    at TCP.done (node:_tls_wrap:588:7)

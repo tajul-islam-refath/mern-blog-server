@@ -11,16 +11,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    restart: unless-stopped
+    restart: always
     volumes:
       - ".:/server"
       - "/server/node_modules"
     ports:
       - 5000:5000
     depends_on:
-      - redis # Ensure Redis starts before
+      - redis
     environment:
       - REDIS_HOST=redis # Use service name discovered by DNS
-    command: ["npm", "start"]
-
-
+    command: npm run dev
