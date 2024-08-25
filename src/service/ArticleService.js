@@ -33,6 +33,7 @@ class ArticleService {
 
     return newArticle;
   };
+
   getById = async (_id) => {
     let populateOptions = [{ path: "author", select: "username profileImage" }];
     let article = await ArticleRepository.findByID(_id, {}, populateOptions);

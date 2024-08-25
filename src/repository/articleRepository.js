@@ -5,14 +5,7 @@ class ArticleRepository extends BaseRepository {
   constructor() {
     super(ArticleModel);
   }
-  /**
-   * Find By ID
-   * @param {string} _id
-   * @returns {article} article
-   */
-  findByID = (_id, select = {}, populateOptions = []) => {
-    return ArticleModel.findById(_id, select).populate(populateOptions);
-  };
+
   /**
    * Find By Author
    * @param {authorId} authorId - Author id
@@ -54,14 +47,7 @@ class ArticleRepository extends BaseRepository {
       },
     ]);
   };
-  /**
-   * Find One
-   * @param {query} query
-   * @returns {article} article
-   */
-  findOne = (query = {}, select = {}) => {
-    return ArticleModel.findOne(query, select);
-  };
+
   /**
    * Find All
    * @returns {array} article array
@@ -199,12 +185,6 @@ class ArticleRepository extends BaseRepository {
       },
       { new: true }
     );
-  };
-  deleteById = (_id) => {
-    return ArticleModel.findByIdAndDelete(_id);
-  };
-  deleteMany = (query) => {
-    return ArticleModel.deleteMany(query);
   };
 }
 

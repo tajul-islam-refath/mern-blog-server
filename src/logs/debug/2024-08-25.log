@@ -1,0 +1,6 @@
+2024-08-25 03:26:36 info: 🚀 App listening on the port 5000
+2024-08-25 06:11:13 info: 🚀 App listening on the port 5000
+2024-08-25 06:20:38 info: 🚀 App listening on the port 5000
+2024-08-25 06:22:15 info: {"method":"GET","url":"/","status":200,"content_length":"65","response_time":329.553}
+2024-08-25 06:22:46 info: {"method":"GET","url":"/","status":304,"response_time":448.946}
+2024-08-25 06:23:33 info: {"method":"GET","url":"/doc","status":404,"content_length":142,"response_time":405.457}

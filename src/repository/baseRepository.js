@@ -5,7 +5,7 @@ class BaseRepository {
   /**
    * Find By ID
    * @param {string} _id
-   * @returns {article} article
+   * @returns {article} item
    */
   findByID = (_id, select = {}, populateOptions = []) => {
     return this.model.findById(_id, select).populate(populateOptions);
@@ -14,7 +14,7 @@ class BaseRepository {
   /**
    * Find One
    * @param {query} query
-   * @returns {article} article
+   * @returns {article} item
    */
   findOne = (query = {}, select = {}) => {
     return this.model.findOne(query, select);
@@ -24,7 +24,6 @@ class BaseRepository {
    * @returns {array} article array
    */
   findAll = async (query = {}) => {
-    console.log("BaseRepo", query);
     const {
       search = "",
       page = 1,
@@ -99,6 +98,11 @@ class BaseRepository {
       { new: true }
     );
   };
+  /**
+   * Delete item
+   * @param {_id} mongodb _id
+   * @returns {object} item object
+   */
   deleteById = (_id) => {
     return this.model.findByIdAndDelete(_id);
   };
