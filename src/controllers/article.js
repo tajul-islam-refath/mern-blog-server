@@ -1,12 +1,8 @@
 const { matchedData } = require("express-validator");
 
-const Post = require("../models/Article");
-const Profile = require("../models/Profile");
-
 const ArticleService = require("../service/ArticleService");
-
-const { catchAsyncErrorHandle } = require("../middlewarers/catchAsyncErrors");
 const RedisService = require("../service/RedisService");
+const { catchAsyncErrorHandle } = require("../middlewarers/catchAsyncErrors");
 
 exports.createArticle = catchAsyncErrorHandle(async (req, res, next) => {
   const article = matchedData(req);
