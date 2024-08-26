@@ -56,12 +56,13 @@ docker compose down
 - 🌟 Server side pagination
 - 🌟 Docker
 - 🌟 Redis
+- 🌟 Nginx server setup
 - 🌟 Testing(comming soon)
 
 ## API Documentation
 
 ```bash
-http://localhost:5000/api-doc
+http://localhost:8080/api-doc
 ```
 
 ## Contributing
